@@ -619,3 +619,14 @@ These do not need to be answered before the idea has had time to develop:
 **Current direction:** A custom, modular harness; an Obsidian vault as the editable record and environment; subject-specific teachers; formal lessons, labs, and exams; evidence-based grading; learner-directed remediation; and ordinary conversation with a human guide.
 
 **Current status:** Concept exploration only. Let it simmer before committing to implementation details.
+
+---
+
+A few areas I'd want a serious critic to investigate:
+- Are you measuring learning, or just better use of external notes? If the learner improves because it retrieves a previous explanation, that's useful—but it's different from changing its underlying capabilities.
+- Can you distinguish genuine improvement from prompting effects? A teacher might teach the learner to produce answers that look better without improving its ability to solve unfamiliar problems.
+- Are the grades meaningful? If the same family of models teaches, examines, and grades the learner, they could share the same blind spots. Independent tests and objective checks will matter.
+- Are you accidentally designing the outcome? Your instructions, reward structure, and available tools could predetermine the behavior you're hoping to observe.
+- What would prove your hypothesis wrong? If every outcome can be explained as evidence that the learner is developing, the experiment isn't falsifiable.
+- What does “persistent behavioral change” actually mean? You need to distinguish changes caused by memory, changing prompts, accumulated experience, and actual weight updates.
+- If two identical base models receive different educational experiences and eventually behave differently, how will you establish that the experiences caused the difference?
