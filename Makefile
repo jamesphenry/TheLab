@@ -9,6 +9,7 @@ BIN_DIR = bin
 # Compiler and flags
 CC = gcc
 CFLAGS += -std=c17 -Wall -Wextra -Werror -I$(INC_DIR)
+LDLIBS ?= -lm
 LDFLAGS ?=
 
 # Source files
@@ -55,10 +56,12 @@ PROJECT_$(1)_OBJ = $$(patsubst $(PROJECT_DIR)/$(1)/src/%.c,$(OBJ_DIR)/projects/$
 .PHONY: $(1)
 $(1): $(BIN_DIR)/$(1) ## Build project $(1)
 
+# LINKING RULE: Add $$(LDLIBS) here so -lm resolves expf()
 $(BIN_DIR)/$(1): $$(PROJECT_$(1)_OBJ)
 	mkdir -p $(BIN_DIR)
-	$$(CC) $$(PROJECT_$(1)_OBJ) -o $$@ $$(LDFLAGS)
+	$$(CC) $$(PROJECT_$(1)_OBJ) -o $$@ $$(LDFLAGS) $$(LDLIBS)
 
+# COMPILATION RULE: Remove $$(LDFLAGS) and $$(LDLIBS) from here
 $$(OBJ_DIR)/projects/$(1)/%.o: $(PROJECT_DIR)/$(1)/src/%.c $$(PROJECT_$(1)_INC)
 	mkdir -p $$(dir $$@)
 	$$(CC) $$(CFLAGS) -I$(PROJECT_DIR)/$(1)/include -c $$< -o $$@
