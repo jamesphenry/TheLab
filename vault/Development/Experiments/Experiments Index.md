@@ -16,4 +16,5 @@ Use one note per meaningful experiment. Include negative results and failed runs
 
 ## Experiments
 
+- [[2026-10-23 BabyLM Lesson 1.1 Phonics and Word Acquisition|2026-10-23 BabyLM Lesson 1.1 Phonics and Word Acquisition]]
 - [[2026-10-23 BabyLM 25M Baseline Initialization|2026-10-23 BabyLM 25M Baseline Initialization & Gradient Step]]
