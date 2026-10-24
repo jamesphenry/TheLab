@@ -48,3 +48,4 @@ scratch/
 tmp/
 *.out
 *.log
+resume.sh
