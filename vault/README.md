@@ -11,9 +11,7 @@ This vault functions as the persistent environment, curriculum repository, and e
 - `05-Dreams/`: Idle-time reflection logs and generated hypotheses.
 - `06-Labs/`: Practical coding and reasoning lab environments.
 - `07-Reports/`: Rubrics, grade reports, and measurable evaluations.
-- `Decisions/`: Architectural Decision Records (ADRs).
-- `Experiments/`: Formal experiment writeups and hypotheses.
-- `Logs/`: Development session logs.
+- `Development/`: Engineering documentation, architecture, roadmap, ADRs, debugging, and session logs.
 - `Templates/`: Standard templates for notes, experiments, and decisions.
 
 See [[Home]] and [[NOTES]] to begin.

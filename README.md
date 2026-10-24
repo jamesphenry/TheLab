@@ -23,7 +23,7 @@ An experimental developmental environment for an AI learner model. Rather than t
 │   ├── 05-Dreams/        # Idle reflection logs and generated hypotheses
 │   ├── 06-Labs/          # Practical problem sandboxes
 │   ├── 07-Reports/       # Finalized assessment rubrics and test records
-│   ├── Project/          # System architecture, build procedures, and roadmap
+│   ├── Development/      # System architecture, build procedures, ADRs, logs, and roadmap
 │   ├── Home.md           # Obsidian entry point
 │   └── NOTES.md          # Comprehensive project blueprint & notes
 ├── harness/              # Python coordination harness

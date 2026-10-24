@@ -27,9 +27,11 @@ updated: 2026-10-23
 - [[01-Learner/Current-Questions|Learner Questions]]
 - [[02-School/Programming/Teacher|Programming School]]
 - [[02-School/Mathematics/Teacher|Mathematics School]]
-- [[Project/Project Overview|Harness Project Overview]]
-- [[Project/Architecture|System Architecture]]
-- [[Project/Roadmap|Development Roadmap]]
+- [[Development/README|Development Documentation]]
+  - [[Development/Project Overview|Harness Project Overview]]
+  - [[Development/Architecture|System Architecture]]
+  - [[Development/Roadmap|Development Roadmap]]
+  - [[Development/Build and Test|Build & Test Guide]]
 
 ## Current Milestone Focus
 
