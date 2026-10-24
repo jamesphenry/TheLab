@@ -16,4 +16,4 @@ Use one note per meaningful experiment. Include negative results and failed runs
 
 ## Experiments
 
-Add links newest first, using `YYYY-MM-DD Short Experiment Name`.
+- [[2026-10-23 BabyLM 25M Baseline Initialization|2026-10-23 BabyLM 25M Baseline Initialization & Gradient Step]]
