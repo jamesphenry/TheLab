@@ -17,4 +17,4 @@ Record durable choices and their trade-offs. Small reversible choices may remain
 
 ## Decisions
 
-Use `ADR-NNNN Short Decision Title.md`, ordered newest first.
+- [[ADR-0001 BabyLM 25M Tabula Rasa Architecture|ADR-0001: 25M Tabula Rasa Architecture for the Learner]]

@@ -12,16 +12,20 @@ updated: 2026-10-23
 
 # Roadmap — AI Learner Laboratory
 
-## Phase 1: Core Foundation & Vault Controller
+## Phase 1: Core Foundation & BabyLM Architecture
 - [x] Clean up obsolete repository scaffolding.
 - [x] Establish AI School vault hierarchy and permission specifications.
-- [ ] Implement `VaultController` in Python with role-based permission enforcement and path isolation tests.
-- [ ] Implement model provider abstraction (supporting local models via Ollama/OpenAI-compatible APIs and mock test fixtures).
+- [x] Implement `VaultController` in Python with role-based permission enforcement and path isolation tests.
+- [x] Formalize model sizing decision ([[Decisions/ADR-0001 BabyLM 25M Tabula Rasa Architecture|ADR-0001: 25M Tabula Rasa Architecture]]).
+- [ ] Implement 25M PyTorch Causal Transformer learner model and tokenizer.
+- [ ] Implement Teacher Engine interface (for prompting curriculum lessons & grading).
 
-## Phase 2: First End-to-End Learning Cycle (Milestone 1)
-- [ ] Define initial C Programming Lesson 1.1 (Memory & Addresses) and Examination rubric.
-- [ ] Implement automated assessment runner with compiler/output verification.
-- [ ] Run full cycle: *Lesson -> Failed Assessment -> Weakness Identification -> Remediation Decision -> Improved Assessment*.
+## Phase 2: Early Childhood Curriculum & First Learning Cycle (Milestone 1)
+- [ ] Stage 0: Phonics & Character Babbling (entropy collapse, whitespace/word boundaries).
+- [ ] Stage 1: Vocabulary & Association (high-frequency nouns, colors, simple pairings).
+- [ ] Stage 2: 1st-Grade Syntax & Dialog (Subject-Verb-Object, basic Q&A).
+- [ ] Stage 3: Elementary Math & Logic (counting sequences, 1 + 1 = 2).
+- [ ] Verify first live developmental improvement: *Unfamiliar word/syntax test -> Failure -> Interactive Teacher Correction -> Instant Weight Update -> Passing Retest*.
 
 ## Phase 3: Metacognition & Self-Directed Study
 - [ ] Self-Assessment calibration metrics (comparing perceived confidence vs actual grade).

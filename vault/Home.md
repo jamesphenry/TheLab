@@ -25,8 +25,9 @@ updated: 2026-10-23
 - [[01-Learner/Goals|Learner Goals]]
 - [[01-Learner/Self-Assessment|Self-Assessment Tracker]]
 - [[01-Learner/Current-Questions|Learner Questions]]
-- [[02-School/Programming/Teacher|Programming School]]
+- [[02-School/Language/Teacher|Language & Reading School]]
 - [[02-School/Mathematics/Teacher|Mathematics School]]
+- [[02-School/Programming/Teacher|Programming School]]
 - [[Development/README|Development Documentation]]
   - [[Development/Project Overview|Harness Project Overview]]
   - [[Development/Architecture|System Architecture]]
@@ -35,9 +36,10 @@ updated: 2026-10-23
 
 ## Current Milestone Focus
 
-- **Objective:** First End-to-End Learning Cycle.
-- **Milestone Definition:** *The learner takes a lesson, fails a test, identifies a weakness, chooses to work on it, and demonstrably improves on a different test.*
-- **Initial Subject:** Programming (Module 1: Pointer & Memory Mechanics).
+- **Objective:** First End-to-End Tabula Rasa Learning Cycle.
+- **Model Target:** BabyLM ~25M Parameter Transformer (randomly initialized).
+- **Initial Subject:** Early Language & Reading (Stage 0: Phonics & Words -> Stage 1: Basic Associations).
+- **Milestone Definition:** *The learner starts at random weights, receives lessons, fails an assessment, adapts via live gradient updates, and demonstrates verifiable transfer on a fresh assessment.*
 
 ## Project Principles
 
