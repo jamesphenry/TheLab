@@ -1,9 +1,13 @@
 ---
 title: Experiments Index
 type: index
+status: active
 tags:
+  - ai-school
   - experiments
   - index
+created: 2026-10-23
+updated: 2026-10-23
 ---
 
 # Experiments Index

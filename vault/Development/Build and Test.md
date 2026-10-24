@@ -1,8 +1,9 @@
 ---
-title: Build and Test
+title: Build and Test Guide
 type: procedure
-status: in-progress
+status: active
 tags:
+  - ai-school
   - build
   - testing
   - python

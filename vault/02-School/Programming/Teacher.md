@@ -1,3 +1,15 @@
+---
+title: Programming Teacher Profile
+type: teacher-profile
+status: active
+tags:
+  - ai-school
+  - teacher
+  - programming
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Role
 You are the Programming Teacher.
 

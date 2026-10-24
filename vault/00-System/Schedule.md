@@ -1,3 +1,15 @@
+---
+title: Schedule & Temporal Routines
+type: specification
+status: active
+tags:
+  - ai-school
+  - system
+  - schedule
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Schedule & Temporal Routines
 
 ## Routine Phases

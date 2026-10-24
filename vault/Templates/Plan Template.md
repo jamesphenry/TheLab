@@ -3,9 +3,10 @@ title: "{{plan_name}}"
 type: plan
 status: planned
 tags:
+  - ai-school
   - plan
-  - c
-date: {{date}}
+created: {{date}}
+updated: {{date}}
 ---
 
 # {{plan_name}}

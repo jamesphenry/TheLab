@@ -1,3 +1,15 @@
+---
+title: Programming Curriculum
+type: curriculum
+status: active
+tags:
+  - ai-school
+  - curriculum
+  - programming
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Programming Curriculum
 
 ## Module 1: Fundamental Mechanics & Memory Models

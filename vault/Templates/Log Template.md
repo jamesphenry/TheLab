@@ -3,8 +3,10 @@ title: "{{date}}"
 type: log
 status: in-progress
 tags:
+  - ai-school
   - log
-date: {{date}}
+created: {{date}}
+updated: {{date}}
 ---
 
 # {{date}} — Log

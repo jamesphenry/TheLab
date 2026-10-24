@@ -3,9 +3,10 @@ title: "{{problem_name}}"
 type: debugging
 status: in-progress
 tags:
+  - ai-school
   - debugging
-  - c
-date: {{date}}
+created: {{date}}
+updated: {{date}}
 ---
 
 # {{problem_name}}

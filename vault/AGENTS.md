@@ -1,3 +1,14 @@
+---
+title: Agent Instructions — AI Learner Laboratory
+type: instructions
+status: active
+tags:
+  - ai-school
+  - agent-guidelines
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Agent Instructions — AI Learner Laboratory
 
 ## 1. Mission

@@ -1,3 +1,15 @@
+---
+title: Development Documentation
+type: hub
+status: active
+tags:
+  - ai-school
+  - development
+  - docs
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Development Documentation
 
 This folder contains internal engineering and architecture documentation for building and maintaining the **AI Learner Laboratory (AI School)** harness and environment.

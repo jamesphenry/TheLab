@@ -1,3 +1,15 @@
+---
+title: Component Permissions Matrix
+type: specification
+status: active
+tags:
+  - ai-school
+  - system
+  - permissions
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Component Permissions Matrix
 
 The harness enforces granular filesystem and tool permissions based on role:

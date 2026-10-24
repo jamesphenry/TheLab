@@ -3,9 +3,10 @@ title: "{{date}}"
 type: log
 status: done
 tags:
+  - ai-school
   - log
-  - c
-date: {{date}}
+created: {{date}}
+updated: {{date}}
 ---
 
 # {{date}} — Session Log

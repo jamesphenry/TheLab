@@ -1,3 +1,15 @@
+---
+title: AI Learner Laboratory — Discussion Notes
+type: blueprint
+status: active
+tags:
+  - ai-school
+  - notes
+  - blueprint
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # AI Learner Laboratory — Discussion Notes
 
 **Status:** Early-stage concept; let it simmer before committing to an architecture  

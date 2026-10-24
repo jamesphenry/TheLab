@@ -1,8 +1,9 @@
 ---
 title: Roadmap
 type: plan
-status: in-progress
+status: active
 tags:
+  - ai-school
   - roadmap
   - plan
 created: 2026-10-23

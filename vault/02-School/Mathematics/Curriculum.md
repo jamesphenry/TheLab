@@ -1,3 +1,15 @@
+---
+title: Mathematics Curriculum
+type: curriculum
+status: active
+tags:
+  - ai-school
+  - curriculum
+  - mathematics
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Mathematics Curriculum
 
 ## Module 1: Discrete Structures & Logic

@@ -3,9 +3,11 @@ title: "ADR-{{number}} {{decision_title}}"
 type: decision
 status: accepted
 tags:
+  - ai-school
   - decision
   - architecture
-date: {{date}}
+created: {{date}}
+updated: {{date}}
 ---
 
 # ADR-{{number}} — {{decision_title}}

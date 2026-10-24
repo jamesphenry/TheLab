@@ -1,3 +1,15 @@
+---
+title: Learner Self-Assessment
+type: self-assessment
+status: active
+tags:
+  - ai-school
+  - learner
+  - self-assessment
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Learner Self-Assessment
 
 *This note tracks the learner's perceived understanding versus measured reality.*

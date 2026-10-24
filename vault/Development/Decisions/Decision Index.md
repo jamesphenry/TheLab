@@ -1,10 +1,14 @@
 ---
-title: Decision Index
+title: Architecture Decision Index
 type: index
+status: active
 tags:
+  - ai-school
   - decisions
   - architecture
   - index
+created: 2026-10-23
+updated: 2026-10-23
 ---
 
 # Decision Index

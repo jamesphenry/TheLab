@@ -1,3 +1,15 @@
+---
+title: Learner Goals
+type: learner-profile
+status: active
+tags:
+  - ai-school
+  - learner
+  - goals
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Learner Goals
 
 ## Current Objectives

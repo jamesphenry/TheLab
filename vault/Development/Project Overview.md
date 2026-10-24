@@ -3,9 +3,9 @@ title: Project Overview
 type: project
 status: active
 tags:
+  - ai-school
   - project
   - python
-  - ai-school
 created: 2026-10-23
 updated: 2026-10-23
 ---

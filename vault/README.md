@@ -1,3 +1,15 @@
+---
+title: AI Learner Laboratory — Obsidian Vault
+type: overview
+status: active
+tags:
+  - ai-school
+  - vault
+  - guide
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # AI Learner Laboratory — Obsidian Vault
 
 This vault functions as the persistent environment, curriculum repository, and experiment notebook for the **AI Learner Laboratory**.

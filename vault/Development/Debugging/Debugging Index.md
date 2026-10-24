@@ -1,9 +1,13 @@
 ---
 title: Debugging Index
 type: index
+status: active
 tags:
+  - ai-school
   - debugging
   - index
+created: 2026-10-23
+updated: 2026-10-23
 ---
 
 # Debugging Index

@@ -1,9 +1,13 @@
 ---
-title: Logs Index
+title: Session Logs Index
 type: index
+status: active
 tags:
+  - ai-school
   - logs
   - index
+created: 2026-10-23
+updated: 2026-10-23
 ---
 
 # Logs Index

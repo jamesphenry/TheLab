@@ -1,8 +1,9 @@
 ---
 title: Harness Architecture
 type: architecture
-status: in-progress
+status: active
 tags:
+  - ai-school
   - architecture
   - python
 created: 2026-10-23

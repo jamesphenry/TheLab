@@ -3,9 +3,10 @@ title: "{{experiment_name}}"
 type: experiment
 status: planned
 tags:
+  - ai-school
   - experiment
-  - c
-date: {{date}}
+created: {{date}}
+updated: {{date}}
 ---
 
 # {{experiment_name}}

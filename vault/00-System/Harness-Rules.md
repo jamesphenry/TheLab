@@ -1,3 +1,15 @@
+---
+title: Harness Rules & Invariants
+type: specification
+status: active
+tags:
+  - ai-school
+  - system
+  - rules
+created: 2026-10-23
+updated: 2026-10-23
+---
+
 # Harness Rules & Invariants
 
 ## Core Principles
