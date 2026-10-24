@@ -1,53 +1,45 @@
 ---
-title: Project Home
+title: AI Learner Laboratory - Home
 type: hub
-status: in-progress
+status: active
 tags:
-  - project
-  - c
-created: {{date}}
-updated: {{date}}
+  - ai-school
+  - learner-lab
+created: 2026-10-23
+updated: 2026-10-23
 ---
 
-# Project Home
+# AI Learner Laboratory — Obsidian Hub
 
-> [!abstract] Project at a glance
-> **Project:** `{{project_name}}`
-> **Language:** C17 (adjust if needed)
-> **Code repository:** `{{repository_url_or_path}}`
-> **Current phase:** `{{current_phase}}`
+> [!abstract] Project at a Glance
+> **Project:** AI Learner Laboratory (AI School)
+> **Harness Stack:** Python 3.13
+> **Purpose:** Experimental developmental environment for an AI learner model featuring subject-specific teachers, evidence-based assessments, metacognitive self-direction, idle reflection, and human guidance.
 
-## Start Here
+## Core Navigation
 
-- [[Project/Project Overview|Project Overview]]
-- [[Project/Architecture|Architecture]]
-- [[Project/Build and Test|Build and Test]]
-- [[Project/Roadmap|Roadmap]]
-- [[Logs/Logs Index|Session Logs]]
-- [[Experiments/Experiments Index|Experiments]]
-- [[Decisions/Decision Index|Architecture Decisions]]
-- [[Debugging/Debugging Index|Debugging Notes]]
-- [[Learning/C Learning Index|C Learning Notes]]
-- [[Templates/Experiment Template|Experiment Template]]
-- [[Templates/Session Log Template|Session Log Template]]
-- [[Templates/Decision Template|Decision Template]]
-- [[Templates/Debugging Template|Debugging Template]]
+- [[NOTES|Discussion Notes & Blueprint]]
+- [[00-System/Harness-Rules|System Rules & Invariants]]
+- [[00-System/Permissions|Permissions Matrix]]
+- [[00-System/Schedule|Routines & Schedule]]
+- [[01-Learner/Goals|Learner Goals]]
+- [[01-Learner/Self-Assessment|Self-Assessment Tracker]]
+- [[01-Learner/Current-Questions|Learner Questions]]
+- [[02-School/Programming/Teacher|Programming School]]
+- [[02-School/Mathematics/Teacher|Mathematics School]]
+- [[Project/Project Overview|Harness Project Overview]]
+- [[Project/Architecture|System Architecture]]
+- [[Project/Roadmap|Development Roadmap]]
 
-## Current Focus
+## Current Milestone Focus
 
-- **Working on:** `{{current_task}}`
-- **Last verified state:** `{{last_verified_state}}`
-- **Next step:** `{{next_step}}`
-- **Open blocker:** `{{blocker_or_none}}`
+- **Objective:** First End-to-End Learning Cycle.
+- **Milestone Definition:** *The learner takes a lesson, fails a test, identifies a weakness, chooses to work on it, and demonstrably improves on a different test.*
+- **Initial Subject:** Programming (Module 1: Pointer & Memory Mechanics).
 
-## Project Rules
+## Project Principles
 
-- Treat test output, compiler output, diffs, and reproducible observations as evidence.
-- Separate observed facts from hypotheses and interpretations.
-- Record failed attempts when they teach us something or affect future work.
-- Update documentation when a change alters behavior, architecture, build steps, tests, or project understanding.
-- Link notes to the relevant source files, commits, tests, and other notes where possible.
-
-## Recent Activity
-
-- Add links to recent session logs and significant experiments here.
+- **Separation of Concerns:** The Python harness coordinates, enforces folder permissions, and records events.
+- **Technical Access Controls:** Permissions are enforced in harness code, not merely prompt instructions.
+- **Evidence-Based Grading:** Mastery requires verified test outcomes evaluated against rubrics.
+- **Three Knowledge Layers:** Keep distinct: model capability, external notes, and learner self-assessment.

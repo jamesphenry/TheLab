@@ -1,52 +1,54 @@
 ---
-title: Architecture
+title: Harness Architecture
 type: architecture
 status: in-progress
 tags:
   - architecture
-  - c
-created: {{date}}
-updated: {{date}}
+  - python
+created: 2026-10-23
+updated: 2026-10-23
 ---
 
-# Architecture
-
-> Document verified architecture. Mark unknowns instead of guessing.
+# Architecture — AI School Harness
 
 ## System Summary
+The harness coordinates an AI learner model, teacher agents, and deterministic assessment checkers while using the Obsidian vault as a shared, human-inspectable state representation.
 
-`{{brief description of the program and its main flow}}`
+```
++-----------------------------------------------------------+
+|                      Python Harness                       |
+|                                                           |
+|  +-------------------+  +------------------------------+  |
+|  |  VaultController  |  |       ExecutionSandbox       |  |
+|  | (Permissions / IO)|  |     (Code/Check Runnings)    |  |
+|  +-------------------+  +------------------------------+  |
+|                                                           |
+|  +-----------------------------------------------------+  |
+|  |                  Lifecycle Engine                   |  |
+|  | (Lesson -> Practice -> Exam -> Grade -> Remediate)  |  |
+|  +-----------------------------------------------------+  |
+|                                                           |
+|  +-----------------------------------------------------+  |
+|  |                    Model Client                     |  |
+|  |      (Local Ollama / API Client / Mock Runner)      |  |
+|  +-----------------------------------------------------+  |
++-----------------------------------------------------------+
+                            |
+                            v
+               +-------------------------+
+               |     Obsidian Vault      |
+               | (Markdown File System)  |
+               +-------------------------+
+```
 
-## Module Map
+## Module Responsibilities
+- `harness/vault/`: Filesystem interface with path sanitization, permission validation, and markdown parsing.
+- `harness/models/`: Uniform LLM client abstraction (Ollama, Gemini/OpenAI, local server, or deterministically testable mock).
+- `harness/school/`: Teacher prompt loaders, lesson dispatchers, rubric evaluation runners.
+- `harness/sandbox/`: Safe execution of C code, tests, or mathematical verification.
+- `harness/core/`: Event loop, routine scheduler, and experiment recorder.
 
-| Module / file | Responsibility | Public interface | Dependencies |
-| --- | --- | --- | --- |
-| `{{module}}` | `{{responsibility}}` | `{{header/API}}` | `{{dependencies}}` |
-
-## Data Flow
-
-Describe how inputs move through the program, how state changes, and how results are produced.
-
-## Ownership and Lifetime
-
-Record important allocation, ownership, borrowing, lifetime, and cleanup rules.
-
-## Invariants
-
-- `{{invariant}}` — evidence/source: `{{file_or_test}}`
-
-## Error Handling
-
-Document error propagation, return codes, cleanup behavior, and failure modes.
-
-## Concurrency
-
-Record threads, synchronization, shared state, and relevant assumptions. If there is no concurrency, state that this has been checked.
-
-## Open Questions
-
-- [ ] `{{question_to_investigate}}`
-
-## Related Decisions
-
-- Link relevant notes in [[Decision Index]].
+## Security & Isolation Invariants
+1. All path operations validate that `os.path.realpath(path)` is within the authorized role directory.
+2. Learner role cannot write to `00-System/`, `02-School/`, or `07-Reports/`.
+3. Teacher role cannot write to student memory or tamper with other subjects.

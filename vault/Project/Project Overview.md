@@ -1,67 +1,39 @@
 ---
 title: Project Overview
 type: project
-status: in-progress
+status: active
 tags:
   - project
-  - c
-created: {{date}}
-updated: {{date}}
+  - python
+  - ai-school
+created: 2026-10-23
+updated: 2026-10-23
 ---
 
-# Project Overview
+# Project Overview — AI School Harness
 
 ## Identity
-
-- **Project name:** `{{project_name}}`
-- **Purpose:** `{{what_problem_this_project_solves}}`
-- **Code repository:** `{{repository_url_or_path}}`
-- **Default branch:** `{{branch}}`
-- **C standard:** C17 (verify in build configuration)
-- **Primary compiler:** `{{compiler_and_version}}`
-- **Primary environment:** `{{os_architecture}}`
+- **Project Name:** AI Learner Laboratory Harness
+- **Purpose:** A modular Python coordinator that mediates interactions between an AI learner model, subject-specific teachers, an evidence-based assessment engine, and an Obsidian vault environment.
+- **Language/Stack:** Python 3.13+ (standard library + minimal dependencies)
+- **Primary Environment:** Linux (Debian 14.2/Python 3.13)
 
 ## Goals
 
-### In scope
-- `{{goal_1}}`
-- `{{goal_2}}`
+### In Scope
+1. **Sandboxed Vault Manager:** Strict permission enforcement for reading and writing files based on caller role (`Learner`, `Teacher`, `Assessment`, `Human`).
+2. **Subject Teaching Engine:** Loading teacher profiles and curricula from `02-School/<Subject>/` and orchestrating lesson interactions.
+3. **Assessment & Rubrics Engine:** Evaluating student test answers against rubrics with evidence tracking.
+4. **Student Lifecycle Loop:** Driving the cycle of: Lesson -> Practice -> Exam -> Grading -> Self-Reflection -> Remediation / Advancement.
 
-### Out of scope
-- `{{non_goal_1}}`
-
-## Current State
-
-- **Phase:** `{{phase}}`
-- **Last verified commit:** `{{commit_hash_or_unknown}}`
-- **Build status:** `{{verified_status_or_unknown}}`
-- **Test status:** `{{verified_status_or_unknown}}`
-- **Known blockers:** `{{none_or_list}}`
-
-## Repository Map
-
-Document the real structure here after inspecting the code repository.
-
-| Path | Responsibility | Notes |
-| --- | --- | --- |
-| `src/` | `{{verify}}` | |
-| `include/` | `{{verify}}` | |
-| `tests/` | `{{verify}}` | |
-| `Makefile` | Build/test entry points | Verify actual targets |
-
-## Constraints and Conventions
-
-- C standard and compiler assumptions:
-- Dependency policy:
-- Naming and formatting:
-- Error handling:
-- Testing requirements:
-- Memory ownership conventions:
-- Documentation expectations:
+### Out of Scope (Initial Phase)
+- Autonomous weight fine-tuning or backpropagation pipelines.
+- Elaborate GUI dashboards (Obsidian serves as the UI).
+- Unrestricted internet access or arbitrary shell tool execution.
 
 ## Related Notes
-
 - [[Architecture]]
 - [[Build and Test]]
 - [[Roadmap]]
-- [[Decision Index]]
+- [[00-System/Permissions|Permissions Matrix]]
+- [[00-System/Harness-Rules|Harness Rules]]

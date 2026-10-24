@@ -5,37 +5,28 @@ status: in-progress
 tags:
   - roadmap
   - plan
-created: {{date}}
-updated: {{date}}
+created: 2026-10-23
+updated: 2026-10-23
 ---
 
-# Roadmap
+# Roadmap — AI Learner Laboratory
 
-Keep this focused on the next meaningful steps, not every idea ever mentioned.
+## Phase 1: Core Foundation & Vault Controller
+- [x] Clean up obsolete repository scaffolding.
+- [x] Establish AI School vault hierarchy and permission specifications.
+- [ ] Implement `VaultController` in Python with role-based permission enforcement and path isolation tests.
+- [ ] Implement model provider abstraction (supporting local models via Ollama/OpenAI-compatible APIs and mock test fixtures).
 
-## Current Phase
+## Phase 2: First End-to-End Learning Cycle (Milestone 1)
+- [ ] Define initial C Programming Lesson 1.1 (Memory & Addresses) and Examination rubric.
+- [ ] Implement automated assessment runner with compiler/output verification.
+- [ ] Run full cycle: *Lesson -> Failed Assessment -> Weakness Identification -> Remediation Decision -> Improved Assessment*.
 
-**Objective:** `{{objective}}`
+## Phase 3: Metacognition & Self-Directed Study
+- [ ] Self-Assessment calibration metrics (comparing perceived confidence vs actual grade).
+- [ ] Learner question-generation and proactive help-seeking.
+- [ ] Experience logging and memory consolidation.
 
-### Next
-- [ ] `{{task}}` — success criteria: `{{observable_result}}`
-
-### In progress
-- [ ] `{{task}}`
-
-### Blocked
-- [ ] `{{task}}` — blocker: `{{specific_blocker}}`
-
-## Later
-
-- [ ] `{{future_idea}}`
-
-## Completed
-
-Move items here only when the completion criteria have been verified.
-
-- [x] `{{completed_item}}` — evidence: `{{test_commit_or_note}}`
-
-## Review Notes
-
-Record why priorities changed and link relevant decision or experiment notes.
+## Phase 4: Reflection & Long-Term Adaptation
+- [ ] Idle period / "dream" reflection loop.
+- [ ] A/B experimental comparisons across learner instances.

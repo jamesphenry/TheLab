@@ -1,117 +1,44 @@
-# c-skeleton
+# AI Learner Laboratory (AI School)
 
-A minimalist project skeleton for C development. This repository provides a basic structure to set up C projects quickly and efficiently.
+An experimental developmental environment for an AI learner model. Rather than treating a pretrained language model as a one-shot chatbot, this project provides an ongoing environment with structured schooling, evidence-based evaluations, metacognitive self-direction, idle reflection, and ordinary human guidance.
 
-## Introduction
+## Key Concepts
 
-c-skeleton is a simple and minimalistic starting point for C projects. It includes the essential files and directory structure needed to begin developing C applications.
+- **Subject Teachers:** Dedicated teacher instances (Programming, Mathematics, Science, etc.) with specific curricula, lesson plans, and assignments.
+- **Evidence-Based Grading:** Objective transfer tests and rubrics with recorded evidence, separating verified performance from subjective claims of understanding.
+- **Learner Self-Direction:** The learner model inspects its performance, evaluates strengths/weaknesses, and decides whether to practice, remediate, or advance.
+- **Obsidian Vault World:** The primary environment and memory store is an Obsidian vault (`vault/`), keeping curricula, lesson histories, and learner memories human-readable and directly inspectable.
+- **Enforced Security Harness:** A Python-based technical harness coordinates components, enforcing strict folder-level read/write permissions and sandboxing execution tools.
 
-## Features
-
-- Basic project structure
-- Flexible Makefile for building the project
-- Sample source files
-- Directory setup for source, header, and test files
-
-## Prerequisites
-
-Ensure you have the following installed on your system:
-
-- **Standard C Compiler**
-- **Make**
-- **AWK** (optional, for `make help`)
-- **fswatch** (optional, for `make watch`)
-
-## Installation
-
-Clone the repository to your local machine:
-
-```sh
-git clone --recurse-submodules https://github.com/jonruttan/c-skeleton.git
-cd c-skeleton
-```
-
-## Usage
-
-To build the project, simply run:
-
-```sh
-make
-```
-
-For help on make options, run:
-
-```sh
-make help
-```
-
-
-To run all tests:
-
-```sh
-make test
-```
-
-To run a specific test:
-
-```sh
-TST=test/main.test.c make test
-```
-
-To watch files for changes:
-
-```sh
-make watch
-```
-
-To clean up the compiled files, use:
-
-```sh
-make clean
-```
-
-## Project Structure
+## Repository Layout
 
 ```
-c-skeleton
-├── include
-│   ├── main.h
-│   └── ...
-├── src
-│   ├── main.c
-│   └── ...
-├── test
-│   ├── main.test.c
-│   └── ...
-├── .editorconfig
-├── .gitignore
-├── .gitmodules
-├── CHANGELOG.md
-├── LICENSE.md
-├── Makefile
-└── README.md
+.
+├── vault/                # The Obsidian knowledge vault & world environment
+│   ├── 00-System/        # Harness rules, permission policies, schedules
+│   ├── 01-Learner/       # Learner goals, self-assessment, pending questions
+│   ├── 02-School/        # Curricula, lessons, assignments, assessments
+│   ├── 03-Experiences/   # Chronological session logs and exchanges
+│   ├── 04-Memory/        # Synthesized memory notes & concept summaries
+│   ├── 05-Dreams/        # Idle reflection logs and generated hypotheses
+│   ├── 06-Labs/          # Practical problem sandboxes
+│   ├── 07-Reports/       # Finalized assessment rubrics and test records
+│   ├── Project/          # System architecture, build procedures, and roadmap
+│   ├── Home.md           # Obsidian entry point
+│   └── NOTES.md          # Comprehensive project blueprint & notes
+├── harness/              # Python coordination harness
+│   ├── core/             # Event loop & lifecycle coordinator
+│   ├── vault/            # Sandboxed filesystem & permission manager
+│   ├── models/           # LLM client abstractions (local/API/mock)
+│   └── school/           # Lesson dispatchers & rubric evaluators
+├── tests/                # Test suite for the harness
+└── pyproject.toml        # Python project metadata
 ```
 
-- **include/**: Contains the header files (.h files).
-- **src/**: Contains the source files (.c files).
-- **test/**: Contains the test files (.test.c files).
-- **.editorconfig**: A file to define editor coding styles (https://editorconfig.org/).
-- **.git**: Version control directory.
-- **.gitignore**: Specifies intentionally untracked files to ignore.
-- **.gitmodules**: Defines submodule properties.
-- **CHANGELOG.md**: Changelog (https://keepachangelog.com/en/1.1.0/).
-- **LICENSE**: License.
-- **Makefile**: A file to automate the build process.
-- **README.md**: This file.
+## Getting Started
 
-## Contributing
-
-Contributions are welcome! Please fork this repository and submit a pull request with your improvements.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## ai helper prompt
-I want to explore how to implement [concept/task] in C17. My reference point is [C# approach or existing understanding]. Do not build a complete application. Show me a small, focused example. Explain the underlying C mechanisms, compare alternative implementations where useful, and identify what C# normally handles for me. Don't skip the reasoning or immediately give me the most sophisticated solution. I want to understand the design choices and experiment with them myself.
-
+1. Open `vault/` in [Obsidian](https://obsidian.md/) to explore the environment.
+2. Run harness unit tests:
+   ```bash
+   python3 -m unittest discover tests
+   ```
