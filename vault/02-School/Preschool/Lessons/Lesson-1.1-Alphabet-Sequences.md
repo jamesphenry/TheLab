@@ -23,6 +23,10 @@ Teach the model to complete ordered alphabet sequences by presenting the pattern
    - `m n o p q r s`
    - `t u v w x y z`
    - `e f g h i j k`
+   - `p q r s t u`
+   - `q r s t u v`
+   - `r s t u v w`
+   - `o p q r s t`
 2. **Single-step completion:**
    - `a b c ` -> `d`
    - `f g h ` -> `i`
