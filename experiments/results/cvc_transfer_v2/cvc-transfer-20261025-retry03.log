@@ -1,0 +1,523 @@
+[2026-10-25T09:52:29.249029+00:00] run_id=cvc-transfer-20261025-retry03; preflight=PASS
+[2026-10-25T09:52:29.249168+00:00] bundle=experiments/results/cvc_transfer_v2/cvc-transfer-20261025-retry03.json
+[2026-10-25T09:52:37.323142+00:00] seed=42 paired_initial_state_sha256=ebdd8833da3cd6f5af2b7724cc09a2045269335af5b529fa09820d41fec1a316
+[2026-10-25T09:52:44.428851+00:00] seed=42 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T09:52:45.513080+00:00] seed=42 condition=phonics pass=1/15 mean_loss=6.544551
+[2026-10-25T09:52:46.351359+00:00] seed=42 condition=phonics pass=2/15 mean_loss=3.361282
+[2026-10-25T09:52:47.197836+00:00] seed=42 condition=phonics pass=3/15 mean_loss=2.590409
+[2026-10-25T09:52:48.059687+00:00] seed=42 condition=phonics pass=4/15 mean_loss=2.683586
+[2026-10-25T09:52:48.902483+00:00] seed=42 condition=phonics pass=5/15 mean_loss=2.314226
+[2026-10-25T09:52:49.743606+00:00] seed=42 condition=phonics pass=6/15 mean_loss=1.989472
+[2026-10-25T09:52:50.729824+00:00] seed=42 condition=phonics pass=7/15 mean_loss=1.673744
+[2026-10-25T09:52:51.567711+00:00] seed=42 condition=phonics pass=8/15 mean_loss=1.439932
+[2026-10-25T09:52:52.560180+00:00] seed=42 condition=phonics pass=9/15 mean_loss=1.230794
+[2026-10-25T09:52:53.453909+00:00] seed=42 condition=phonics pass=10/15 mean_loss=1.135944
+[2026-10-25T09:52:54.448945+00:00] seed=42 condition=phonics pass=11/15 mean_loss=1.019826
+[2026-10-25T09:52:55.474520+00:00] seed=42 condition=phonics pass=12/15 mean_loss=0.923123
+[2026-10-25T09:52:56.322835+00:00] seed=42 condition=phonics pass=13/15 mean_loss=0.843640
+[2026-10-25T09:52:57.164081+00:00] seed=42 condition=phonics pass=14/15 mean_loss=0.766961
+[2026-10-25T09:52:58.020102+00:00] seed=42 condition=phonics pass=15/15 mean_loss=0.690456
+[2026-10-25T09:52:58.404301+00:00] seed=42 condition=phonics final_evaluation_saved
+[2026-10-25T09:53:03.841937+00:00] seed=42 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T09:53:04.852282+00:00] seed=42 condition=shuffled pass=1/15 mean_loss=6.226603
+[2026-10-25T09:53:05.734392+00:00] seed=42 condition=shuffled pass=2/15 mean_loss=3.378473
+[2026-10-25T09:53:06.627845+00:00] seed=42 condition=shuffled pass=3/15 mean_loss=4.305232
+[2026-10-25T09:53:07.473551+00:00] seed=42 condition=shuffled pass=4/15 mean_loss=2.453225
+[2026-10-25T09:53:08.330001+00:00] seed=42 condition=shuffled pass=5/15 mean_loss=2.426497
+[2026-10-25T09:53:09.228329+00:00] seed=42 condition=shuffled pass=6/15 mean_loss=2.419275
+[2026-10-25T09:53:10.102199+00:00] seed=42 condition=shuffled pass=7/15 mean_loss=2.169040
+[2026-10-25T09:53:11.011045+00:00] seed=42 condition=shuffled pass=8/15 mean_loss=2.061474
+[2026-10-25T09:53:11.904282+00:00] seed=42 condition=shuffled pass=9/15 mean_loss=1.926221
+[2026-10-25T09:53:12.930633+00:00] seed=42 condition=shuffled pass=10/15 mean_loss=1.730190
+[2026-10-25T09:53:13.818145+00:00] seed=42 condition=shuffled pass=11/15 mean_loss=1.655277
+[2026-10-25T09:53:14.714655+00:00] seed=42 condition=shuffled pass=12/15 mean_loss=1.685221
+[2026-10-25T09:53:15.715665+00:00] seed=42 condition=shuffled pass=13/15 mean_loss=1.607929
+[2026-10-25T09:53:16.746906+00:00] seed=42 condition=shuffled pass=14/15 mean_loss=1.572165
+[2026-10-25T09:53:17.659844+00:00] seed=42 condition=shuffled pass=15/15 mean_loss=1.424880
+[2026-10-25T09:53:18.030749+00:00] seed=42 condition=shuffled final_evaluation_saved
+[2026-10-25T09:53:23.442181+00:00] seed=42 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T09:53:24.444138+00:00] seed=42 condition=unrelated_english pass=1/15 mean_loss=6.311168
+[2026-10-25T09:53:25.496196+00:00] seed=42 condition=unrelated_english pass=2/15 mean_loss=3.639372
+[2026-10-25T09:53:26.545277+00:00] seed=42 condition=unrelated_english pass=3/15 mean_loss=4.788141
+[2026-10-25T09:53:27.523576+00:00] seed=42 condition=unrelated_english pass=4/15 mean_loss=4.645640
+[2026-10-25T09:53:28.508230+00:00] seed=42 condition=unrelated_english pass=5/15 mean_loss=2.885928
+[2026-10-25T09:53:29.480305+00:00] seed=42 condition=unrelated_english pass=6/15 mean_loss=2.800890
+[2026-10-25T09:53:30.533534+00:00] seed=42 condition=unrelated_english pass=7/15 mean_loss=2.755585
+[2026-10-25T09:53:31.520420+00:00] seed=42 condition=unrelated_english pass=8/15 mean_loss=2.616151
+[2026-10-25T09:53:32.499087+00:00] seed=42 condition=unrelated_english pass=9/15 mean_loss=2.415094
+[2026-10-25T09:53:33.486751+00:00] seed=42 condition=unrelated_english pass=10/15 mean_loss=2.309357
+[2026-10-25T09:53:34.473713+00:00] seed=42 condition=unrelated_english pass=11/15 mean_loss=2.258238
+[2026-10-25T09:53:35.452154+00:00] seed=42 condition=unrelated_english pass=12/15 mean_loss=2.216311
+[2026-10-25T09:53:36.453084+00:00] seed=42 condition=unrelated_english pass=13/15 mean_loss=2.064675
+[2026-10-25T09:53:37.421316+00:00] seed=42 condition=unrelated_english pass=14/15 mean_loss=1.806510
+[2026-10-25T09:53:38.442929+00:00] seed=42 condition=unrelated_english pass=15/15 mean_loss=1.647589
+[2026-10-25T09:53:38.815904+00:00] seed=42 condition=unrelated_english final_evaluation_saved
+[2026-10-25T09:53:44.571633+00:00] seed=123 paired_initial_state_sha256=6a8bd0ccffcf2b04c123af8482f152584689714eaed9a72feeccc34191914891
+[2026-10-25T09:53:49.971932+00:00] seed=123 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T09:53:50.840746+00:00] seed=123 condition=phonics pass=1/15 mean_loss=6.133072
+[2026-10-25T09:53:51.713531+00:00] seed=123 condition=phonics pass=2/15 mean_loss=5.787838
+[2026-10-25T09:53:52.583175+00:00] seed=123 condition=phonics pass=3/15 mean_loss=2.642946
+[2026-10-25T09:53:53.544316+00:00] seed=123 condition=phonics pass=4/15 mean_loss=2.434768
+[2026-10-25T09:53:54.567101+00:00] seed=123 condition=phonics pass=5/15 mean_loss=2.022103
+[2026-10-25T09:53:55.532774+00:00] seed=123 condition=phonics pass=6/15 mean_loss=1.616978
+[2026-10-25T09:53:56.392721+00:00] seed=123 condition=phonics pass=7/15 mean_loss=1.498756
+[2026-10-25T09:53:57.256941+00:00] seed=123 condition=phonics pass=8/15 mean_loss=1.367637
+[2026-10-25T09:53:58.126171+00:00] seed=123 condition=phonics pass=9/15 mean_loss=1.215606
+[2026-10-25T09:53:59.022216+00:00] seed=123 condition=phonics pass=10/15 mean_loss=1.014201
+[2026-10-25T09:53:59.939567+00:00] seed=123 condition=phonics pass=11/15 mean_loss=0.989072
+[2026-10-25T09:54:00.847316+00:00] seed=123 condition=phonics pass=12/15 mean_loss=0.813042
+[2026-10-25T09:54:01.730860+00:00] seed=123 condition=phonics pass=13/15 mean_loss=0.610428
+[2026-10-25T09:54:02.607240+00:00] seed=123 condition=phonics pass=14/15 mean_loss=0.652441
+[2026-10-25T09:54:03.489527+00:00] seed=123 condition=phonics pass=15/15 mean_loss=0.689664
+[2026-10-25T09:54:03.881098+00:00] seed=123 condition=phonics final_evaluation_saved
+[2026-10-25T09:54:09.315239+00:00] seed=123 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T09:54:10.206841+00:00] seed=123 condition=shuffled pass=1/15 mean_loss=6.197130
+[2026-10-25T09:54:11.126828+00:00] seed=123 condition=shuffled pass=2/15 mean_loss=3.351601
+[2026-10-25T09:54:12.065363+00:00] seed=123 condition=shuffled pass=3/15 mean_loss=3.456090
+[2026-10-25T09:54:12.952392+00:00] seed=123 condition=shuffled pass=4/15 mean_loss=2.517674
+[2026-10-25T09:54:13.827719+00:00] seed=123 condition=shuffled pass=5/15 mean_loss=2.352854
+[2026-10-25T09:54:14.728668+00:00] seed=123 condition=shuffled pass=6/15 mean_loss=2.289418
+[2026-10-25T09:54:15.621052+00:00] seed=123 condition=shuffled pass=7/15 mean_loss=2.305693
+[2026-10-25T09:54:16.525359+00:00] seed=123 condition=shuffled pass=8/15 mean_loss=2.039304
+[2026-10-25T09:54:17.477942+00:00] seed=123 condition=shuffled pass=9/15 mean_loss=1.970079
+[2026-10-25T09:54:18.348287+00:00] seed=123 condition=shuffled pass=10/15 mean_loss=1.762337
+[2026-10-25T09:54:19.235836+00:00] seed=123 condition=shuffled pass=11/15 mean_loss=1.678227
+[2026-10-25T09:54:20.149325+00:00] seed=123 condition=shuffled pass=12/15 mean_loss=1.499949
+[2026-10-25T09:54:21.060342+00:00] seed=123 condition=shuffled pass=13/15 mean_loss=1.412525
+[2026-10-25T09:54:21.943048+00:00] seed=123 condition=shuffled pass=14/15 mean_loss=1.239740
+[2026-10-25T09:54:22.862605+00:00] seed=123 condition=shuffled pass=15/15 mean_loss=1.119547
+[2026-10-25T09:54:23.256791+00:00] seed=123 condition=shuffled final_evaluation_saved
+[2026-10-25T09:54:28.695842+00:00] seed=123 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T09:54:29.808540+00:00] seed=123 condition=unrelated_english pass=1/15 mean_loss=6.218897
+[2026-10-25T09:54:30.764180+00:00] seed=123 condition=unrelated_english pass=2/15 mean_loss=3.629179
+[2026-10-25T09:54:31.763060+00:00] seed=123 condition=unrelated_english pass=3/15 mean_loss=3.114407
+[2026-10-25T09:54:32.700332+00:00] seed=123 condition=unrelated_english pass=4/15 mean_loss=3.052042
+[2026-10-25T09:54:33.724333+00:00] seed=123 condition=unrelated_english pass=5/15 mean_loss=2.843977
+[2026-10-25T09:54:34.720378+00:00] seed=123 condition=unrelated_english pass=6/15 mean_loss=2.645562
+[2026-10-25T09:54:35.663433+00:00] seed=123 condition=unrelated_english pass=7/15 mean_loss=2.506304
+[2026-10-25T09:54:36.639792+00:00] seed=123 condition=unrelated_english pass=8/15 mean_loss=2.242504
+[2026-10-25T09:54:37.583121+00:00] seed=123 condition=unrelated_english pass=9/15 mean_loss=2.076233
+[2026-10-25T09:54:38.530895+00:00] seed=123 condition=unrelated_english pass=10/15 mean_loss=1.935414
+[2026-10-25T09:54:39.512871+00:00] seed=123 condition=unrelated_english pass=11/15 mean_loss=1.701189
+[2026-10-25T09:54:40.467972+00:00] seed=123 condition=unrelated_english pass=12/15 mean_loss=1.529903
+[2026-10-25T09:54:41.423565+00:00] seed=123 condition=unrelated_english pass=13/15 mean_loss=1.375918
+[2026-10-25T09:54:42.382395+00:00] seed=123 condition=unrelated_english pass=14/15 mean_loss=1.101810
+[2026-10-25T09:54:43.337764+00:00] seed=123 condition=unrelated_english pass=15/15 mean_loss=0.876035
+[2026-10-25T09:54:43.721217+00:00] seed=123 condition=unrelated_english final_evaluation_saved
+[2026-10-25T09:54:49.519288+00:00] seed=7 paired_initial_state_sha256=d75ac98ddfeb026da4a1856652c570f3e52a259c0680338d3835c548c690066f
+[2026-10-25T09:54:54.913679+00:00] seed=7 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T09:54:55.838240+00:00] seed=7 condition=phonics pass=1/15 mean_loss=6.821249
+[2026-10-25T09:54:56.740816+00:00] seed=7 condition=phonics pass=2/15 mean_loss=3.776731
+[2026-10-25T09:54:57.578345+00:00] seed=7 condition=phonics pass=3/15 mean_loss=2.872532
+[2026-10-25T09:54:58.431572+00:00] seed=7 condition=phonics pass=4/15 mean_loss=2.554317
+[2026-10-25T09:54:59.259392+00:00] seed=7 condition=phonics pass=5/15 mean_loss=2.465689
+[2026-10-25T09:55:00.086912+00:00] seed=7 condition=phonics pass=6/15 mean_loss=2.283542
+[2026-10-25T09:55:00.937167+00:00] seed=7 condition=phonics pass=7/15 mean_loss=2.097830
+[2026-10-25T09:55:01.769478+00:00] seed=7 condition=phonics pass=8/15 mean_loss=1.959779
+[2026-10-25T09:55:02.648661+00:00] seed=7 condition=phonics pass=9/15 mean_loss=1.788953
+[2026-10-25T09:55:03.473233+00:00] seed=7 condition=phonics pass=10/15 mean_loss=2.021839
+[2026-10-25T09:55:04.309298+00:00] seed=7 condition=phonics pass=11/15 mean_loss=1.722288
+[2026-10-25T09:55:05.172781+00:00] seed=7 condition=phonics pass=12/15 mean_loss=1.571322
+[2026-10-25T09:55:06.043833+00:00] seed=7 condition=phonics pass=13/15 mean_loss=1.442903
+[2026-10-25T09:55:06.892527+00:00] seed=7 condition=phonics pass=14/15 mean_loss=1.354937
+[2026-10-25T09:55:07.730371+00:00] seed=7 condition=phonics pass=15/15 mean_loss=1.267683
+[2026-10-25T09:55:08.114620+00:00] seed=7 condition=phonics final_evaluation_saved
+[2026-10-25T09:55:13.536379+00:00] seed=7 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T09:55:14.431057+00:00] seed=7 condition=shuffled pass=1/15 mean_loss=6.088616
+[2026-10-25T09:55:15.274470+00:00] seed=7 condition=shuffled pass=2/15 mean_loss=3.772587
+[2026-10-25T09:55:16.178240+00:00] seed=7 condition=shuffled pass=3/15 mean_loss=3.271472
+[2026-10-25T09:55:17.056692+00:00] seed=7 condition=shuffled pass=4/15 mean_loss=2.602715
+[2026-10-25T09:55:17.911551+00:00] seed=7 condition=shuffled pass=5/15 mean_loss=2.409059
+[2026-10-25T09:55:18.753621+00:00] seed=7 condition=shuffled pass=6/15 mean_loss=2.354851
+[2026-10-25T09:55:19.620632+00:00] seed=7 condition=shuffled pass=7/15 mean_loss=2.174314
+[2026-10-25T09:55:20.463667+00:00] seed=7 condition=shuffled pass=8/15 mean_loss=2.098049
+[2026-10-25T09:55:21.305131+00:00] seed=7 condition=shuffled pass=9/15 mean_loss=1.935215
+[2026-10-25T09:55:22.181789+00:00] seed=7 condition=shuffled pass=10/15 mean_loss=1.786830
+[2026-10-25T09:55:23.049845+00:00] seed=7 condition=shuffled pass=11/15 mean_loss=1.643048
+[2026-10-25T09:55:23.906624+00:00] seed=7 condition=shuffled pass=12/15 mean_loss=1.528722
+[2026-10-25T09:55:24.745596+00:00] seed=7 condition=shuffled pass=13/15 mean_loss=1.335715
+[2026-10-25T09:55:25.607603+00:00] seed=7 condition=shuffled pass=14/15 mean_loss=1.280140
+[2026-10-25T09:55:26.604441+00:00] seed=7 condition=shuffled pass=15/15 mean_loss=1.361729
+[2026-10-25T09:55:26.989107+00:00] seed=7 condition=shuffled final_evaluation_saved
+[2026-10-25T09:55:32.357004+00:00] seed=7 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T09:55:33.378799+00:00] seed=7 condition=unrelated_english pass=1/15 mean_loss=6.287259
+[2026-10-25T09:55:34.323957+00:00] seed=7 condition=unrelated_english pass=2/15 mean_loss=3.650176
+[2026-10-25T09:55:35.319938+00:00] seed=7 condition=unrelated_english pass=3/15 mean_loss=3.100457
+[2026-10-25T09:55:36.418507+00:00] seed=7 condition=unrelated_english pass=4/15 mean_loss=3.595849
+[2026-10-25T09:55:37.419861+00:00] seed=7 condition=unrelated_english pass=5/15 mean_loss=2.871167
+[2026-10-25T09:55:38.371933+00:00] seed=7 condition=unrelated_english pass=6/15 mean_loss=2.659610
+[2026-10-25T09:55:39.352518+00:00] seed=7 condition=unrelated_english pass=7/15 mean_loss=2.517998
+[2026-10-25T09:55:40.394146+00:00] seed=7 condition=unrelated_english pass=8/15 mean_loss=2.377097
+[2026-10-25T09:55:41.330373+00:00] seed=7 condition=unrelated_english pass=9/15 mean_loss=2.181120
+[2026-10-25T09:55:42.305698+00:00] seed=7 condition=unrelated_english pass=10/15 mean_loss=2.043054
+[2026-10-25T09:55:43.335845+00:00] seed=7 condition=unrelated_english pass=11/15 mean_loss=1.968389
+[2026-10-25T09:55:44.301283+00:00] seed=7 condition=unrelated_english pass=12/15 mean_loss=1.741862
+[2026-10-25T09:55:45.276190+00:00] seed=7 condition=unrelated_english pass=13/15 mean_loss=1.442654
+[2026-10-25T09:55:46.229583+00:00] seed=7 condition=unrelated_english pass=14/15 mean_loss=1.303904
+[2026-10-25T09:55:47.221418+00:00] seed=7 condition=unrelated_english pass=15/15 mean_loss=1.099630
+[2026-10-25T09:55:47.606534+00:00] seed=7 condition=unrelated_english final_evaluation_saved
+[2026-10-25T09:55:53.328902+00:00] seed=2026 paired_initial_state_sha256=ca768a2b3659f15bb04ea7d3cd6ad4f4f3278aeb26536e0503cc15cbc217b40f
+[2026-10-25T09:55:58.980820+00:00] seed=2026 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T09:55:59.866163+00:00] seed=2026 condition=phonics pass=1/15 mean_loss=6.345754
+[2026-10-25T09:56:00.730837+00:00] seed=2026 condition=phonics pass=2/15 mean_loss=3.403283
+[2026-10-25T09:56:01.567081+00:00] seed=2026 condition=phonics pass=3/15 mean_loss=3.503159
+[2026-10-25T09:56:02.412206+00:00] seed=2026 condition=phonics pass=4/15 mean_loss=2.395794
+[2026-10-25T09:56:03.245001+00:00] seed=2026 condition=phonics pass=5/15 mean_loss=2.163078
+[2026-10-25T09:56:04.071899+00:00] seed=2026 condition=phonics pass=6/15 mean_loss=1.941681
+[2026-10-25T09:56:04.879421+00:00] seed=2026 condition=phonics pass=7/15 mean_loss=1.819632
+[2026-10-25T09:56:05.708887+00:00] seed=2026 condition=phonics pass=8/15 mean_loss=1.498010
+[2026-10-25T09:56:06.658136+00:00] seed=2026 condition=phonics pass=9/15 mean_loss=1.285881
+[2026-10-25T09:56:07.497236+00:00] seed=2026 condition=phonics pass=10/15 mean_loss=1.117762
+[2026-10-25T09:56:08.331340+00:00] seed=2026 condition=phonics pass=11/15 mean_loss=0.897807
+[2026-10-25T09:56:09.177789+00:00] seed=2026 condition=phonics pass=12/15 mean_loss=0.745154
+[2026-10-25T09:56:10.013609+00:00] seed=2026 condition=phonics pass=13/15 mean_loss=0.744225
+[2026-10-25T09:56:10.828829+00:00] seed=2026 condition=phonics pass=14/15 mean_loss=0.685031
+[2026-10-25T09:56:11.681371+00:00] seed=2026 condition=phonics pass=15/15 mean_loss=0.514179
+[2026-10-25T09:56:12.067356+00:00] seed=2026 condition=phonics final_evaluation_saved
+[2026-10-25T09:56:17.456223+00:00] seed=2026 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T09:56:18.332937+00:00] seed=2026 condition=shuffled pass=1/15 mean_loss=6.335394
+[2026-10-25T09:56:19.232005+00:00] seed=2026 condition=shuffled pass=2/15 mean_loss=3.639530
+[2026-10-25T09:56:20.166693+00:00] seed=2026 condition=shuffled pass=3/15 mean_loss=2.690527
+[2026-10-25T09:56:21.213720+00:00] seed=2026 condition=shuffled pass=4/15 mean_loss=2.479289
+[2026-10-25T09:56:22.157925+00:00] seed=2026 condition=shuffled pass=5/15 mean_loss=2.355071
+[2026-10-25T09:56:23.141508+00:00] seed=2026 condition=shuffled pass=6/15 mean_loss=2.139112
+[2026-10-25T09:56:24.154161+00:00] seed=2026 condition=shuffled pass=7/15 mean_loss=1.822498
+[2026-10-25T09:56:25.167345+00:00] seed=2026 condition=shuffled pass=8/15 mean_loss=1.725938
+[2026-10-25T09:56:26.193082+00:00] seed=2026 condition=shuffled pass=9/15 mean_loss=1.792311
+[2026-10-25T09:56:27.215204+00:00] seed=2026 condition=shuffled pass=10/15 mean_loss=1.475277
+[2026-10-25T09:56:28.240336+00:00] seed=2026 condition=shuffled pass=11/15 mean_loss=1.368097
+[2026-10-25T09:56:29.276230+00:00] seed=2026 condition=shuffled pass=12/15 mean_loss=1.302261
+[2026-10-25T09:56:30.300877+00:00] seed=2026 condition=shuffled pass=13/15 mean_loss=1.210067
+[2026-10-25T09:56:31.322634+00:00] seed=2026 condition=shuffled pass=14/15 mean_loss=1.002440
+[2026-10-25T09:56:32.335689+00:00] seed=2026 condition=shuffled pass=15/15 mean_loss=0.926401
+[2026-10-25T09:56:32.740219+00:00] seed=2026 condition=shuffled final_evaluation_saved
+[2026-10-25T09:56:38.125301+00:00] seed=2026 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T09:56:39.293704+00:00] seed=2026 condition=unrelated_english pass=1/15 mean_loss=6.465016
+[2026-10-25T09:56:40.476533+00:00] seed=2026 condition=unrelated_english pass=2/15 mean_loss=3.694774
+[2026-10-25T09:56:41.642999+00:00] seed=2026 condition=unrelated_english pass=3/15 mean_loss=3.105542
+[2026-10-25T09:56:42.855905+00:00] seed=2026 condition=unrelated_english pass=4/15 mean_loss=3.007071
+[2026-10-25T09:56:44.067915+00:00] seed=2026 condition=unrelated_english pass=5/15 mean_loss=7.842444
+[2026-10-25T09:56:45.247016+00:00] seed=2026 condition=unrelated_english pass=6/15 mean_loss=2.815298
+[2026-10-25T09:56:46.425556+00:00] seed=2026 condition=unrelated_english pass=7/15 mean_loss=2.668554
+[2026-10-25T09:56:47.625878+00:00] seed=2026 condition=unrelated_english pass=8/15 mean_loss=2.593473
+[2026-10-25T09:56:48.869052+00:00] seed=2026 condition=unrelated_english pass=9/15 mean_loss=2.517656
+[2026-10-25T09:56:50.126189+00:00] seed=2026 condition=unrelated_english pass=10/15 mean_loss=2.402126
+[2026-10-25T09:56:51.333675+00:00] seed=2026 condition=unrelated_english pass=11/15 mean_loss=2.304049
+[2026-10-25T09:56:52.549658+00:00] seed=2026 condition=unrelated_english pass=12/15 mean_loss=2.275303
+[2026-10-25T09:56:53.753510+00:00] seed=2026 condition=unrelated_english pass=13/15 mean_loss=2.547339
+[2026-10-25T09:56:54.983761+00:00] seed=2026 condition=unrelated_english pass=14/15 mean_loss=2.200366
+[2026-10-25T09:56:56.229375+00:00] seed=2026 condition=unrelated_english pass=15/15 mean_loss=2.108394
+[2026-10-25T09:56:56.639263+00:00] seed=2026 condition=unrelated_english final_evaluation_saved
+[2026-10-25T09:57:02.561915+00:00] seed=99 paired_initial_state_sha256=7dca9d3731fa5bbfb23bde909da3f58483db891ea7d3504192c6c28537a5b4d3
+[2026-10-25T09:57:08.557314+00:00] seed=99 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T09:57:09.421378+00:00] seed=99 condition=phonics pass=1/15 mean_loss=6.410600
+[2026-10-25T09:57:10.235051+00:00] seed=99 condition=phonics pass=2/15 mean_loss=3.674849
+[2026-10-25T09:57:11.078286+00:00] seed=99 condition=phonics pass=3/15 mean_loss=2.848143
+[2026-10-25T09:57:12.080620+00:00] seed=99 condition=phonics pass=4/15 mean_loss=2.653273
+[2026-10-25T09:57:12.925042+00:00] seed=99 condition=phonics pass=5/15 mean_loss=2.613245
+[2026-10-25T09:57:13.743974+00:00] seed=99 condition=phonics pass=6/15 mean_loss=2.387541
+[2026-10-25T09:57:14.603871+00:00] seed=99 condition=phonics pass=7/15 mean_loss=2.237738
+[2026-10-25T09:57:15.619660+00:00] seed=99 condition=phonics pass=8/15 mean_loss=2.003681
+[2026-10-25T09:57:16.535374+00:00] seed=99 condition=phonics pass=9/15 mean_loss=1.892407
+[2026-10-25T09:57:17.362952+00:00] seed=99 condition=phonics pass=10/15 mean_loss=1.614536
+[2026-10-25T09:57:18.176851+00:00] seed=99 condition=phonics pass=11/15 mean_loss=1.337246
+[2026-10-25T09:57:19.077151+00:00] seed=99 condition=phonics pass=12/15 mean_loss=1.180015
+[2026-10-25T09:57:19.907845+00:00] seed=99 condition=phonics pass=13/15 mean_loss=1.103547
+[2026-10-25T09:57:20.735693+00:00] seed=99 condition=phonics pass=14/15 mean_loss=0.999619
+[2026-10-25T09:57:21.566203+00:00] seed=99 condition=phonics pass=15/15 mean_loss=0.875282
+[2026-10-25T09:57:21.960704+00:00] seed=99 condition=phonics final_evaluation_saved
+[2026-10-25T09:57:27.347796+00:00] seed=99 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T09:57:28.262323+00:00] seed=99 condition=shuffled pass=1/15 mean_loss=6.261614
+[2026-10-25T09:57:29.092288+00:00] seed=99 condition=shuffled pass=2/15 mean_loss=3.335873
+[2026-10-25T09:57:29.926199+00:00] seed=99 condition=shuffled pass=3/15 mean_loss=2.730879
+[2026-10-25T09:57:30.755412+00:00] seed=99 condition=shuffled pass=4/15 mean_loss=2.520531
+[2026-10-25T09:57:31.586724+00:00] seed=99 condition=shuffled pass=5/15 mean_loss=2.484557
+[2026-10-25T09:57:32.428815+00:00] seed=99 condition=shuffled pass=6/15 mean_loss=2.148719
+[2026-10-25T09:57:33.256306+00:00] seed=99 condition=shuffled pass=7/15 mean_loss=1.903245
+[2026-10-25T09:57:34.102674+00:00] seed=99 condition=shuffled pass=8/15 mean_loss=1.652385
+[2026-10-25T09:57:34.948134+00:00] seed=99 condition=shuffled pass=9/15 mean_loss=1.524630
+[2026-10-25T09:57:35.768605+00:00] seed=99 condition=shuffled pass=10/15 mean_loss=1.634140
+[2026-10-25T09:57:36.605741+00:00] seed=99 condition=shuffled pass=11/15 mean_loss=1.395137
+[2026-10-25T09:57:37.497396+00:00] seed=99 condition=shuffled pass=12/15 mean_loss=1.311270
+[2026-10-25T09:57:38.321547+00:00] seed=99 condition=shuffled pass=13/15 mean_loss=1.173153
+[2026-10-25T09:57:39.165239+00:00] seed=99 condition=shuffled pass=14/15 mean_loss=1.037422
+[2026-10-25T09:57:39.999617+00:00] seed=99 condition=shuffled pass=15/15 mean_loss=0.998992
+[2026-10-25T09:57:40.396083+00:00] seed=99 condition=shuffled final_evaluation_saved
+[2026-10-25T09:57:45.781740+00:00] seed=99 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T09:57:46.684508+00:00] seed=99 condition=unrelated_english pass=1/15 mean_loss=6.367574
+[2026-10-25T09:57:47.684731+00:00] seed=99 condition=unrelated_english pass=2/15 mean_loss=3.704970
+[2026-10-25T09:57:48.620963+00:00] seed=99 condition=unrelated_english pass=3/15 mean_loss=3.123949
+[2026-10-25T09:57:49.537286+00:00] seed=99 condition=unrelated_english pass=4/15 mean_loss=3.045306
+[2026-10-25T09:57:50.444365+00:00] seed=99 condition=unrelated_english pass=5/15 mean_loss=3.799199
+[2026-10-25T09:57:51.401386+00:00] seed=99 condition=unrelated_english pass=6/15 mean_loss=2.954023
+[2026-10-25T09:57:52.312906+00:00] seed=99 condition=unrelated_english pass=7/15 mean_loss=3.426009
+[2026-10-25T09:57:53.242659+00:00] seed=99 condition=unrelated_english pass=8/15 mean_loss=2.722049
+[2026-10-25T09:57:54.191225+00:00] seed=99 condition=unrelated_english pass=9/15 mean_loss=2.531936
+[2026-10-25T09:57:55.279456+00:00] seed=99 condition=unrelated_english pass=10/15 mean_loss=2.317881
+[2026-10-25T09:57:56.189540+00:00] seed=99 condition=unrelated_english pass=11/15 mean_loss=2.090403
+[2026-10-25T09:57:57.187381+00:00] seed=99 condition=unrelated_english pass=12/15 mean_loss=1.945439
+[2026-10-25T09:57:58.157076+00:00] seed=99 condition=unrelated_english pass=13/15 mean_loss=1.880833
+[2026-10-25T09:57:59.101053+00:00] seed=99 condition=unrelated_english pass=14/15 mean_loss=1.694577
+[2026-10-25T09:58:00.018148+00:00] seed=99 condition=unrelated_english pass=15/15 mean_loss=1.417816
+[2026-10-25T09:58:00.427466+00:00] seed=99 condition=unrelated_english final_evaluation_saved
+[2026-10-25T09:58:06.171910+00:00] seed=314 paired_initial_state_sha256=572ae3f0e86b21dea492a04c1faf9b262b7730ff5a28b6002c24b2bad79c5cc4
+[2026-10-25T09:58:11.600694+00:00] seed=314 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T09:58:12.414668+00:00] seed=314 condition=phonics pass=1/15 mean_loss=6.483491
+[2026-10-25T09:58:13.241891+00:00] seed=314 condition=phonics pass=2/15 mean_loss=3.310299
+[2026-10-25T09:58:14.083011+00:00] seed=314 condition=phonics pass=3/15 mean_loss=2.546556
+[2026-10-25T09:58:14.969955+00:00] seed=314 condition=phonics pass=4/15 mean_loss=2.432651
+[2026-10-25T09:58:15.818359+00:00] seed=314 condition=phonics pass=5/15 mean_loss=2.248734
+[2026-10-25T09:58:16.809350+00:00] seed=314 condition=phonics pass=6/15 mean_loss=1.996302
+[2026-10-25T09:58:17.727296+00:00] seed=314 condition=phonics pass=7/15 mean_loss=1.807017
+[2026-10-25T09:58:18.751505+00:00] seed=314 condition=phonics pass=8/15 mean_loss=1.716041
+[2026-10-25T09:58:19.619346+00:00] seed=314 condition=phonics pass=9/15 mean_loss=1.715688
+[2026-10-25T09:58:20.497934+00:00] seed=314 condition=phonics pass=10/15 mean_loss=1.489649
+[2026-10-25T09:58:21.367175+00:00] seed=314 condition=phonics pass=11/15 mean_loss=1.383149
+[2026-10-25T09:58:22.336558+00:00] seed=314 condition=phonics pass=12/15 mean_loss=1.234498
+[2026-10-25T09:58:23.300728+00:00] seed=314 condition=phonics pass=13/15 mean_loss=1.261411
+[2026-10-25T09:58:24.263087+00:00] seed=314 condition=phonics pass=14/15 mean_loss=1.167716
+[2026-10-25T09:58:25.281324+00:00] seed=314 condition=phonics pass=15/15 mean_loss=1.075807
+[2026-10-25T09:58:25.683937+00:00] seed=314 condition=phonics final_evaluation_saved
+[2026-10-25T09:58:31.069290+00:00] seed=314 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T09:58:32.050211+00:00] seed=314 condition=shuffled pass=1/15 mean_loss=6.212792
+[2026-10-25T09:58:33.049454+00:00] seed=314 condition=shuffled pass=2/15 mean_loss=3.372291
+[2026-10-25T09:58:34.081108+00:00] seed=314 condition=shuffled pass=3/15 mean_loss=6.884516
+[2026-10-25T09:58:35.088226+00:00] seed=314 condition=shuffled pass=4/15 mean_loss=2.802054
+[2026-10-25T09:58:36.122475+00:00] seed=314 condition=shuffled pass=5/15 mean_loss=2.544163
+[2026-10-25T09:58:37.121626+00:00] seed=314 condition=shuffled pass=6/15 mean_loss=2.344879
+[2026-10-25T09:58:38.142559+00:00] seed=314 condition=shuffled pass=7/15 mean_loss=2.224690
+[2026-10-25T09:58:39.154282+00:00] seed=314 condition=shuffled pass=8/15 mean_loss=1.973288
+[2026-10-25T09:58:40.156019+00:00] seed=314 condition=shuffled pass=9/15 mean_loss=1.661224
+[2026-10-25T09:58:41.159280+00:00] seed=314 condition=shuffled pass=10/15 mean_loss=1.585037
+[2026-10-25T09:58:42.166779+00:00] seed=314 condition=shuffled pass=11/15 mean_loss=1.582080
+[2026-10-25T09:58:43.165812+00:00] seed=314 condition=shuffled pass=12/15 mean_loss=1.505648
+[2026-10-25T09:58:44.193624+00:00] seed=314 condition=shuffled pass=13/15 mean_loss=1.272628
+[2026-10-25T09:58:45.244697+00:00] seed=314 condition=shuffled pass=14/15 mean_loss=1.221511
+[2026-10-25T09:58:46.250654+00:00] seed=314 condition=shuffled pass=15/15 mean_loss=1.069798
+[2026-10-25T09:58:46.651441+00:00] seed=314 condition=shuffled final_evaluation_saved
+[2026-10-25T09:58:52.043390+00:00] seed=314 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T09:58:53.227134+00:00] seed=314 condition=unrelated_english pass=1/15 mean_loss=6.341387
+[2026-10-25T09:58:54.429258+00:00] seed=314 condition=unrelated_english pass=2/15 mean_loss=3.678127
+[2026-10-25T09:58:55.623129+00:00] seed=314 condition=unrelated_english pass=3/15 mean_loss=3.086601
+[2026-10-25T09:58:56.825794+00:00] seed=314 condition=unrelated_english pass=4/15 mean_loss=3.641733
+[2026-10-25T09:58:58.045343+00:00] seed=314 condition=unrelated_english pass=5/15 mean_loss=2.914980
+[2026-10-25T09:58:59.233705+00:00] seed=314 condition=unrelated_english pass=6/15 mean_loss=2.683514
+[2026-10-25T09:59:00.200801+00:00] seed=314 condition=unrelated_english pass=7/15 mean_loss=2.601167
+[2026-10-25T09:59:01.143506+00:00] seed=314 condition=unrelated_english pass=8/15 mean_loss=2.459344
+[2026-10-25T09:59:02.102293+00:00] seed=314 condition=unrelated_english pass=9/15 mean_loss=2.587219
+[2026-10-25T09:59:03.043304+00:00] seed=314 condition=unrelated_english pass=10/15 mean_loss=2.306632
+[2026-10-25T09:59:04.014856+00:00] seed=314 condition=unrelated_english pass=11/15 mean_loss=2.124789
+[2026-10-25T09:59:04.959461+00:00] seed=314 condition=unrelated_english pass=12/15 mean_loss=1.869335
+[2026-10-25T09:59:05.905406+00:00] seed=314 condition=unrelated_english pass=13/15 mean_loss=1.691092
+[2026-10-25T09:59:06.872846+00:00] seed=314 condition=unrelated_english pass=14/15 mean_loss=1.573543
+[2026-10-25T09:59:07.822061+00:00] seed=314 condition=unrelated_english pass=15/15 mean_loss=1.427242
+[2026-10-25T09:59:08.225509+00:00] seed=314 condition=unrelated_english final_evaluation_saved
+[2026-10-25T09:59:14.034690+00:00] seed=256 paired_initial_state_sha256=793c768f498287e3dc0af5704f1a62f89cf701060956c6dd14439739108b00a9
+[2026-10-25T09:59:19.462423+00:00] seed=256 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T09:59:20.318223+00:00] seed=256 condition=phonics pass=1/15 mean_loss=6.060468
+[2026-10-25T09:59:21.166836+00:00] seed=256 condition=phonics pass=2/15 mean_loss=3.482611
+[2026-10-25T09:59:22.038922+00:00] seed=256 condition=phonics pass=3/15 mean_loss=2.775072
+[2026-10-25T09:59:22.906555+00:00] seed=256 condition=phonics pass=4/15 mean_loss=2.299641
+[2026-10-25T09:59:23.900576+00:00] seed=256 condition=phonics pass=5/15 mean_loss=1.976089
+[2026-10-25T09:59:24.740080+00:00] seed=256 condition=phonics pass=6/15 mean_loss=1.818381
+[2026-10-25T09:59:25.603491+00:00] seed=256 condition=phonics pass=7/15 mean_loss=1.530488
+[2026-10-25T09:59:26.522472+00:00] seed=256 condition=phonics pass=8/15 mean_loss=1.362437
+[2026-10-25T09:59:27.366885+00:00] seed=256 condition=phonics pass=9/15 mean_loss=1.113681
+[2026-10-25T09:59:28.214611+00:00] seed=256 condition=phonics pass=10/15 mean_loss=0.943127
+[2026-10-25T09:59:29.080493+00:00] seed=256 condition=phonics pass=11/15 mean_loss=0.750305
+[2026-10-25T09:59:29.967439+00:00] seed=256 condition=phonics pass=12/15 mean_loss=0.729511
+[2026-10-25T09:59:30.801083+00:00] seed=256 condition=phonics pass=13/15 mean_loss=0.617999
+[2026-10-25T09:59:31.647468+00:00] seed=256 condition=phonics pass=14/15 mean_loss=0.606047
+[2026-10-25T09:59:32.538316+00:00] seed=256 condition=phonics pass=15/15 mean_loss=0.569009
+[2026-10-25T09:59:32.967236+00:00] seed=256 condition=phonics final_evaluation_saved
+[2026-10-25T09:59:38.783280+00:00] seed=256 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T09:59:39.667184+00:00] seed=256 condition=shuffled pass=1/15 mean_loss=6.078901
+[2026-10-25T09:59:40.580345+00:00] seed=256 condition=shuffled pass=2/15 mean_loss=3.324436
+[2026-10-25T09:59:41.467270+00:00] seed=256 condition=shuffled pass=3/15 mean_loss=2.648553
+[2026-10-25T09:59:42.365483+00:00] seed=256 condition=shuffled pass=4/15 mean_loss=2.447741
+[2026-10-25T09:59:43.256447+00:00] seed=256 condition=shuffled pass=5/15 mean_loss=2.262085
+[2026-10-25T09:59:44.163649+00:00] seed=256 condition=shuffled pass=6/15 mean_loss=1.886776
+[2026-10-25T09:59:45.050533+00:00] seed=256 condition=shuffled pass=7/15 mean_loss=1.942921
+[2026-10-25T09:59:45.945320+00:00] seed=256 condition=shuffled pass=8/15 mean_loss=1.546553
+[2026-10-25T09:59:46.829665+00:00] seed=256 condition=shuffled pass=9/15 mean_loss=1.481931
+[2026-10-25T09:59:47.717588+00:00] seed=256 condition=shuffled pass=10/15 mean_loss=1.354265
+[2026-10-25T09:59:48.633243+00:00] seed=256 condition=shuffled pass=11/15 mean_loss=1.222636
+[2026-10-25T09:59:49.548267+00:00] seed=256 condition=shuffled pass=12/15 mean_loss=1.060090
+[2026-10-25T09:59:50.431047+00:00] seed=256 condition=shuffled pass=13/15 mean_loss=0.912245
+[2026-10-25T09:59:51.323242+00:00] seed=256 condition=shuffled pass=14/15 mean_loss=0.862676
+[2026-10-25T09:59:52.220346+00:00] seed=256 condition=shuffled pass=15/15 mean_loss=0.707729
+[2026-10-25T09:59:52.647285+00:00] seed=256 condition=shuffled final_evaluation_saved
+[2026-10-25T09:59:58.326770+00:00] seed=256 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T09:59:59.499869+00:00] seed=256 condition=unrelated_english pass=1/15 mean_loss=6.318444
+[2026-10-25T10:00:00.562712+00:00] seed=256 condition=unrelated_english pass=2/15 mean_loss=3.719035
+[2026-10-25T10:00:01.557551+00:00] seed=256 condition=unrelated_english pass=3/15 mean_loss=3.112999
+[2026-10-25T10:00:02.537178+00:00] seed=256 condition=unrelated_english pass=4/15 mean_loss=3.007028
+[2026-10-25T10:00:03.502549+00:00] seed=256 condition=unrelated_english pass=5/15 mean_loss=8.143685
+[2026-10-25T10:00:04.463060+00:00] seed=256 condition=unrelated_english pass=6/15 mean_loss=3.022894
+[2026-10-25T10:00:05.429693+00:00] seed=256 condition=unrelated_english pass=7/15 mean_loss=2.843259
+[2026-10-25T10:00:06.390737+00:00] seed=256 condition=unrelated_english pass=8/15 mean_loss=2.700859
+[2026-10-25T10:00:07.339651+00:00] seed=256 condition=unrelated_english pass=9/15 mean_loss=2.655873
+[2026-10-25T10:00:08.348374+00:00] seed=256 condition=unrelated_english pass=10/15 mean_loss=2.530995
+[2026-10-25T10:00:09.320571+00:00] seed=256 condition=unrelated_english pass=11/15 mean_loss=2.426343
+[2026-10-25T10:00:10.301210+00:00] seed=256 condition=unrelated_english pass=12/15 mean_loss=2.368599
+[2026-10-25T10:00:11.275453+00:00] seed=256 condition=unrelated_english pass=13/15 mean_loss=2.265760
+[2026-10-25T10:00:12.435716+00:00] seed=256 condition=unrelated_english pass=14/15 mean_loss=2.077232
+[2026-10-25T10:00:13.519805+00:00] seed=256 condition=unrelated_english pass=15/15 mean_loss=2.017938
+[2026-10-25T10:00:13.925561+00:00] seed=256 condition=unrelated_english final_evaluation_saved
+[2026-10-25T10:00:19.709390+00:00] seed=13 paired_initial_state_sha256=2e2fa6c5cdac51e6f5f7954ee204cf802e9ef8056873bf52e790e8cd4310d1d4
+[2026-10-25T10:00:25.352706+00:00] seed=13 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T10:00:26.297080+00:00] seed=13 condition=phonics pass=1/15 mean_loss=6.161236
+[2026-10-25T10:00:27.330155+00:00] seed=13 condition=phonics pass=2/15 mean_loss=3.315805
+[2026-10-25T10:00:28.373714+00:00] seed=13 condition=phonics pass=3/15 mean_loss=2.667917
+[2026-10-25T10:00:29.409949+00:00] seed=13 condition=phonics pass=4/15 mean_loss=2.532137
+[2026-10-25T10:00:30.444964+00:00] seed=13 condition=phonics pass=5/15 mean_loss=2.244533
+[2026-10-25T10:00:31.473665+00:00] seed=13 condition=phonics pass=6/15 mean_loss=1.990463
+[2026-10-25T10:00:32.485441+00:00] seed=13 condition=phonics pass=7/15 mean_loss=1.680873
+[2026-10-25T10:00:33.515976+00:00] seed=13 condition=phonics pass=8/15 mean_loss=1.421176
+[2026-10-25T10:00:34.550413+00:00] seed=13 condition=phonics pass=9/15 mean_loss=1.471106
+[2026-10-25T10:00:35.577151+00:00] seed=13 condition=phonics pass=10/15 mean_loss=1.220184
+[2026-10-25T10:00:36.613374+00:00] seed=13 condition=phonics pass=11/15 mean_loss=1.096265
+[2026-10-25T10:00:37.644347+00:00] seed=13 condition=phonics pass=12/15 mean_loss=0.913455
+[2026-10-25T10:00:38.668504+00:00] seed=13 condition=phonics pass=13/15 mean_loss=0.781505
+[2026-10-25T10:00:39.695755+00:00] seed=13 condition=phonics pass=14/15 mean_loss=0.708771
+[2026-10-25T10:00:40.726671+00:00] seed=13 condition=phonics pass=15/15 mean_loss=0.568783
+[2026-10-25T10:00:41.157407+00:00] seed=13 condition=phonics final_evaluation_saved
+[2026-10-25T10:00:46.599286+00:00] seed=13 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T10:00:47.634367+00:00] seed=13 condition=shuffled pass=1/15 mean_loss=6.140458
+[2026-10-25T10:00:48.694357+00:00] seed=13 condition=shuffled pass=2/15 mean_loss=3.312054
+[2026-10-25T10:00:49.749300+00:00] seed=13 condition=shuffled pass=3/15 mean_loss=2.731036
+[2026-10-25T10:00:50.801551+00:00] seed=13 condition=shuffled pass=4/15 mean_loss=2.388674
+[2026-10-25T10:00:51.850387+00:00] seed=13 condition=shuffled pass=5/15 mean_loss=2.221058
+[2026-10-25T10:00:52.901383+00:00] seed=13 condition=shuffled pass=6/15 mean_loss=2.158708
+[2026-10-25T10:00:53.949010+00:00] seed=13 condition=shuffled pass=7/15 mean_loss=1.976716
+[2026-10-25T10:00:54.989222+00:00] seed=13 condition=shuffled pass=8/15 mean_loss=1.780614
+[2026-10-25T10:00:56.048200+00:00] seed=13 condition=shuffled pass=9/15 mean_loss=1.719821
+[2026-10-25T10:00:57.093153+00:00] seed=13 condition=shuffled pass=10/15 mean_loss=1.523669
+[2026-10-25T10:00:58.152053+00:00] seed=13 condition=shuffled pass=11/15 mean_loss=1.349686
+[2026-10-25T10:00:59.216368+00:00] seed=13 condition=shuffled pass=12/15 mean_loss=1.248360
+[2026-10-25T10:01:00.273640+00:00] seed=13 condition=shuffled pass=13/15 mean_loss=1.114235
+[2026-10-25T10:01:01.400224+00:00] seed=13 condition=shuffled pass=14/15 mean_loss=1.029667
+[2026-10-25T10:01:02.461423+00:00] seed=13 condition=shuffled pass=15/15 mean_loss=0.913212
+[2026-10-25T10:01:02.869675+00:00] seed=13 condition=shuffled final_evaluation_saved
+[2026-10-25T10:01:08.271823+00:00] seed=13 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T10:01:09.283621+00:00] seed=13 condition=unrelated_english pass=1/15 mean_loss=6.375971
+[2026-10-25T10:01:10.304280+00:00] seed=13 condition=unrelated_english pass=2/15 mean_loss=3.670642
+[2026-10-25T10:01:11.311673+00:00] seed=13 condition=unrelated_english pass=3/15 mean_loss=3.090166
+[2026-10-25T10:01:12.322962+00:00] seed=13 condition=unrelated_english pass=4/15 mean_loss=2.966222
+[2026-10-25T10:01:13.298552+00:00] seed=13 condition=unrelated_english pass=5/15 mean_loss=3.042647
+[2026-10-25T10:01:14.302462+00:00] seed=13 condition=unrelated_english pass=6/15 mean_loss=2.854677
+[2026-10-25T10:01:15.304393+00:00] seed=13 condition=unrelated_english pass=7/15 mean_loss=2.688950
+[2026-10-25T10:01:16.317003+00:00] seed=13 condition=unrelated_english pass=8/15 mean_loss=2.550977
+[2026-10-25T10:01:17.316430+00:00] seed=13 condition=unrelated_english pass=9/15 mean_loss=2.568911
+[2026-10-25T10:01:18.339282+00:00] seed=13 condition=unrelated_english pass=10/15 mean_loss=2.522544
+[2026-10-25T10:01:19.346241+00:00] seed=13 condition=unrelated_english pass=11/15 mean_loss=2.340786
+[2026-10-25T10:01:20.333713+00:00] seed=13 condition=unrelated_english pass=12/15 mean_loss=2.137781
+[2026-10-25T10:01:21.346081+00:00] seed=13 condition=unrelated_english pass=13/15 mean_loss=1.985743
+[2026-10-25T10:01:22.358237+00:00] seed=13 condition=unrelated_english pass=14/15 mean_loss=1.852005
+[2026-10-25T10:01:23.373588+00:00] seed=13 condition=unrelated_english pass=15/15 mean_loss=1.945807
+[2026-10-25T10:01:23.810430+00:00] seed=13 condition=unrelated_english final_evaluation_saved
+[2026-10-25T10:01:30.014213+00:00] seed=555 paired_initial_state_sha256=90e390adff6fefd491d503bfa746c3ce2d5f9a091d30c021286c767db9e5b63c
+[2026-10-25T10:01:35.738952+00:00] seed=555 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T10:01:36.591725+00:00] seed=555 condition=phonics pass=1/15 mean_loss=6.278432
+[2026-10-25T10:01:37.461081+00:00] seed=555 condition=phonics pass=2/15 mean_loss=3.998989
+[2026-10-25T10:01:38.315750+00:00] seed=555 condition=phonics pass=3/15 mean_loss=2.939970
+[2026-10-25T10:01:39.215425+00:00] seed=555 condition=phonics pass=4/15 mean_loss=2.648022
+[2026-10-25T10:01:40.081063+00:00] seed=555 condition=phonics pass=5/15 mean_loss=2.432642
+[2026-10-25T10:01:40.968681+00:00] seed=555 condition=phonics pass=6/15 mean_loss=2.231927
+[2026-10-25T10:01:41.916297+00:00] seed=555 condition=phonics pass=7/15 mean_loss=1.871810
+[2026-10-25T10:01:42.760953+00:00] seed=555 condition=phonics pass=8/15 mean_loss=1.716357
+[2026-10-25T10:01:43.658501+00:00] seed=555 condition=phonics pass=9/15 mean_loss=1.620130
+[2026-10-25T10:01:44.519480+00:00] seed=555 condition=phonics pass=10/15 mean_loss=1.401160
+[2026-10-25T10:01:45.377828+00:00] seed=555 condition=phonics pass=11/15 mean_loss=1.337457
+[2026-10-25T10:01:46.225132+00:00] seed=555 condition=phonics pass=12/15 mean_loss=1.120283
+[2026-10-25T10:01:47.199858+00:00] seed=555 condition=phonics pass=13/15 mean_loss=1.090866
+[2026-10-25T10:01:48.063012+00:00] seed=555 condition=phonics pass=14/15 mean_loss=0.982356
+[2026-10-25T10:01:49.040372+00:00] seed=555 condition=phonics pass=15/15 mean_loss=0.924480
+[2026-10-25T10:01:49.459755+00:00] seed=555 condition=phonics final_evaluation_saved
+[2026-10-25T10:01:54.955357+00:00] seed=555 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T10:01:55.879980+00:00] seed=555 condition=shuffled pass=1/15 mean_loss=6.200129
+[2026-10-25T10:01:56.751271+00:00] seed=555 condition=shuffled pass=2/15 mean_loss=3.345061
+[2026-10-25T10:01:57.628312+00:00] seed=555 condition=shuffled pass=3/15 mean_loss=2.711471
+[2026-10-25T10:01:58.557468+00:00] seed=555 condition=shuffled pass=4/15 mean_loss=3.342245
+[2026-10-25T10:01:59.483896+00:00] seed=555 condition=shuffled pass=5/15 mean_loss=2.449833
+[2026-10-25T10:02:00.425094+00:00] seed=555 condition=shuffled pass=6/15 mean_loss=2.237258
+[2026-10-25T10:02:01.356916+00:00] seed=555 condition=shuffled pass=7/15 mean_loss=2.082108
+[2026-10-25T10:02:02.235596+00:00] seed=555 condition=shuffled pass=8/15 mean_loss=2.081171
+[2026-10-25T10:02:03.173101+00:00] seed=555 condition=shuffled pass=9/15 mean_loss=1.884259
+[2026-10-25T10:02:04.141090+00:00] seed=555 condition=shuffled pass=10/15 mean_loss=1.855114
+[2026-10-25T10:02:05.076874+00:00] seed=555 condition=shuffled pass=11/15 mean_loss=1.703495
+[2026-10-25T10:02:05.976134+00:00] seed=555 condition=shuffled pass=12/15 mean_loss=1.616138
+[2026-10-25T10:02:07.066306+00:00] seed=555 condition=shuffled pass=13/15 mean_loss=1.526312
+[2026-10-25T10:02:07.960147+00:00] seed=555 condition=shuffled pass=14/15 mean_loss=1.444307
+[2026-10-25T10:02:08.860200+00:00] seed=555 condition=shuffled pass=15/15 mean_loss=1.358573
+[2026-10-25T10:02:09.284457+00:00] seed=555 condition=shuffled final_evaluation_saved
+[2026-10-25T10:02:14.962269+00:00] seed=555 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T10:02:15.962981+00:00] seed=555 condition=unrelated_english pass=1/15 mean_loss=6.236126
+[2026-10-25T10:02:16.918224+00:00] seed=555 condition=unrelated_english pass=2/15 mean_loss=3.605495
+[2026-10-25T10:02:17.893180+00:00] seed=555 condition=unrelated_english pass=3/15 mean_loss=3.106174
+[2026-10-25T10:02:18.950987+00:00] seed=555 condition=unrelated_english pass=4/15 mean_loss=3.503039
+[2026-10-25T10:02:20.033738+00:00] seed=555 condition=unrelated_english pass=5/15 mean_loss=2.916496
+[2026-10-25T10:02:21.195420+00:00] seed=555 condition=unrelated_english pass=6/15 mean_loss=3.207559
+[2026-10-25T10:02:22.345193+00:00] seed=555 condition=unrelated_english pass=7/15 mean_loss=2.723090
+[2026-10-25T10:02:23.557569+00:00] seed=555 condition=unrelated_english pass=8/15 mean_loss=2.732971
+[2026-10-25T10:02:24.728145+00:00] seed=555 condition=unrelated_english pass=9/15 mean_loss=2.645900
+[2026-10-25T10:02:25.880537+00:00] seed=555 condition=unrelated_english pass=10/15 mean_loss=2.579805
+[2026-10-25T10:02:27.056700+00:00] seed=555 condition=unrelated_english pass=11/15 mean_loss=2.507199
+[2026-10-25T10:02:28.258881+00:00] seed=555 condition=unrelated_english pass=12/15 mean_loss=2.390082
+[2026-10-25T10:02:29.484553+00:00] seed=555 condition=unrelated_english pass=13/15 mean_loss=2.305859
+[2026-10-25T10:02:30.807802+00:00] seed=555 condition=unrelated_english pass=14/15 mean_loss=2.263075
+[2026-10-25T10:02:31.982359+00:00] seed=555 condition=unrelated_english pass=15/15 mean_loss=2.173012
+[2026-10-25T10:02:32.461995+00:00] seed=555 condition=unrelated_english final_evaluation_saved
+[2026-10-25T10:02:38.619669+00:00] seed=8 paired_initial_state_sha256=6da1236a03a5bec2de3e0b6d37964456e8fac8cdf9678e351c474003b90378be
+[2026-10-25T10:02:44.031869+00:00] seed=8 condition=phonics verified_identical_initial_weights=true
+[2026-10-25T10:02:45.060236+00:00] seed=8 condition=phonics pass=1/15 mean_loss=6.112004
+[2026-10-25T10:02:46.129107+00:00] seed=8 condition=phonics pass=2/15 mean_loss=3.267951
+[2026-10-25T10:02:47.181674+00:00] seed=8 condition=phonics pass=3/15 mean_loss=2.670180
+[2026-10-25T10:02:48.236807+00:00] seed=8 condition=phonics pass=4/15 mean_loss=2.533487
+[2026-10-25T10:02:49.328994+00:00] seed=8 condition=phonics pass=5/15 mean_loss=2.366021
+[2026-10-25T10:02:50.387272+00:00] seed=8 condition=phonics pass=6/15 mean_loss=2.229223
+[2026-10-25T10:02:51.445784+00:00] seed=8 condition=phonics pass=7/15 mean_loss=2.000483
+[2026-10-25T10:02:52.502534+00:00] seed=8 condition=phonics pass=8/15 mean_loss=1.761368
+[2026-10-25T10:02:53.562054+00:00] seed=8 condition=phonics pass=9/15 mean_loss=1.434535
+[2026-10-25T10:02:54.598465+00:00] seed=8 condition=phonics pass=10/15 mean_loss=1.281512
+[2026-10-25T10:02:55.652023+00:00] seed=8 condition=phonics pass=11/15 mean_loss=1.173201
+[2026-10-25T10:02:56.712045+00:00] seed=8 condition=phonics pass=12/15 mean_loss=1.019008
+[2026-10-25T10:02:57.768203+00:00] seed=8 condition=phonics pass=13/15 mean_loss=0.873892
+[2026-10-25T10:02:58.819317+00:00] seed=8 condition=phonics pass=14/15 mean_loss=0.825949
+[2026-10-25T10:02:59.877992+00:00] seed=8 condition=phonics pass=15/15 mean_loss=0.675876
+[2026-10-25T10:03:00.312448+00:00] seed=8 condition=phonics final_evaluation_saved
+[2026-10-25T10:03:05.740914+00:00] seed=8 condition=shuffled verified_identical_initial_weights=true
+[2026-10-25T10:03:06.648815+00:00] seed=8 condition=shuffled pass=1/15 mean_loss=6.091618
+[2026-10-25T10:03:07.496793+00:00] seed=8 condition=shuffled pass=2/15 mean_loss=3.450115
+[2026-10-25T10:03:08.340573+00:00] seed=8 condition=shuffled pass=3/15 mean_loss=2.857670
+[2026-10-25T10:03:09.219239+00:00] seed=8 condition=shuffled pass=4/15 mean_loss=2.685916
+[2026-10-25T10:03:10.165359+00:00] seed=8 condition=shuffled pass=5/15 mean_loss=2.551296
+[2026-10-25T10:03:11.036407+00:00] seed=8 condition=shuffled pass=6/15 mean_loss=2.358083
+[2026-10-25T10:03:11.910180+00:00] seed=8 condition=shuffled pass=7/15 mean_loss=2.173734
+[2026-10-25T10:03:12.864931+00:00] seed=8 condition=shuffled pass=8/15 mean_loss=2.077350
+[2026-10-25T10:03:13.731677+00:00] seed=8 condition=shuffled pass=9/15 mean_loss=1.864557
+[2026-10-25T10:03:14.597030+00:00] seed=8 condition=shuffled pass=10/15 mean_loss=1.905251
+[2026-10-25T10:03:15.464592+00:00] seed=8 condition=shuffled pass=11/15 mean_loss=1.607657
+[2026-10-25T10:03:16.328005+00:00] seed=8 condition=shuffled pass=12/15 mean_loss=1.519685
+[2026-10-25T10:03:17.210929+00:00] seed=8 condition=shuffled pass=13/15 mean_loss=1.371940
+[2026-10-25T10:03:18.096771+00:00] seed=8 condition=shuffled pass=14/15 mean_loss=1.309586
+[2026-10-25T10:03:19.000155+00:00] seed=8 condition=shuffled pass=15/15 mean_loss=1.051058
+[2026-10-25T10:03:19.461258+00:00] seed=8 condition=shuffled final_evaluation_saved
+[2026-10-25T10:03:24.934402+00:00] seed=8 condition=unrelated_english verified_identical_initial_weights=true
+[2026-10-25T10:03:25.958623+00:00] seed=8 condition=unrelated_english pass=1/15 mean_loss=6.336790
+[2026-10-25T10:03:26.936703+00:00] seed=8 condition=unrelated_english pass=2/15 mean_loss=3.649924
+[2026-10-25T10:03:27.900555+00:00] seed=8 condition=unrelated_english pass=3/15 mean_loss=3.111938
+[2026-10-25T10:03:28.860161+00:00] seed=8 condition=unrelated_english pass=4/15 mean_loss=3.062318
+[2026-10-25T10:03:29.804693+00:00] seed=8 condition=unrelated_english pass=5/15 mean_loss=3.009367
+[2026-10-25T10:03:30.813005+00:00] seed=8 condition=unrelated_english pass=6/15 mean_loss=4.140837
+[2026-10-25T10:03:31.768281+00:00] seed=8 condition=unrelated_english pass=7/15 mean_loss=2.737107
+[2026-10-25T10:03:32.873041+00:00] seed=8 condition=unrelated_english pass=8/15 mean_loss=2.567721
+[2026-10-25T10:03:33.846196+00:00] seed=8 condition=unrelated_english pass=9/15 mean_loss=2.454963
+[2026-10-25T10:03:34.822469+00:00] seed=8 condition=unrelated_english pass=10/15 mean_loss=2.366033
+[2026-10-25T10:03:35.805638+00:00] seed=8 condition=unrelated_english pass=11/15 mean_loss=2.249065
+[2026-10-25T10:03:36.770448+00:00] seed=8 condition=unrelated_english pass=12/15 mean_loss=2.130941
+[2026-10-25T10:03:37.741026+00:00] seed=8 condition=unrelated_english pass=13/15 mean_loss=2.087765
+[2026-10-25T10:03:38.720809+00:00] seed=8 condition=unrelated_english pass=14/15 mean_loss=2.008508
+[2026-10-25T10:03:39.676111+00:00] seed=8 condition=unrelated_english pass=15/15 mean_loss=1.817470
+[2026-10-25T10:03:40.107270+00:00] seed=8 condition=unrelated_english final_evaluation_saved
+[2026-10-25T10:03:40.585577+00:00] run completed all declared seeds and conditions
