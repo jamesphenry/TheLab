@@ -1,5 +1,5 @@
 ---
-title: "Controlled CVC Transfer Replication — Completed Run"
+title: Controlled CVC Transfer Replication — Completed Run
 type: experiment
 status: completed
 scripts:
@@ -12,7 +12,10 @@ tags:
   - completed-run
 created: 2026-10-25
 updated: 2026-10-25
-changelog: []
+changelog:
+  - date: 2026-10-25
+    change: Linked this detailed result analysis to the canonical experiment record, which now includes the procedure, summary results, and conclusion.
+reviewed: complete
 ---
 
 # Controlled CVC Transfer Replication — Completed Run
@@ -21,7 +24,7 @@ changelog: []
 
 Does training on the original Lesson 1.1 sentences improve next-letter probabilities for unseen CVC words whose final two-letter sequences are absent from phonics training, beyond character-frequency and generic-English exposure effects?
 
-This is a narrow byte-level spelling-completion probe. It does not test word meaning, pronunciation, phoneme awareness, or reliable free-form word generation. The preregistered plan is [[2026-10-25 Plan - Controlled CVC Transfer Replication]].
+This is a narrow byte-level spelling-completion probe. It does not test word meaning, pronunciation, phoneme awareness, or reliable free-form word generation. The canonical scientific-method record, including the frozen protocol and experiment conclusion, is [[2026-10-25 Controlled CVC Transfer Replication]].
 
 ## Hypothesis
 
@@ -140,7 +143,7 @@ Across all far predictions, the phonics letter-restricted decoder chose `h` 37/8
 
 ## Related
 
-- Plan and frozen protocol: [[2026-10-25 Plan - Controlled CVC Transfer Replication]]
+- Canonical experiment record and frozen protocol: [[2026-10-25 Controlled CVC Transfer Replication]]
 - Workflow and observed execution gotchas: [[00-System/Experiment Workflow|Experiment Workflow]]
 - Earlier evidence: [[2026-10-23 Experiment A — Held-Out Test]], [[2026-10-23 Experiment B — Control Group]], [[2026-10-23 Experiment C — Multiple Random Seeds]]
 - Run bundle: `experiments/results/cvc_transfer_v2/cvc-transfer-20261025-retry03.json`

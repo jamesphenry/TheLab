@@ -1,5 +1,5 @@
 ---
-title: "Plan — Controlled CVC Transfer Replication"
+title: "Controlled CVC Transfer Replication"
 type: experiment
 status: completed
 scripts:
@@ -7,12 +7,17 @@ scripts:
 tags:
   - ai-school
   - experiment
-  - research-plan
   - cvc
   - transfer
 created: 2026-10-25
 updated: 2026-10-25
 changelog:
+  - date: 2026-10-25
+    change: "Added a formal analysis of the preregistered paired-seed contrast, its uncertainty, and the output-space diagnostic after rereading the saved result bundle."
+  - date: 2026-10-25
+    change: "Recorded the user's review of the completed experiment analysis."
+  - date: 2026-10-25
+    change: "Converted the planned protocol into the canonical scientific-method experiment record and incorporated the actual procedure, run history, results, and conclusion; retained the frozen pre-run design."
   - date: 2026-10-25
     change: "Added the completed retry03 experiment record and index link; preserved all run attempts and updated the plan lifecycle."
   - date: 2026-10-25
@@ -31,10 +36,10 @@ changelog:
     change: "Recorded a second hash failure: paired tensors were equal, but serialized archive metadata differed; the digest now hashes only the raw tensor payload, excluding archive metadata."
 ---
 
-# Plan — Controlled CVC Transfer Replication
+# Controlled CVC Transfer Replication
 
-> [!info] Protocol and analysis record completed
-> The frozen protocol passed data-only preflight. Two startup attempts failed and two CPU attempts were interrupted or failed before optimizer updates; all are preserved under separate run IDs. `cvc-transfer-20261025-retry03` completed all 10 seeds, 30 condition arms, and 2,250 updates. Its validated findings, item-level summary, controls, failures, and limitations are in the new [[2026-10-25 Controlled CVC Transfer Replication - Completed Run|completed experiment record]].
+> [!summary] Outcome
+> The frozen protocol passed preflight. After two startup failures and two interrupted/failed CPU attempts, `cvc-transfer-20261025-retry03` completed all 10 seeds, 30 condition arms, and 2,250 updates. The preregistered phonics-over-shuffled advantage was not supported. Full-head loss reductions mostly reflected a shift away from impossible output IDs; target-letter NLL within the 26 letters worsened in every aggregate condition. Detailed seed/item analyses and raw-output references are recorded in [[2026-10-25 Controlled CVC Transfer Replication - Completed Run|the completed run analysis]].
 
 ## Research question
 
@@ -42,7 +47,123 @@ Does training on the original Lesson 1.1 sentences increase a 27M BabyLM's proba
 
 This operationalizes a narrow byte-level spelling-completion claim. It does not test word meaning, phoneme awareness, or reliable free-form word generation.
 
-## Motivation and current evidence
+## Background and evidence
+
+- The initial Lesson 1.1 record reports a mean target-loss decrease of 3.7655, but its four target words (`mat`, `hot`, `run`, `bed`) occur in its five training sentences. That supports fitting those strings, not transfer.
+- Experiment A reports a 3.8638 mean loss decrease over eight nominally held-out items in one seed; its set mixes new contexts for trained words, familiar spelling fragments, and only two fully novel CVC words. Generations were not reliably correct.
+- Experiment B found target-loss decreases for both phonics and unrelated English in one seed, leaving generic English-byte learning as a live explanation.
+- Earlier multi-seed and preschool assessments have overlap and checkpoint-selection confounds documented below and in the linked source records.
+- The 4096-class model head is larger than the tokenizer's 260 emitted IDs, so full-head loss can improve as probability shifts away from impossible classes without identifying the correct letter.
+
+Sources: [[2026-10-23 BabyLM Lesson 1.1 Phonics and Word Acquisition]], [[2026-10-23 Experiment A — Held-Out Test]], [[2026-10-23 Experiment B — Control Group]], [[2026-10-23 Experiment C — Multiple Random Seeds]], [[2026-10-24 Lesson 1.1 Updated Test]], [[2026-10-24 Coverage Fix Multi-Seed Follow-up]], [[02-School/Preschool/Curriculum|Preschool Curriculum]], [[02-School/Preschool/Teacher|Preschool Teacher]], [[02-School/Preschool/Assessments/Assessment-1-Pattern-Sequences|Assessment 1]], and the 2026-10-25 [[07-Reports/2026-10-25 AI School Independent Research Audit - Updated Evidence|updated audit]] plus its [[07-Reports/2026-10-25 Research Artifact Inventory Correction|artifact-inventory correction]].
+
+## Hypothesis
+
+Relative to the no-update baseline and the character-shuffled control, phonics training was predicted to produce a larger reduction in full-head target-letter NLL on eight far items whose target suffix bigrams are absent from phonics exemplars. Five near items, with suffix bigrams present in the exemplars, served as a positive-control stratum. A phonics advantage no greater than shuffled or unrelated-English training, or an effect limited to near items, would count against the hypothesis.
+
+**Observed decision:** the hypothesis was not supported; see Results.
+
+## Method
+
+### Conditions and fixed measures
+
+- **Phonics:** five original Lesson 1.1 sentences.
+- **Matched order control:** five fixed strings with each treatment sentence's byte multiset and length preserved while alphabetic order was shuffled.
+- **Unrelated-English control:** five fixed English sentences; this arm was not byte-count matched.
+- **Model and training:** 4096-class BabyLM output head, byte tokenizer, AdamW (`1e-3`), gradient clipping (`1.0`), 15 passes over five strings (75 updates per arm).
+- **Test:** one-byte completion on five near and eight far CVC items; four separate development items. Near/far was defined against phonics suffix exposure.
+- **Primary metric:** full-head target-letter NLL change on the eight far items and the paired per-seed phonics-minus-shuffled gain. Lowercase-letter-renormalized NLL and greedy accuracy were diagnostics.
+- **Seeds/checkpoint:** ten paired seeds; same cloned initialization across conditions within seed; fixed final checkpoint after 15 passes, no best-checkpoint selection.
+
+The frozen dataset, prompts, complete conditions, control exposure counts, exact shuffled strings, split/leakage checks, model configuration, and planned analysis are retained in the protocol details below and `experiments/data/cvc_transfer_v2.json` at the recorded revision. These were fixed before final evaluation.
+
+## Procedure and run provenance
+
+1. Ran the standard-library-only data preflight before model construction; it passed.
+2. For each predeclared seed (`42, 123, 7, 2026, 99, 314, 256, 13, 555, 8`), measured an untrained baseline, cloned the initial state across three conditions, and verified tensor-by-tensor equality and matching state digests.
+3. Trained each condition for 15 passes over its five fixed strings with a fresh optimizer per arm. The completed run performed 2,250/2,250 updates.
+4. Evaluated four development items and all 13 final items after training, using unrestricted 4096-class and lowercase-letter-restricted greedy decoders. No checkpoint was selected on evaluation outcomes.
+
+**Completed run:** `cvc-transfer-20261025-retry03`, Jane CPU environment, Python 3.11.2, PyTorch 2.14.1+cpu. Actual command: `.venv/bin/python experiments/run_cvc_transfer_v2.py --run-id cvc-transfer-20261025-retry03 --device cpu`. Runner/data revision: `a6191dfa4b9e3937daf147baddb1c1e031d7012f`; result artifact commit: `0c1a6f83528fd309401288f5b645545c0af2c9ad`.
+
+**Earlier attempts:** the data-only preflight passed; `main` failed before model construction because default Python lacked PyTorch; `retry01` was interrupted before any seed due to slow tensor serialization; `retry02` failed digest verification before training updates. They remain preserved under distinct run IDs and are excluded from measurements.
+
+## Results
+
+“Full-head gain” is baseline NLL minus final NLL (positive means lower final NLL). “26-letter gain” is the equivalent change after renormalization among lowercase letters.
+
+| Condition | Stratum | Full-head gain | 26-letter NLL gain | Letter-restricted exact | Impossible-ID mass |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Phonics | Near (5 items) | +1.829 | −1.253 | 5/50 (10%) | 0.80% |
+| Phonics | Far (8 items) | +1.130 | −2.762 | 3/80 (3.75%) | 0.55% |
+| Shuffled | Near (5 items) | +2.821 | −1.005 | 4/50 (8%) | 0.38% |
+| Shuffled | Far (8 items) | +2.359 | −1.238 | 4/80 (5%) | 0.53% |
+| Unrelated English | Near (5 items) | +2.938 | −1.924 | 0/50 | 0.81% |
+| Unrelated English | Far (8 items) | +1.732 | −3.092 | 0/80 | 1.13% |
+
+The primary far-item phonics-gain minus shuffled-gain contrast averaged **−1.229 NLL** (median −1.319, sample SD 2.254); the 95% percentile bootstrap interval over ten seeds was **[−2.514, 0.086]**. Seven seeds favored shuffled and three favored phonics. The resampling unit was seeds; the test still contains only eight fixed far items.
+
+At baseline, approximately 93.6% of probability mass was assigned to impossible output IDs. After training, impossible-ID mass was 0.38–1.13%, while target NLL within lowercase letters worsened for every aggregate condition/stratum. Thus lower full-head NLL did not correspond to reliable correct-letter selection. Far-item letter-restricted correctness ranged from 0/80 to 4/80 across conditions; full per-item and per-seed failures are in the linked run analysis and JSON bundle.
+
+## Formal analysis
+
+### Primary estimand and decision
+
+The preregistered contrast is the mean, over the ten paired seeds, of:
+
+`(phonics baseline far-item NLL − phonics final far-item NLL) − (shuffled baseline far-item NLL − shuffled final far-item NLL)`.
+
+Positive values favor the predicted phonics advantage. Recomputing this contrast from the per-item baseline and final NLLs in the saved bundle reproduces all ten stored seed-level values. The mean contrast is **−1.229**, median **−1.319**, and sample SD **2.254**. Seven seeds are negative and three are positive. The preregistered 95% percentile bootstrap interval over paired seeds is **[−2.514, 0.086]**.
+
+The estimate points toward greater far-item full-head NLL reduction under shuffled training, but the interval includes zero. Therefore the study does **not** establish a shuffled-training advantage either. It fails to support the hypothesized phonics advantage; it does not establish equivalence or rule out a positive phonics effect. The resampling unit is initialization seed. The eight far words remain a fixed item set, so this interval does not quantify uncertainty over other words.
+
+### Construct and metric validity
+
+The full-head primary metric is difficult to interpret as successful letter transfer because 4,096 output classes are scored although the tokenizer can emit only 260 IDs. Baseline impossible-ID probability mass was about 93.6%; after training it fell to 0.38–1.13%. Meanwhile, lowercase-letter-renormalized target NLL worsened in every aggregate condition/stratum. The full-head reductions are therefore consistent with a broad shift from impossible classes toward valid output classes, not selective probability gain for the correct final letter.
+
+On the 80 seed-by-item far predictions per condition, the letter-restricted decoder selected the target 3 times for phonics, 4 for shuffled, and 0 for unrelated English. These are repeated predictions on the same eight words across ten initializations, not 240 independent test cases. They show poor exact completion and cannot support a population-level accuracy claim. No post hoc significance test or item-level resampling is used here.
+
+### Inference boundary
+
+The study supports a narrow negative conclusion: under this model, protocol, and fixed item set, the predicted phonics-over-shuffle gain was not observed, and output-space calibration is a major alternative explanation for full-head NLL movement. It does not show that ordered spelling exposure never transfers, that shuffled training is generally better, or that the treatments are equivalent. Resolving the output-head confound and adding a larger independently sampled test-word set are prerequisites for stronger claims.
+
+## Interpretation
+
+**Observed:** all three conditions reduced full-head target NLL on average. Shuffled training exceeded phonics on far-item gain, unrelated English also reduced full-head NLL, and exact letter selection remained rare. The large reduction in impossible-ID mass coincided with generally higher probability on valid letters, while target NLL normalized within lowercase letters increased.
+
+**Conclusion from evidence:** this run does not establish ordered-phonics transfer to unseen CVC completions. The pattern is compatible with output-space calibration and generic byte-frequency effects. The controls do not isolate all alternatives: shuffled strings remove natural order and syntax, and unrelated English differs in byte exposure. The observed primary contrast does not support the predicted phonics-over-shuffle advantage on these fixed items.
+
+## Limitations
+
+- The output head has 4096 classes while the tokenizer emits 260 IDs; this substantially confounds full-head NLL.
+- There are only eight fixed far items and five near items. Seeds measure initialization sensitivity, not uncertainty over a population of words.
+- Prefixes do not uniquely determine a CVC word. This is a byte-level spelling probe, not evidence of reading, phonological concepts, or preschool learning.
+- The unrelated-English arm is not byte-count matched; the shuffled arm destroys natural syntax and order. Some suffix exposures occur in controls.
+- Execution used a CPU-only PyTorch environment on Jane despite a host GPU; no GPU comparison was made.
+- No model checkpoints were retained; outputs, provenance, code/data hashes, and logs were retained.
+
+## Conclusion
+
+- **Supported:** these training regimes shifted probability away from impossible output IDs and reduced full-head target NLL on the fixed items.
+- **Not supported / not established:** the predicted phonics advantage over shuffled training, broad CVC generalization, meaningful word completion, phoneme awareness, or preschool learning capability.
+- **Next experiment suggestion:** use an output head matched to the 260-token tokenizer, or a justified target-letter objective, with a new leakage-checked protocol and held-out words. Treat this as a new model/protocol version; do not alter this run's data or historical claims.
+
+## Analysis review
+
+- **Status:** Reviewed by the user on 2026-10-25.
+- **Scope:** Completed experiment analysis and interpretation in this record and the linked detailed run analysis.
+
+## Frozen protocol and pre-run design
+
+The sections below preserve the design as specified before execution, including alternatives, expected outcomes, and implementation details. They are retained as protocol history, not a claim that the run followed every planned operational step without deviation.
+
+### Research question
+
+Does training on the original Lesson 1.1 sentences increase a 27M BabyLM's probability of completing the final letter of CVC spellings that never occur as words in training, beyond changes caused by character frequency or generic English-byte exposure? Does any effect depend on whether the target's final two-letter sequence appeared in training?
+
+This operationalizes a narrow byte-level spelling-completion claim. It does not test word meaning, phoneme awareness, or reliable free-form word generation.
+
+### Motivation and current evidence
 
 - The initial Lesson 1.1 record reports a mean target-loss decrease of 3.7655, but its four target words (`mat`, `hot`, `run`, `bed`) appear in the five training sentences. The result supports fitting those strings, not transfer.
 - Experiment A reports a 3.8638 mean loss decrease over eight nominally held-out items in one seed. Its test set mixes new contexts for trained words, words with familiar spelling fragments, and only two fully novel CVC words (`dig`, `big`). Its generations are not reliably correct.
@@ -54,7 +175,7 @@ This operationalizes a narrow byte-level spelling-completion claim. It does not 
 
 Sources: [[2026-10-23 BabyLM Lesson 1.1 Phonics and Word Acquisition]], [[2026-10-23 Experiment A — Held-Out Test]], [[2026-10-23 Experiment B — Control Group]], [[2026-10-23 Experiment C — Multiple Random Seeds]], [[2026-10-24 Lesson 1.1 Updated Test]], [[2026-10-24 Coverage Fix Multi-Seed Follow-up]], [[02-School/Preschool/Curriculum|Preschool Curriculum]], [[02-School/Preschool/Teacher|Preschool Teacher]], [[02-School/Preschool/Assessments/Assessment-1-Pattern-Sequences|Assessment 1]], and the 2026-10-25 [[07-Reports/2026-10-25 AI School Independent Research Audit - Updated Evidence|updated audit]] plus its [[07-Reports/2026-10-25 Research Artifact Inventory Correction|artifact-inventory correction]].
 
-## Competing explanations
+### Competing explanations
 
 1. **Ordered spelling exposure transfers:** training raises probability for novel CVC continuations because the model uses ordered letter patterns learned from words such as `cat`, `mat`, `run`, and `pen`.
 2. **Whole-word memorization:** gains occur only for words or complete target strings present in the training corpus. The final test forbids this overlap.
@@ -62,7 +183,7 @@ Sources: [[2026-10-23 BabyLM Lesson 1.1 Phonics and Word Acquisition]], [[2026-1
 4. **Generic English statistics:** unrelated English improves letter predictions similarly to the phonics material. An English-text control reuses Experiment B's corpus; its unequal byte lengths will be reported as a limitation.
 5. **Initialization variance:** apparent transfer is driven by a small number of favorable random seeds. Each condition is paired by seed and repeated across ten predeclared seeds.
 
-## Control-exposure audit
+### Control-exposure audit
 
 The suffix counts below are literal, case-insensitive occurrences in each complete training corpus before its 15 passes. They make clear that “far” means absent from the **phonics treatment**, not necessarily absent from every control. The unrelated-English corpus exposes `at`, `en`, and `ag`; in particular, the `tag` item is not suffix-novel relative to that arm. The shuffled corpus is fixed rather than regenerated per model seed, so the exact sequences and their exposures are auditable.
 
@@ -104,13 +225,13 @@ The unrelated-English corpus used for these counts is:
 - `The compiler optimizes register allocation.`
 - `Memory allocation requires careful management.`
 
-## Falsifiable hypothesis
+### Falsifiable hypothesis
 
 Relative to both the no-update baseline and the character-shuffled control, phonics training will produce a larger reduction in target-letter negative log likelihood on the **far** test cohort, whose target suffix bigrams are absent from the phonics exemplars. The near cohort, whose suffix bigrams are already present in other words, is a positive-control stratum and is expected to improve more than the far cohort.
 
 The hypothesis is not supported if the phonics condition's far-cohort improvement is no greater than the shuffled or unrelated-English condition, or if any apparent advantage is limited to the near cohort. A likelihood gain without exact letter prediction will be reported as a probability shift, not as successful completion.
 
-## Experimental design and controls
+### Experimental design and controls
 
 ### Conditions
 
@@ -156,14 +277,14 @@ All listed letters occur in the phonics training corpus. The words are absent as
 - The development set and final test have disjoint words and prompts. Use development items only to verify the frozen evaluation code. Do not tune epochs, learning rate, seeds, examples, or decoding based on development results. If a protocol change is needed after inspecting development outcomes, increment the protocol version and replace the final test before any final-test access.
 - Freeze the final item JSON, code revision, and split-check output before fitting models. Do not use final-test values for checkpoint selection or curriculum changes. Since the stopping schedule is fixed, no checkpoint selection is planned.
 
-## Training, validation, and final test separation
+### Training, validation, and final test separation
 
 - **Training:** only the five exemplars for the phonics arm; the matched shuffled strings for its control; and the specified unrelated-English strings for the auxiliary control.
 - **Validation/development:** four separate CVC items (`cap`, `cot`, `met`, `ram`) for pipeline checks and descriptive reporting only. They are not included in training and do not select checkpoints.
 - **Final test:** the 13 words in the table above, evaluated only after all conditions, seeds, item definitions, and scoring code are frozen. No final item is used for training, early stopping, or parameter selection.
 - **Leakage audit:** exact whole-word lookup, character-coverage check, suffix-bigram membership check, test/validation disjointness check, and a printed per-condition overlap matrix are required before the first training update. Save the audit output with the results.
 
-## Independent variables and baselines
+### Independent variables and baselines
 
 - **Primary independent variable:** training corpus condition (phonics, byte-multiset-matched shuffled, unrelated English).
 - **Stratification variable:** whether the target's final two letters occur as a contiguous bigram in the phonics exemplars (near vs. far).
@@ -172,7 +293,7 @@ All listed letters occur in the phonics training corpus. The words are absent as
 - **Digest definition:** sort `state_dict` entries by key and hash each key, dtype, and shape separated by NUL bytes, followed by the raw `data/0` storage payload extracted from a Torch-saved contiguous CPU tensor and a NUL delimiter. Exclude serialization/archive metadata. Record the PyTorch version with provenance. Log the digest before training each arm and verify that all three arms for a seed have the same digest.
 - **Fixed conditions:** model architecture and 4096-way output head; tokenizer; optimizer; learning rate; gradient clipping; update count; decoding; item set; and software environment within each seed.
 
-## Metrics and item-level failure analysis
+### Metrics and item-level failure analysis
 
 ### Primary metric
 
@@ -189,7 +310,7 @@ Because the model predicts 4096 classes but the tokenizer can emit only 260 IDs,
 
 No single “pass” threshold is defined. With 13 related probes, describe the evidence and uncertainty; do not treat items as independent replications of the model-training intervention.
 
-## Seeds, sample sizes, and checkpoint selection
+### Seeds, sample sizes, and checkpoint selection
 
 - Ten paired seeds from the existing multi-seed set: `42, 123, 7, 2026, 99, 314, 256, 13, 555, 8`.
 - Three fresh training runs per seed (30 total), plus each same-seed pre-training baseline.
@@ -198,11 +319,11 @@ No single “pass” threshold is defined. With 13 related probes, describe the 
 - Report paired per-seed condition differences, mean/median, sample standard deviation, and a 95% percentile bootstrap interval over seeds (10,000 resamples; bootstrap seed `20261025`) as a descriptive uncertainty summary. Preserve all failed runs and record any rerun as a separate attempt.
 - Interpret the bootstrap interval over seeds as initialization uncertainty for these fixed items. Ten seeds do not turn the eight far words into 80 independent test items; report the item count as eight and limit generalization claims accordingly.
 
-## Stopping rule
+### Stopping rule
 
 Run exactly 15 passes over the five training strings in each condition. Stop a run early only for a code/runtime failure or a non-finite loss; record the seed, condition, last completed update, and error. Do not extend training because results look weak. A repaired rerun must use the same frozen protocol and be recorded alongside the failed attempt.
 
-## Required scripts, data, and artifacts
+### Required scripts, data, and artifacts
 
 - **New runner:** `experiments/run_cvc_transfer_v2.py`. It supports a data-only `--preflight-only` mode and a separate training mode. Reuse `BabyLM`, `BabyLMConfig`, and `BabyTokenizer`; implement deterministic one-byte scoring and the two declared decoders. Do not modify the historical experiment scripts.
 - **Frozen item/control file:** `experiments/data/cvc_transfer_v2.json`, containing exact train, development, and final-test strings, the control shuffle seed and strings, near/far labels, expected suffix counts, and bootstrap settings. The runner computes the leakage/exposure audit from these frozen inputs and records it before constructing a model or optimizer. Review and commit both code and data before execution.
@@ -212,7 +333,7 @@ Run exactly 15 passes over the five training strings in each condition. Stop a r
 - **Follow-up record:** create a new dated completed experiment note after execution and link it here. Preserve this plan and all earlier experiment records.
 - **No checkpoint archive is required for the primary result** because the fixed seeds and code/data revision reconstruct the run; if checkpoints are retained, record their paths and storage cost.
 
-## Expected outcomes and interpretation
+### Expected outcomes and interpretation
 
 | Outcome | Interpretation update |
 | --- | --- |
@@ -226,7 +347,7 @@ Run exactly 15 passes over the five training strings in each condition. Stop a r
 
 Even if the predicted pattern appears across all ten seeds, the conclusion remains limited to these 13 selected words (eight far items); the seeds quantify initialization sensitivity and are not additional word-level replications.
 
-## Limitations and unresolved questions
+### Limitations and unresolved questions
 
 - A one-letter target after a two-letter prefix is a deliberately narrow byte-level probe. It does not establish meaningful word completion, reading, pronunciation, or phonological awareness.
 - The target word is not uniquely determined by its first two letters. Top-1 exact-word-style scoring is therefore descriptive; likelihood comparisons are the primary outcome.
@@ -237,7 +358,7 @@ Even if the predicted pattern appears across all ten seeds, the conclusion remai
 - The 4096-versus-260 output mismatch remains. Reporting both full-head and letter-normalized probabilities makes it visible but does not resolve its effect on learning.
 - Results do not repair the current Preschool Assessment 1 split or validate the promoted mixed-coverage curriculum. A separate leakage-free alphabet curriculum evaluation remains necessary before using preschool graduation criteria.
 
-## Implementation status and exact execution sequence
+### Implementation status and exact execution sequence
 
 1. **Protocol/data frozen; run attempts preserved:** `experiments/data/cvc_transfer_v2.json` freezes the protocol strings/items, suffix-exposure expectation, optimizer settings, seeds, and bootstrap recipe. Data-only preflight passed as `preflight-20261025-2837ee0`. `cvc-transfer-20261025-main` failed before model creation because `/usr/bin/python3` lacked Torch. `cvc-transfer-20261025-retry01` was interrupted before its first saved seed because Python-level storage-byte conversion was too slow. `cvc-transfer-20261025-retry02` failed at paired-state digest verification before any condition arm; diagnostics confirmed equal tensors/raw payloads but differing archive metadata. `cvc-transfer-20261025-retry03` completed 10 seeds, 30 arms, and 2,250 updates on CPU. All attempt bundles/logs are preserved.
 2. Before execution, review the exact code/data diff and a clean committed revision against this plan. Use a fresh `--run-id`; output collisions are rejected rather than overwritten.
@@ -247,7 +368,7 @@ Even if the predicted pattern appears across all ten seeds, the conclusion remai
 
 **Execution boundary and current next step:** retry03 is the completed run; the earlier three full-run IDs remain failed or interrupted and must not be combined with it. Its provenance field reports the run log as untracked because Git status was captured after the log was opened; a pre-launch check confirmed the checkout was otherwise clean at commit `a6191df`. The runner now captures provenance before creating output paths. The completed record documents the bounded interpretation and leaves a vocabulary-matched output-head study as a separately planned follow-up.
 
-## Estimated compute and memory requirements
+### Estimated compute and memory requirements
 
 The current model has about 27.4M parameters. In float32, weights, gradients, and two AdamW moment buffers require roughly 0.41 GiB before activations, temporary tensors, and framework overhead. Plan for **1–2 GiB resident memory for one training process**; this is an estimate from parameter count, not a measured peak. Runs are sequential, so memory does not multiply by the 30 runs.
 
@@ -255,7 +376,7 @@ The protocol performs 30 trained fits × 75 optimizer updates = **2,250 updates 
 
 Given the reported low-memory Chromebook, use the server for the multi-seed run. A single fit may fit on a Chromebook with adequate free RAM, but the full paired study risks memory pressure and slow CPU execution; no hardware-specific guarantee is available from this checkout. No run is authorized by this planning note.
 
-## Alternatives considered
+### Alternatives considered
 
 | Candidate | Scientific value and discrimination | Feasibility and cost | Decision |
 | --- | --- | --- | --- |
@@ -263,7 +384,7 @@ Given the reported low-memory Chromebook, use the server for the multi-seed run.
 | Controlled CVC transfer replication (this plan) | Tests a foundational byte-level spelling claim with genuinely unseen target words, near/far n-gram strata, ten seeds, and order/frequency controls. It distinguishes several live explanations in one small study. | Existing model/training infrastructure and a relevant source script; one focused runner and a small frozen JSON file; 2,250 optimizer updates. | **Recommended primary experiment.** |
 | Held-out explicit-rule/content versus response-format test | High conceptual value for AI School's reasoning claims. Existing Experiment G mostly trains the evaluated mappings and has only one fully novel mapping, so a clean design needs a new mapping inventory and matched formats. | Higher protocol/data-design cost; not required to answer the immediate CVC transfer question. | Defer until the spelling/sequence measures have cleaner baselines. |
 
-## Related
+### Related
 
 - [[2026-10-25 Controlled CVC Transfer Replication - Completed Run|Completed run and analysis]]
 - [[2026-10-23 Experiment A — Held-Out Test]]

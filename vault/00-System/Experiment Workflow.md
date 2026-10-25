@@ -10,6 +10,8 @@ created: 2026-10-25
 updated: 2026-10-25
 changelog:
   - date: 2026-10-25
+    change: "Updated navigation to the canonical scientific-method CVC experiment record, now including actual procedure and results."
+  - date: 2026-10-25
     change: "Documented the completed CVC experiment record, results index entry, and command-provenance correction for future runs."
   - date: 2026-10-25
     change: "Added the completed CVC experiment record and index link; the run has a bounded result and a separate follow-up remains planned."
@@ -35,7 +37,7 @@ See [[Documentation Standard]], [[Vault Maintenance]], and [[AGENTS]] for eviden
 
 After the plan is approved for implementation, Codex creates or modifies only the listed runner and frozen inputs, then documents the exact command, expected outputs, paths, schema, and preflight checks in the plan. It checks that final-test items are disjoint from training and validation and that checkpoint selection does not inspect the final test. Code and data changes are reviewed before execution approval.
 
-**Current implementation:** the CVC plan at [[Development/Experiments/2026-10-25 Plan - Controlled CVC Transfer Replication]] uses `experiments/run_cvc_transfer_v2.py` and `experiments/data/cvc_transfer_v2.json`. Its preflight, three incomplete full-run attempts, and one completed run have run-specific artifacts; the completed result is in [[Development/Experiments/2026-10-25 Controlled CVC Transfer Replication - Completed Run]]. There is no generic runner standard or example-runner document in this vault. The existing [[Development/Experiments/README|artifact map]] links legacy scripts; it warns that name correspondence does not prove reproduction.
+**Current implementation:** the completed CVC experiment record at [[Development/Experiments/2026-10-25 Controlled CVC Transfer Replication]] preserves the frozen protocol and records procedure, failures, results, and interpretation. It uses `experiments/run_cvc_transfer_v2.py` and `experiments/data/cvc_transfer_v2.json`; detailed seed/item analyses are in [[Development/Experiments/2026-10-25 Controlled CVC Transfer Replication - Completed Run]]. Its preflight, three incomplete full-run attempts, and one completed run have run-specific artifacts. There is no generic runner standard or example-runner document in this vault. The existing [[Development/Experiments/README|artifact map]] links legacy scripts; it warns that name correspondence does not prove reproduction.
 
 ## 3. Review — researcher approval
 
@@ -128,4 +130,4 @@ The legacy `experiments/lesson11_updated_results.json` records four seeds. Seed 
 - [[Templates/Experiment Template|Experiment Template]] and [[Templates/Plan Template|Plan Template]]
 - [[Development/Build and Test|Build and Test Guide]] (harness commands, not a research-runner standard)
 - Existing script examples: `experiments/test_lesson11_updated.py`, `experiments/test_preschool_throwaway.py`, `experiments/run_experiment_b.py`
-- [[Development/Experiments/2026-10-25 Plan - Controlled CVC Transfer Replication|Planned CVC replication]]
+- [[Development/Experiments/2026-10-25 Controlled CVC Transfer Replication|Completed CVC transfer experiment]]
