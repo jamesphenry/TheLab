@@ -560,7 +560,7 @@ def main() -> int:
         "status": "running",
         "started_at_utc": utc_now(),
         "finished_at_utc": None,
-        "command": ["python3", "experiments/run_cvc_transfer_v2.py", *sys.argv[1:]],
+        "command": [sys.executable, "experiments/run_cvc_transfer_v2.py", *sys.argv[1:]],
         "source_path": "experiments/run_cvc_transfer_v2.py",
         "data_path": "experiments/data/cvc_transfer_v2.json",
         "output_paths": {

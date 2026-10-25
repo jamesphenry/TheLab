@@ -1,7 +1,7 @@
 ---
 title: "Plan — Controlled CVC Transfer Replication"
 type: experiment
-status: planned
+status: completed
 scripts:
   - experiments/run_cvc_transfer_v2.py
 tags:
@@ -14,7 +14,9 @@ created: 2026-10-25
 updated: 2026-10-25
 changelog:
   - date: 2026-10-25
-    change: "Recorded completed retry03 artifacts and its bounded primary contrast; corrected run-state text while preserving the three earlier failed/interrupted attempts."
+    change: "Added the completed retry03 experiment record and index link; preserved all run attempts and updated the plan lifecycle."
+  - date: 2026-10-25
+    change: "Adjusted future runner provenance to capture the actual Python executable; the completed run bundle remains unchanged and its command caveat is documented."
   - date: 2026-10-25
     change: "Implementation draft: freeze the inputs/bootstrap recipe and add a preflight-first paired-seed runner with unique run IDs and partial-run preservation; no preflight command or experiment was executed."
   - date: 2026-10-25
@@ -31,8 +33,8 @@ changelog:
 
 # Plan — Controlled CVC Transfer Replication
 
-> [!warning] Run complete; analysis note pending
-> The frozen protocol passed data-only preflight. Two startup attempts failed and one CPU attempt was interrupted before training; all are preserved under separate run IDs. `cvc-transfer-20261025-retry03` completed all 10 seeds, 30 condition arms, and 2,250 updates. Its validated bundle and log are preserved under `experiments/results/cvc_transfer_v2/`. The measured far-item paired phonics-minus-shuffled improvement contrast is −1.229 full-head NLL units (95% seed-bootstrap interval −2.514 to 0.086; eight fixed far items). This is a bounded measurement, not a generalization claim; create the dated analysis record through the documented completion-review step.
+> [!info] Protocol and analysis record completed
+> The frozen protocol passed data-only preflight. Two startup attempts failed and two CPU attempts were interrupted or failed before optimizer updates; all are preserved under separate run IDs. `cvc-transfer-20261025-retry03` completed all 10 seeds, 30 condition arms, and 2,250 updates. Its validated findings, item-level summary, controls, failures, and limitations are in the new [[2026-10-25 Controlled CVC Transfer Replication - Completed Run|completed experiment record]].
 
 ## Research question
 
@@ -241,9 +243,9 @@ Even if the predicted pattern appears across all ten seeds, the conclusion remai
 2. Before execution, review the exact code/data diff and a clean committed revision against this plan. Use a fresh `--run-id`; output collisions are rejected rather than overwritten.
 3. Run the separate `--preflight-only` command first if desired. It computes leakage, byte-ID, shuffle-inventory, near/far, and suffix-exposure checks and writes a preflight-only bundle/log without importing Torch or constructing a model. Use a different run ID for the later full experiment.
 4. After preflight and separate execution approval, run the full command once. The runner repeats and saves the audit before constructing any model/optimizer; it then evaluates the same-seed baseline, clones and hashes the initial weights, verifies each condition tensor-by-tensor, trains the fixed 15 × 5 updates, and evaluates the final checkpoint without checkpoint selection or stochastic decoding.
-5. The runner saves per-item baseline/final metrics, both declared decoders, impossible-token mass, raw strings/exposures, environment/provenance, summaries, and a durable progress log. It retains failed/interrupted attempts in their run-ID paths. After execution, create a new dated result record and index it; do not rewrite this protocol or prior findings.
+5. The runner saved per-item baseline/final metrics, both declared decoders, impossible-token mass, raw strings/exposures, environment/provenance, summaries, and a durable progress log. It retains failed/interrupted attempts in their run-ID paths. The completed run is documented in [[2026-10-25 Controlled CVC Transfer Replication - Completed Run|the separate result record]] and indexed; this protocol and earlier findings remain intact.
 
-**Execution boundary and current next step:** retry03 is the completed run; the earlier three full-run IDs remain failed or interrupted and must not be combined with it. Its provenance field reports the run log as untracked because Git status was captured after the log was opened; a pre-launch check confirmed the checkout was otherwise clean at commit `a6191df`. The runner now captures provenance before creating output paths. The formal result note and scientific interpretation remain pending the documented evidence-review step.
+**Execution boundary and current next step:** retry03 is the completed run; the earlier three full-run IDs remain failed or interrupted and must not be combined with it. Its provenance field reports the run log as untracked because Git status was captured after the log was opened; a pre-launch check confirmed the checkout was otherwise clean at commit `a6191df`. The runner now captures provenance before creating output paths. The completed record documents the bounded interpretation and leaves a vocabulary-matched output-head study as a separately planned follow-up.
 
 ## Estimated compute and memory requirements
 
@@ -263,6 +265,7 @@ Given the reported low-memory Chromebook, use the server for the multi-seed run.
 
 ## Related
 
+- [[2026-10-25 Controlled CVC Transfer Replication - Completed Run|Completed run and analysis]]
 - [[2026-10-23 Experiment A — Held-Out Test]]
 - [[2026-10-23 Experiment B — Control Group]]
 - [[2026-10-23 Experiment C — Multiple Random Seeds]]

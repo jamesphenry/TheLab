@@ -45,5 +45,6 @@ Canonical index for the experiment records in this directory. Add each new exper
 - [[2026-10-24 Lesson 1.1 Updated Test]] - Updated lesson assessment across seeds
 - [[2026-10-24 Model Size Comparison - Larger Model Test]] - Larger-model comparison
 
-## 2026-10-25 — Planned
+## 2026-10-25
 - [[2026-10-25 Plan - Controlled CVC Transfer Replication]] - Multi-seed, leakage-checked spelling-transfer probe with matched controls
+- [[2026-10-25 Controlled CVC Transfer Replication - Completed Run]] - Completed 10-seed run, output-space diagnosis, and bounded interpretation

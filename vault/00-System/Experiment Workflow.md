@@ -10,6 +10,10 @@ created: 2026-10-25
 updated: 2026-10-25
 changelog:
   - date: 2026-10-25
+    change: "Documented the completed CVC experiment record, results index entry, and command-provenance correction for future runs."
+  - date: 2026-10-25
+    change: "Added the completed CVC experiment record and index link; the run has a bounded result and a separate follow-up remains planned."
+  - date: 2026-10-25
     change: "Recorded the provenance-order issue and the completed/failed CVC run IDs."
   - date: 2026-10-25
     change: "Added observed CVC runner environment and performance gotchas, with the preserved failed/interrupted run IDs."
@@ -17,7 +21,7 @@ changelog:
 
 # AI School Experiment Workflow
 
-Operational checklist for planning, running, and reporting experiments. The vault documents the research lifecycle. The CVC plan now has a dedicated runner, frozen input file, run-ID-scoped JSON/log outputs, and a data-only preflight; there is still no generic runner standard, run-ID generator, artifact validator, or automated `complete` command. The CVC protocol remains planned, and its full-run attempts have not completed.
+Operational checklist for planning, running, and reporting experiments. The vault documents the research lifecycle. The CVC replication has a dedicated runner, frozen input file, run-ID-scoped JSON/log outputs, and a data-only preflight; one full run completed and three earlier attempts remain failed or interrupted in their separate artifacts. There is still no generic runner standard, run-ID generator, artifact validator, or automated `complete` command.
 
 ## 1. Plan — Codex and researcher
 
@@ -31,7 +35,7 @@ See [[Documentation Standard]], [[Vault Maintenance]], and [[AGENTS]] for eviden
 
 After the plan is approved for implementation, Codex creates or modifies only the listed runner and frozen inputs, then documents the exact command, expected outputs, paths, schema, and preflight checks in the plan. It checks that final-test items are disjoint from training and validation and that checkpoint selection does not inspect the final test. Code and data changes are reviewed before execution approval.
 
-**Current implementation:** the CVC plan at [[Development/Experiments/2026-10-25 Plan - Controlled CVC Transfer Replication]] uses `experiments/run_cvc_transfer_v2.py` and `experiments/data/cvc_transfer_v2.json`. Its preflight and two incomplete full-run attempts have run-specific artifacts. There is no generic runner standard or example-runner document in this vault. The existing [[Development/Experiments/README|artifact map]] links legacy scripts; it warns that name correspondence does not prove reproduction.
+**Current implementation:** the CVC plan at [[Development/Experiments/2026-10-25 Plan - Controlled CVC Transfer Replication]] uses `experiments/run_cvc_transfer_v2.py` and `experiments/data/cvc_transfer_v2.json`. Its preflight, three incomplete full-run attempts, and one completed run have run-specific artifacts; the completed result is in [[Development/Experiments/2026-10-25 Controlled CVC Transfer Replication - Completed Run]]. There is no generic runner standard or example-runner document in this vault. The existing [[Development/Experiments/README|artifact map]] links legacy scripts; it warns that name correspondence does not prove reproduction.
 
 ## 3. Review — researcher approval
 
@@ -99,6 +103,7 @@ Find the new dated record in the [[Development/Experiments/Experiments Index|Exp
 - **Avoid Python iteration over large tensor storage when hashing weights.** The `bytes(tensor.untyped_storage())` path consumed a full CPU core for over a minute on a 10 MB diagnostic tensor. The CVC retry (`cvc-transfer-20261025-retry01`) showed no saved seed progress after more than eight minutes and was interrupted. It produced no optimizer updates. The runner now extracts raw tensor payload bytes from Torch serialization; use a new run ID for any retry.
 - **Do not hash the entire Torch serialization archive as if it were tensor content.** Retry `cvc-transfer-20261025-retry02` failed the paired digest check before training. A no-training diagnostic confirmed `torch.equal` for paired weights and equality of extracted raw payloads, while the surrounding archive representation was not a safe equality check. The digest should include only raw tensor payload bytes plus the separately defined key/dtype/shape fields.
 - **Provenance must be captured before output creation.** In completed run `cvc-transfer-20261025-retry03`, Git status listed only the run's own newly opened log as untracked because provenance was collected after opening it. The server checkout was verified clean at launch (`a6191df`); the runner now records provenance before creating the results directory/log. When reviewing older bundles, distinguish this self-created output from pre-existing dirty-tree changes.
+- **Record the interpreter actually invoked.** Retry03's bundle `command` field says `python3`, while the execution used the repository `.venv/bin/python`. The environment version and actual invocation were independently verified. The runner now uses `sys.executable` for future command provenance; do not edit old bundles to make them appear as if the corrected runner produced them.
 - **Keep each failed or interrupted run.** The preflight (`preflight-20261025-2837ee0`), failed default-Python attempt, interrupted CPU attempt, hash-mismatch attempt, and completed run each have separate JSON/log paths. Do not overwrite or relabel them as completed results.
 
 ## Example: reading an existing result bundle
