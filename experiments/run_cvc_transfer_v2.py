@@ -24,6 +24,7 @@ import subprocess
 import sys
 import tempfile
 import traceback
+import zipfile
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -313,11 +314,16 @@ def digest_state_dict(state: dict[str, Any]) -> str:
         for field in fields:
             digest.update(field.encode("utf-8"))
             digest.update(b"\0")
-        # Torch's deterministic legacy serializer writes storage bytes in C++;
-        # Python-level iteration over UntypedStorage is prohibitively slow here.
+        # Torch writes raw storage bytes in C++; Python-level iteration over
+        # UntypedStorage is prohibitively slow. Hash only data/0, excluding
+        # archive metadata that can differ for equal tensors.
         tensor_buffer = io.BytesIO()
-        torch.save(cpu_tensor, tensor_buffer, _use_new_zipfile_serialization=False)
-        digest.update(tensor_buffer.getbuffer())
+        torch.save(cpu_tensor, tensor_buffer)
+        with zipfile.ZipFile(tensor_buffer) as archive:
+            data_members = [name for name in archive.namelist() if name.endswith("/data/0")]
+            if len(data_members) != 1:
+                raise RuntimeError(f"expected one raw tensor payload in Torch archive for {name}")
+            digest.update(archive.read(data_members[0]))
         digest.update(b"\0")
     return digest.hexdigest()
 

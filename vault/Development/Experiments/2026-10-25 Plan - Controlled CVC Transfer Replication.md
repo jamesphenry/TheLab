@@ -22,13 +22,15 @@ changelog:
   - date: 2026-10-25
     change: "Removed the runner's unnecessary NumPy requirement from canonical tensor hashing after the first server attempt found NumPy unavailable; the failed attempt remains preserved."
   - date: 2026-10-25
-    change: "Replaced slow Python iteration over tensor storage with deterministic Torch serialization after the CPU retry made no saved progress; its interrupted attempt is preserved separately."
+    change: "Replaced slow Python iteration over tensor storage with raw payload extraction from Torch serialization after the CPU retry made no saved progress; its interrupted attempt is preserved separately."
+  - date: 2026-10-25
+    change: "Recorded a second hash failure: paired tensors were equal, but serialized archive metadata differed; the digest now hashes only the raw tensor payload, excluding archive metadata."
 ---
 
 # Plan — Controlled CVC Transfer Replication
 
 > [!warning] Execution attempts preserved; no training results yet
-> The frozen protocol passed data-only preflight. The first full-run attempt failed because the default server Python lacked PyTorch. A CPU-only retry was interrupted before its first seed record because the initial-state hash path was prohibitively slow. Both attempts are preserved under their run IDs; no optimizer update or scientific result has been produced. Fix and review the runner, then use a new run ID for any retry.
+> The frozen protocol passed data-only preflight. The first full-run attempt failed because the default server Python lacked PyTorch. A CPU-only retry was interrupted before its first seed record because the initial-state hash path was prohibitively slow. A second retry reached the paired-state check and failed despite equal tensors because the serialized archive metadata differed; diagnostics confirmed the raw payloads matched. All attempts are preserved under their run IDs; no optimizer update or scientific result has been produced. Fix and review the runner, then use a new run ID for any retry.
 
 ## Research question
 
@@ -163,7 +165,7 @@ All listed letters occur in the phonics training corpus. The words are absent as
 - **Stratification variable:** whether the target's final two letters occur as a contiguous bigram in the phonics exemplars (near vs. far).
 - **Baseline:** same-seed untrained model evaluated before training. The no-update comparison is therefore paired with every condition.
 - **Initialization control:** for each seed, load the same cloned initial tensors into each condition. Verify equality tensor by tensor before updating and record the per-seed canonical SHA-256 digest in the result bundle.
-- **Digest definition:** sort `state_dict` entries by key and hash each key, dtype, and shape separated by NUL bytes, followed by the deterministic legacy `torch.save` serialization of that contiguous CPU tensor and a NUL delimiter. The implementation was checked for repeatability on the server's installed PyTorch version. Record the PyTorch version with provenance. Log the digest before training each arm and verify that all three arms for a seed have the same digest.
+- **Digest definition:** sort `state_dict` entries by key and hash each key, dtype, and shape separated by NUL bytes, followed by the raw `data/0` storage payload extracted from a Torch-saved contiguous CPU tensor and a NUL delimiter. Exclude serialization/archive metadata. Record the PyTorch version with provenance. Log the digest before training each arm and verify that all three arms for a seed have the same digest.
 - **Fixed conditions:** model architecture and 4096-way output head; tokenizer; optimizer; learning rate; gradient clipping; update count; decoding; item set; and software environment within each seed.
 
 ## Metrics and item-level failure analysis
@@ -233,13 +235,13 @@ Even if the predicted pattern appears across all ten seeds, the conclusion remai
 
 ## Implementation status and exact execution sequence
 
-1. **Protocol/data frozen; execution attempts preserved:** `experiments/data/cvc_transfer_v2.json` freezes the protocol strings/items, suffix-exposure expectation, optimizer settings, seeds, and bootstrap recipe. Data-only preflight passed as `preflight-20261025-2837ee0`. Full attempt `cvc-transfer-20261025-main` failed before model creation because `/usr/bin/python3` lacked Torch. Attempt `cvc-transfer-20261025-retry01` used the existing CPU-only `.venv` and was interrupted before its first saved seed because Python-level storage-byte conversion was too slow. Both run bundles/logs are preserved; neither completed an optimizer update.
+1. **Protocol/data frozen; execution attempts preserved:** `experiments/data/cvc_transfer_v2.json` freezes the protocol strings/items, suffix-exposure expectation, optimizer settings, seeds, and bootstrap recipe. Data-only preflight passed as `preflight-20261025-2837ee0`. Full attempt `cvc-transfer-20261025-main` failed before model creation because `/usr/bin/python3` lacked Torch. Attempt `cvc-transfer-20261025-retry01` used the existing CPU-only `.venv` and was interrupted before its first saved seed because Python-level storage-byte conversion was too slow. Attempt `cvc-transfer-20261025-retry02` failed at the paired-state digest check before any condition arm; diagnosis confirmed equal tensors and equal raw payloads but differing serialized archive metadata. All attempt bundles/logs are preserved; no optimizer update completed.
 2. Before execution, review the exact code/data diff and a clean committed revision against this plan. Use a fresh `--run-id`; output collisions are rejected rather than overwritten.
 3. Run the separate `--preflight-only` command first if desired. It computes leakage, byte-ID, shuffle-inventory, near/far, and suffix-exposure checks and writes a preflight-only bundle/log without importing Torch or constructing a model. Use a different run ID for the later full experiment.
 4. After preflight and separate execution approval, run the full command once. The runner repeats and saves the audit before constructing any model/optimizer; it then evaluates the same-seed baseline, clones and hashes the initial weights, verifies each condition tensor-by-tensor, trains the fixed 15 × 5 updates, and evaluates the final checkpoint without checkpoint selection or stochastic decoding.
 5. The runner saves per-item baseline/final metrics, both declared decoders, impossible-token mass, raw strings/exposures, environment/provenance, summaries, and a durable progress log. It retains failed/interrupted attempts in their run-ID paths. After execution, create a new dated result record and index it; do not rewrite this protocol or prior findings.
 
-**Execution boundary and current next step:** the data-only preflight ran and passed; the two full-run attempts above are failed/interrupted, with zero completed training updates. Do not reuse either run ID or treat either bundle as experiment results. The current fix replaces slow Python storage iteration with Torch serialization; after reviewing and publishing that exact revision, use a new run ID for another attempt.
+**Execution boundary and current next step:** the data-only preflight ran and passed; the three full-run attempts above are failed/interrupted, with zero completed training updates. Do not reuse any run ID or treat those bundles as experiment results. The current fix hashes only raw tensor payload bytes extracted from Torch serialization; after reviewing and publishing that exact revision, use a new run ID for another attempt.
 
 ## Estimated compute and memory requirements
 
