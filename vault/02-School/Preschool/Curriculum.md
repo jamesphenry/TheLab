@@ -60,6 +60,7 @@ To graduate from Preschool, the model must pass all four module assessments:
 - **Format compliance:** Generated text must produce valid English letters, spaces, and punctuation (not random bytes) on at least 50% of items.
 - **Held-out requirement:** At least 2 items per assessment must be fully novel (not in training exemplars).
 - **Retention test:** After all four modules, a comprehensive final exam tests items from all modules simultaneously. The model must maintain loss delta > +2.0 on this combined test.
+- **Evaluation protocol:** Use best-checkpoint evaluation (save checkpoints and select best on held-out performance), track both loss and greedy generation accuracy. Expanded held-out sets (10+ examples) are preferred for reliable measurement.
 
 ## Retention Policy
 
