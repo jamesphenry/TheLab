@@ -1,0 +1,90 @@
+{
+  "protocol_id": "cvc_transfer_v2",
+  "protocol_version": 2,
+  "control_shuffle_seed": 20261025,
+  "passes": 15,
+  "seeds": [42, 123, 7, 2026, 99, 314, 256, 13, 555, 8],
+  "model": {
+    "vocab_size": 4096,
+    "max_seq_len": 256,
+    "dim": 512,
+    "n_layers": 8,
+    "n_heads": 8,
+    "mlp_ratio": 4,
+    "dropout": 0.0
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 0.001,
+    "betas": [0.9, 0.999],
+    "eps": 1e-8,
+    "weight_decay": 0.01,
+    "amsgrad": false,
+    "gradient_clip_norm": 1.0
+  },
+  "conditions": {
+    "phonics": [
+      "The cat sat on the mat.",
+      "The dog can run in the sun.",
+      "The sun is hot.",
+      "The red pen is on the bed.",
+      "A cat can run."
+    ],
+    "shuffled": [
+      "Tsh toc hae tn tta eam.",
+      "Trd oia hgn tsu cn eun hne.",
+      "Tio sth ue hsn.",
+      "Ten bie eoh hd re psd etn.",
+      "A car nut can."
+    ],
+    "unrelated_english": [
+      "The system processes data files.",
+      "Network latency affects throughput.",
+      "Database queries return results.",
+      "The compiler optimizes register allocation.",
+      "Memory allocation requires careful management."
+    ]
+  },
+  "development": [
+    {"word": "cap", "prompt": "ca", "target": "p"},
+    {"word": "cot", "prompt": "co", "target": "t"},
+    {"word": "met", "prompt": "me", "target": "t"},
+    {"word": "ram", "prompt": "ra", "target": "m"}
+  ],
+  "final_test": [
+    {"stratum": "near", "word": "bat", "prompt": "ba", "target": "t"},
+    {"stratum": "near", "word": "bun", "prompt": "bu", "target": "n"},
+    {"stratum": "near", "word": "pot", "prompt": "po", "target": "t"},
+    {"stratum": "near", "word": "hen", "prompt": "he", "target": "n"},
+    {"stratum": "near", "word": "bog", "prompt": "bo", "target": "g"},
+    {"stratum": "far", "word": "dig", "prompt": "di", "target": "g"},
+    {"stratum": "far", "word": "sip", "prompt": "si", "target": "p"},
+    {"stratum": "far", "word": "bit", "prompt": "bi", "target": "t"},
+    {"stratum": "far", "word": "tag", "prompt": "ta", "target": "g"},
+    {"stratum": "far", "word": "cup", "prompt": "cu", "target": "p"},
+    {"stratum": "far", "word": "mud", "prompt": "mu", "target": "d"},
+    {"stratum": "far", "word": "hid", "prompt": "hi", "target": "d"},
+    {"stratum": "far", "word": "rib", "prompt": "ri", "target": "b"}
+  ],
+  "expected_suffix_exposures": {
+    "at": {"phonics": 4, "unrelated_english": 5, "shuffled": 0},
+    "un": {"phonics": 4, "unrelated_english": 0, "shuffled": 1},
+    "ot": {"phonics": 1, "unrelated_english": 0, "shuffled": 0},
+    "en": {"phonics": 1, "unrelated_english": 2, "shuffled": 1},
+    "og": {"phonics": 1, "unrelated_english": 0, "shuffled": 0},
+    "ig": {"phonics": 0, "unrelated_english": 0, "shuffled": 0},
+    "ip": {"phonics": 0, "unrelated_english": 0, "shuffled": 0},
+    "it": {"phonics": 0, "unrelated_english": 0, "shuffled": 0},
+    "ag": {"phonics": 0, "unrelated_english": 1, "shuffled": 0},
+    "up": {"phonics": 0, "unrelated_english": 0, "shuffled": 0},
+    "ud": {"phonics": 0, "unrelated_english": 0, "shuffled": 0},
+    "id": {"phonics": 0, "unrelated_english": 0, "shuffled": 0},
+    "ib": {"phonics": 0, "unrelated_english": 0, "shuffled": 0}
+  },
+  "bootstrap": {
+    "resamples": 10000,
+    "confidence_level": 0.95,
+    "seed": 20261025,
+    "unit": "paired seed-level far-cohort contrast"
+  }
+}

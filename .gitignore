@@ -49,3 +49,7 @@ tmp/
 *.out
 *.log
 resume.sh
+
+# CVC run evidence is intentionally versionable after human validation.
+!experiments/results/cvc_transfer_v2/
+!experiments/results/cvc_transfer_v2/*.log

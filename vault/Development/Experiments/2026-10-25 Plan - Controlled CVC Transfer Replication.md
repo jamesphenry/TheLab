@@ -2,7 +2,8 @@
 title: "Plan — Controlled CVC Transfer Replication"
 type: experiment
 status: planned
-scripts: []
+scripts:
+  - experiments/run_cvc_transfer_v2.py
 tags:
   - ai-school
   - experiment
@@ -13,13 +14,17 @@ created: 2026-10-25
 updated: 2026-10-25
 changelog:
   - date: 2026-10-25
+    change: "Implementation draft: freeze the inputs/bootstrap recipe and add a preflight-first paired-seed runner with unique run IDs and partial-run preservation; no preflight command or experiment was executed."
+  - date: 2026-10-25
     change: "Review revision: verify paired initial weights, expose control n-gram counts and sequences, and limit inference to seeds and items tested."
+  - date: 2026-10-25
+    change: "Aligned the primary-metric statement with the runner: full-head NLL is primary; letter-renormalized NLL is secondary."
 ---
 
 # Plan — Controlled CVC Transfer Replication
 
 > [!warning] Planned, not run
-> This note is a protocol proposal. No training or test evaluation has been run. The fixed shuffled strings below were derived for protocol review only; no experiment data file was changed. The executable runner and item file must be frozen and reviewed before the experiment starts.
+> A runner draft and frozen input file now exist. This implementation has not been executed or independently reviewed; no preflight command, training, or test evaluation has been run, and no result bundle or run log exists. Review and approve the exact code/data revision and use a new run ID before execution.
 
 ## Research question
 
@@ -161,7 +166,7 @@ All listed letters occur in the phonics training corpus. The words are absent as
 
 ### Primary metric
 
-Mean target-letter negative log likelihood on the eight far items, measured before and after training. Report per-seed changes and the paired difference between phonics and shuffled-control improvement. Also report the near-cohort value separately; never combine the two strata into one transfer claim.
+Mean target-letter negative log likelihood under the unchanged full 4096-class output head is the primary metric on the eight far items, measured before and after training. Report per-seed changes and the paired difference between phonics and shuffled-control improvement. Lowercase-letter-renormalized NLL is a secondary diagnostic. Also report the near-cohort value separately; never combine the two strata into one transfer claim.
 
 Because the model predicts 4096 classes but the tokenizer can emit only 260 IDs, report both (1) target NLL under the unchanged full 4096-way training distribution and (2) target probability renormalized over the 26 lowercase letters. Record probability mass assigned to impossible output IDs. Do not change the training loss or model vocabulary in this experiment.
 
@@ -180,7 +185,7 @@ No single “pass” threshold is defined. With 13 related probes, describe the 
 - Three fresh training runs per seed (30 total), plus each same-seed pre-training baseline.
 - Thirteen final items: five near and eight far; four development items. Report all seed-by-item outcomes, not only means or best seeds.
 - Use the final checkpoint after exactly 15 passes. Do not select a best checkpoint. The schedule is fixed to match the original 15-pass CVC/phonics studies; no early stopping.
-- Report paired per-seed condition differences, mean/median, standard deviation, and a bootstrap interval over seeds as a descriptive uncertainty summary. Preserve all failed runs and record any rerun as a separate attempt.
+- Report paired per-seed condition differences, mean/median, sample standard deviation, and a 95% percentile bootstrap interval over seeds (10,000 resamples; bootstrap seed `20261025`) as a descriptive uncertainty summary. Preserve all failed runs and record any rerun as a separate attempt.
 - Interpret the bootstrap interval over seeds as initialization uncertainty for these fixed items. Ten seeds do not turn the eight far words into 80 independent test items; report the item count as eight and limit generalization claims accordingly.
 
 ## Stopping rule
@@ -189,10 +194,11 @@ Run exactly 15 passes over the five training strings in each condition. Stop a r
 
 ## Required scripts, data, and artifacts
 
-- **New runner:** `experiments/run_cvc_transfer_v2.py`. Reuse `BabyLM`, `BabyLMConfig`, and `BabyTokenizer`; implement deterministic one-byte scoring and the two declared decoders. Do not modify the historical experiment scripts.
-- **Frozen item/control file:** `experiments/data/cvc_transfer_v2.json`, containing the exact train, development, and final-test strings, control shuffle seed and strings, near/far labels, and leakage-audit results. It must be reviewed and committed before execution.
-- **Result bundle:** `experiments/results/cvc_transfer_v2.json`, containing commit and dirty-tree state, Python/PyTorch/device information, model/config and optimizer settings, seeds, each per-seed initial-state SHA-256 digest, training-byte/update counts, per-item baseline/final metrics, per-seed summaries, decoding outputs, exact control strings/exposure counts, and leakage-audit output.
-- **Run log:** `experiments/results/cvc_transfer_v2.log`, including all progress, failures, and completion status.
+- **New runner:** `experiments/run_cvc_transfer_v2.py`. It supports a data-only `--preflight-only` mode and a separate training mode. Reuse `BabyLM`, `BabyLMConfig`, and `BabyTokenizer`; implement deterministic one-byte scoring and the two declared decoders. Do not modify the historical experiment scripts.
+- **Frozen item/control file:** `experiments/data/cvc_transfer_v2.json`, containing exact train, development, and final-test strings, the control shuffle seed and strings, near/far labels, expected suffix counts, and bootstrap settings. The runner computes the leakage/exposure audit from these frozen inputs and records it before constructing a model or optimizer. Review and commit both code and data before execution.
+- **Result bundle:** `experiments/results/cvc_transfer_v2/<run-id>.json`, containing commit and dirty-tree state, Python/PyTorch/device information, model/config and optimizer settings, seeds, each per-seed initial-state SHA-256 digest, training-byte/update counts, per-item baseline/final metrics, per-seed summaries, decoding outputs, exact control strings/exposure counts, leakage-audit output, and completion/failure status. A run ID is mandatory; existing bundle or log paths are never overwritten.
+- **Run log:** `experiments/results/cvc_transfer_v2/<run-id>.log`, including progress, failures, interruptions, and completion status. The runner writes partial bundle updates after each completed pass and preserves partial records on handled errors/interruption. Abrupt power loss may leave status `running`; treat it as incomplete.
+- **Commands after separate review/approval:** data-only audit: `python3 experiments/run_cvc_transfer_v2.py --run-id <unique-preflight-id> --preflight-only`; full experiment: `python3 experiments/run_cvc_transfer_v2.py --run-id <unique-run-id>`. A preflight-only ID creates its own bundle/log and cannot be reused for training.
 - **Follow-up record:** create a new dated completed experiment note after execution and link it here. Preserve this plan and all earlier experiment records.
 - **No checkpoint archive is required for the primary result** because the fixed seeds and code/data revision reconstruct the run; if checkpoints are retained, record their paths and storage cost.
 
@@ -221,14 +227,15 @@ Even if the predicted pattern appears across all ten seeds, the conclusion remai
 - The 4096-versus-260 output mismatch remains. Reporting both full-head and letter-normalized probabilities makes it visible but does not resolve its effect on learning.
 - Results do not repair the current Preschool Assessment 1 split or validate the promoted mixed-coverage curriculum. A separate leakage-free alphabet curriculum evaluation remains necessary before using preschool graduation criteria.
 
-## Exact implementation plan
+## Implementation status and exact execution sequence
 
-1. Create `experiments/data/cvc_transfer_v2.json` from the fixed strings and item lists in this protocol; do not take examples from final-test results or alter training data.
-2. Implement a preflight linter in `experiments/run_cvc_transfer_v2.py`. It must check whole-word leakage, character coverage, suffix strata, validation/test disjointness, test-target exposure by condition, and valid byte IDs. It writes its report into the result bundle before any optimizer is constructed.
-3. For each paired seed, instantiate one reference model and clone its initial `state_dict`. Load and tensor-compare that snapshot into each fresh condition model, compute/record its canonical SHA-256 digest using the recipe above, and create a fresh AdamW optimizer per arm. Record actual UTF-8 target bytes, suffix counts, exact training strings, and update counts; do not claim the English condition is byte matched.
-4. Evaluate baseline NLL/rank on development and final items, train exactly 15 passes, then evaluate the final checkpoint. Use no best-checkpoint selection and no stochastic decoding.
-5. Store the raw per-item outputs and environment/provenance in the JSON/log artifacts. Summarize the preregistered far-cohort paired contrast first, then near-cohort and generation results. Add a new completed record after the run; do not rewrite the historical notes.
-6. Before execution, compare the data JSON and runner against this note, record the commit and dirty-tree state, and resolve any discrepancy by creating a protocol revision before exposing final-test results.
+1. **Drafted, not run:** `experiments/data/cvc_transfer_v2.json` freezes the protocol strings/items, suffix-exposure expectation, optimizer settings, seeds, and bootstrap recipe. `experiments/run_cvc_transfer_v2.py` contains the data audit and training implementation; it does not change the historical scripts or curriculum. The audit has not yet been run through the new runner.
+2. Before execution, review the exact code/data diff and a clean committed revision against this plan. Use a fresh `--run-id`; output collisions are rejected rather than overwritten.
+3. Run the separate `--preflight-only` command first if desired. It computes leakage, byte-ID, shuffle-inventory, near/far, and suffix-exposure checks and writes a preflight-only bundle/log without importing Torch or constructing a model. Use a different run ID for the later full experiment.
+4. After preflight and separate execution approval, run the full command once. The runner repeats and saves the audit before constructing any model/optimizer; it then evaluates the same-seed baseline, clones and hashes the initial weights, verifies each condition tensor-by-tensor, trains the fixed 15 × 5 updates, and evaluates the final checkpoint without checkpoint selection or stochastic decoding.
+5. The runner saves per-item baseline/final metrics, both declared decoders, impossible-token mass, raw strings/exposures, environment/provenance, summaries, and a durable progress log. It retains failed/interrupted attempts in their run-ID paths. After execution, create a new dated result record and index it; do not rewrite this protocol or prior findings.
+
+**Implementation boundary for this revision:** only the runner, frozen JSON, and this plan have been prepared. No preflight CLI, model initialization, training, test evaluation, or result generation was performed. The implementation remains subject to review before a run.
 
 ## Estimated compute and memory requirements
 
