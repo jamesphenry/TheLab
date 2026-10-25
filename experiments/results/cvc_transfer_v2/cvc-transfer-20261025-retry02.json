@@ -1,0 +1,1479 @@
+{
+  "bundle_schema_version": 1,
+  "protocol_id": "cvc_transfer_v2",
+  "protocol_version": 2,
+  "run_id": "cvc-transfer-20261025-retry02",
+  "status": "failed",
+  "started_at_utc": "2026-10-25T09:47:40.841467+00:00",
+  "finished_at_utc": "2026-10-25T09:47:54.473155+00:00",
+  "command": [
+    "python3",
+    "experiments/run_cvc_transfer_v2.py",
+    "--run-id",
+    "cvc-transfer-20261025-retry02",
+    "--device",
+    "cpu"
+  ],
+  "source_path": "experiments/run_cvc_transfer_v2.py",
+  "data_path": "experiments/data/cvc_transfer_v2.json",
+  "output_paths": {
+    "bundle": "experiments/results/cvc_transfer_v2/cvc-transfer-20261025-retry02.json",
+    "log": "experiments/results/cvc_transfer_v2/cvc-transfer-20261025-retry02.log"
+  },
+  "source_sha256": "9c5ef7c845072226143c9353945b0ceb99ff5fa84fa8f57938649746c4a46bbf",
+  "protocol_data_sha256": "2c51b7d109972d19c47efcbd93e3d03bb79d02bcf2f1bd3029ddf47529e93590",
+  "git_provenance_before_output_creation": {
+    "commit": "7aded794ae650e4b566fd1779290138ee6b002c5",
+    "working_tree_clean": false,
+    "working_tree_status_porcelain": "?? experiments/results/cvc_transfer_v2/cvc-transfer-20261025-retry02.log"
+  },
+  "environment": {
+    "python": "3.11.2 (main, Oct  7 2026, 12:35:07) [GCC 12.2.0]",
+    "platform": "Linux-6.1.0-53-amd64-x86_64-with-glibc2.36",
+    "pytorch_package_version": "2.14.1+cpu",
+    "requested_device": "cpu",
+    "pytorch_version": "2.14.1+cpu",
+    "device": "cpu",
+    "device_name": "CPU",
+    "cuda_version": null,
+    "cuda_available": false
+  },
+  "protocol_configuration": {
+    "protocol_id": "cvc_transfer_v2",
+    "protocol_version": 2,
+    "control_shuffle_seed": 20261025,
+    "passes": 15,
+    "seeds": [
+      42,
+      123,
+      7,
+      2026,
+      99,
+      314,
+      256,
+      13,
+      555,
+      8
+    ],
+    "model": {
+      "vocab_size": 4096,
+      "max_seq_len": 256,
+      "dim": 512,
+      "n_layers": 8,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.0
+    },
+    "optimizer": {
+      "name": "AdamW",
+      "learning_rate": 0.001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.01,
+      "amsgrad": false,
+      "gradient_clip_norm": 1.0
+    },
+    "conditions": {
+      "phonics": [
+        "The cat sat on the mat.",
+        "The dog can run in the sun.",
+        "The sun is hot.",
+        "The red pen is on the bed.",
+        "A cat can run."
+      ],
+      "shuffled": [
+        "Tsh toc hae tn tta eam.",
+        "Trd oia hgn tsu cn eun hne.",
+        "Tio sth ue hsn.",
+        "Ten bie eoh hd re psd etn.",
+        "A car nut can."
+      ],
+      "unrelated_english": [
+        "The system processes data files.",
+        "Network latency affects throughput.",
+        "Database queries return results.",
+        "The compiler optimizes register allocation.",
+        "Memory allocation requires careful management."
+      ]
+    },
+    "development": [
+      {
+        "word": "cap",
+        "prompt": "ca",
+        "target": "p"
+      },
+      {
+        "word": "cot",
+        "prompt": "co",
+        "target": "t"
+      },
+      {
+        "word": "met",
+        "prompt": "me",
+        "target": "t"
+      },
+      {
+        "word": "ram",
+        "prompt": "ra",
+        "target": "m"
+      }
+    ],
+    "final_test": [
+      {
+        "stratum": "near",
+        "word": "bat",
+        "prompt": "ba",
+        "target": "t"
+      },
+      {
+        "stratum": "near",
+        "word": "bun",
+        "prompt": "bu",
+        "target": "n"
+      },
+      {
+        "stratum": "near",
+        "word": "pot",
+        "prompt": "po",
+        "target": "t"
+      },
+      {
+        "stratum": "near",
+        "word": "hen",
+        "prompt": "he",
+        "target": "n"
+      },
+      {
+        "stratum": "near",
+        "word": "bog",
+        "prompt": "bo",
+        "target": "g"
+      },
+      {
+        "stratum": "far",
+        "word": "dig",
+        "prompt": "di",
+        "target": "g"
+      },
+      {
+        "stratum": "far",
+        "word": "sip",
+        "prompt": "si",
+        "target": "p"
+      },
+      {
+        "stratum": "far",
+        "word": "bit",
+        "prompt": "bi",
+        "target": "t"
+      },
+      {
+        "stratum": "far",
+        "word": "tag",
+        "prompt": "ta",
+        "target": "g"
+      },
+      {
+        "stratum": "far",
+        "word": "cup",
+        "prompt": "cu",
+        "target": "p"
+      },
+      {
+        "stratum": "far",
+        "word": "mud",
+        "prompt": "mu",
+        "target": "d"
+      },
+      {
+        "stratum": "far",
+        "word": "hid",
+        "prompt": "hi",
+        "target": "d"
+      },
+      {
+        "stratum": "far",
+        "word": "rib",
+        "prompt": "ri",
+        "target": "b"
+      }
+    ],
+    "expected_suffix_exposures": {
+      "at": {
+        "phonics": 4,
+        "unrelated_english": 5,
+        "shuffled": 0
+      },
+      "un": {
+        "phonics": 4,
+        "unrelated_english": 0,
+        "shuffled": 1
+      },
+      "ot": {
+        "phonics": 1,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "en": {
+        "phonics": 1,
+        "unrelated_english": 2,
+        "shuffled": 1
+      },
+      "og": {
+        "phonics": 1,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ig": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ip": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "it": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ag": {
+        "phonics": 0,
+        "unrelated_english": 1,
+        "shuffled": 0
+      },
+      "up": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ud": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "id": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ib": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      }
+    },
+    "bootstrap": {
+      "resamples": 10000,
+      "confidence_level": 0.95,
+      "seed": 20261025,
+      "unit": "paired seed-level far-cohort contrast"
+    }
+  },
+  "preflight": {
+    "passed": true,
+    "errors": [],
+    "checks": {
+      "condition_examples": {
+        "phonics": 5,
+        "shuffled": 5,
+        "unrelated_english": 5
+      },
+      "shuffled_byte_inventory": [
+        {
+          "example": 0,
+          "byte_multiset_and_length_match": true
+        },
+        {
+          "example": 1,
+          "byte_multiset_and_length_match": true
+        },
+        {
+          "example": 2,
+          "byte_multiset_and_length_match": true
+        },
+        {
+          "example": 3,
+          "byte_multiset_and_length_match": true
+        },
+        {
+          "example": 4,
+          "byte_multiset_and_length_match": true
+        }
+      ],
+      "development_test_word_disjoint": true,
+      "development_test_prompt_disjoint": true,
+      "all_target_letters_in_phonics_training": true,
+      "suffix_exposure_matches_frozen_matrix": true
+    },
+    "suffix_exposure_counts_per_corpus_before_passes": {
+      "ap": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ot": {
+        "phonics": 1,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "et": {
+        "phonics": 0,
+        "shuffled": 1,
+        "unrelated_english": 2
+      },
+      "am": {
+        "phonics": 0,
+        "shuffled": 1,
+        "unrelated_english": 0
+      },
+      "at": {
+        "phonics": 4,
+        "shuffled": 0,
+        "unrelated_english": 5
+      },
+      "un": {
+        "phonics": 4,
+        "shuffled": 1,
+        "unrelated_english": 0
+      },
+      "en": {
+        "phonics": 1,
+        "shuffled": 1,
+        "unrelated_english": 2
+      },
+      "og": {
+        "phonics": 1,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ig": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ip": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "it": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ag": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 1
+      },
+      "up": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ud": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "id": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ib": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      }
+    },
+    "final_test_suffix_exposure_counts_per_corpus_before_passes": {
+      "ib": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ot": {
+        "phonics": 1,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "it": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ip": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "un": {
+        "phonics": 4,
+        "shuffled": 1,
+        "unrelated_english": 0
+      },
+      "at": {
+        "phonics": 4,
+        "shuffled": 0,
+        "unrelated_english": 5
+      },
+      "ig": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "id": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "og": {
+        "phonics": 1,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ud": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "en": {
+        "phonics": 1,
+        "shuffled": 1,
+        "unrelated_english": 2
+      },
+      "up": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ag": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 1
+      }
+    },
+    "training_byte_audit": {
+      "phonics": {
+        "example_count": 5,
+        "utf8_byte_count": 105,
+        "ascii_only": true,
+        "tokenizer_ids_valid": true
+      },
+      "shuffled": {
+        "example_count": 5,
+        "utf8_byte_count": 105,
+        "ascii_only": true,
+        "tokenizer_ids_valid": true
+      },
+      "unrelated_english": {
+        "example_count": 5,
+        "utf8_byte_count": 188,
+        "ascii_only": true,
+        "tokenizer_ids_valid": true
+      }
+    },
+    "evaluation_item_exposure": [
+      {
+        "split": "development",
+        "word": "cap",
+        "prompt": "ca",
+        "target": "p",
+        "stratum": "development",
+        "word_byte_bigrams": {
+          "ca": {
+            "phonics": 4,
+            "shuffled": 2,
+            "unrelated_english": 3
+          },
+          "ap": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "development",
+        "word": "cot",
+        "prompt": "co",
+        "target": "t",
+        "stratum": "development",
+        "word_byte_bigrams": {
+          "co": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 1
+          },
+          "ot": {
+            "phonics": 1,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 1,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "development",
+        "word": "met",
+        "prompt": "me",
+        "target": "t",
+        "stratum": "development",
+        "word_byte_bigrams": {
+          "me": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 2
+          },
+          "et": {
+            "phonics": 0,
+            "shuffled": 1,
+            "unrelated_english": 2
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 1,
+          "unrelated_english": 2
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "development",
+        "word": "ram",
+        "prompt": "ra",
+        "target": "m",
+        "stratum": "development",
+        "word_byte_bigrams": {
+          "ra": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "am": {
+            "phonics": 0,
+            "shuffled": 1,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 1,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "bat",
+        "prompt": "ba",
+        "target": "t",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "ba": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 1
+          },
+          "at": {
+            "phonics": 4,
+            "shuffled": 0,
+            "unrelated_english": 5
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 4,
+          "shuffled": 0,
+          "unrelated_english": 5
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "bun",
+        "prompt": "bu",
+        "target": "n",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "bu": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "un": {
+            "phonics": 4,
+            "shuffled": 1,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 4,
+          "shuffled": 1,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "pot",
+        "prompt": "po",
+        "target": "t",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "po": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "ot": {
+            "phonics": 1,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 1,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "hen",
+        "prompt": "he",
+        "target": "n",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "he": {
+            "phonics": 7,
+            "shuffled": 0,
+            "unrelated_english": 2
+          },
+          "en": {
+            "phonics": 1,
+            "shuffled": 1,
+            "unrelated_english": 2
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 1,
+          "shuffled": 1,
+          "unrelated_english": 2
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "bog",
+        "prompt": "bo",
+        "target": "g",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "bo": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "og": {
+            "phonics": 1,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 1,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "dig",
+        "prompt": "di",
+        "target": "g",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "di": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "ig": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "sip",
+        "prompt": "si",
+        "target": "p",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "si": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "ip": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "bit",
+        "prompt": "bi",
+        "target": "t",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "bi": {
+            "phonics": 0,
+            "shuffled": 1,
+            "unrelated_english": 0
+          },
+          "it": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "tag",
+        "prompt": "ta",
+        "target": "g",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "ta": {
+            "phonics": 0,
+            "shuffled": 1,
+            "unrelated_english": 2
+          },
+          "ag": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 1
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 1
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "cup",
+        "prompt": "cu",
+        "target": "p",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "cu": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "up": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "mud",
+        "prompt": "mu",
+        "target": "d",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "mu": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "ud": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "hid",
+        "prompt": "hi",
+        "target": "d",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "hi": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "id": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "rib",
+        "prompt": "ri",
+        "target": "b",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "ri": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 1
+          },
+          "ib": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      }
+    ],
+    "pass_count": 15,
+    "updates_per_condition": 75,
+    "planned_trained_fits": 30
+  },
+  "progress": null,
+  "seed_runs": [
+    {
+      "seed": 42,
+      "initial_state_sha256": "b571309075570bbc66508a8ddc5ce211c3b25514d5a10f62fef99fd4203c3483",
+      "baseline": {
+        "development": [
+          {
+            "word": "cap",
+            "prompt": "ca",
+            "target": "p",
+            "stratum": "development",
+            "target_token_id": 116,
+            "target_byte_hex": "70",
+            "full_head_target_nll": 9.796320915222168,
+            "lowercase_letter_normalized_target_nll": 4.7941389083862305,
+            "target_probability_full_head": 5.565598621615209e-05,
+            "target_probability_lowercase_letters": 0.008278124034404755,
+            "target_rank_full_head": 4090,
+            "target_rank_lowercase_letters": 26,
+            "impossible_output_id_probability_mass": 0.9346826672554016,
+            "full_head_argmax_id": 1483,
+            "full_head_argmax_token": "<invalid-id:1483>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 118,
+            "letter_restricted_argmax_token": "r",
+            "letter_restricted_argmax_byte_hex": "72",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "cot",
+            "prompt": "co",
+            "target": "t",
+            "stratum": "development",
+            "target_token_id": 120,
+            "target_byte_hex": "74",
+            "full_head_target_nll": 8.592172622680664,
+            "lowercase_letter_normalized_target_nll": 3.60221529006958,
+            "target_probability_full_head": 0.00018555251881480217,
+            "target_probability_lowercase_letters": 0.027263259515166283,
+            "target_rank_full_head": 2648,
+            "target_rank_lowercase_letters": 19,
+            "impossible_output_id_probability_mass": 0.9340770840644836,
+            "full_head_argmax_id": 1483,
+            "full_head_argmax_token": "<invalid-id:1483>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 118,
+            "letter_restricted_argmax_token": "r",
+            "letter_restricted_argmax_byte_hex": "72",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "met",
+            "prompt": "me",
+            "target": "t",
+            "stratum": "development",
+            "target_token_id": 120,
+            "target_byte_hex": "74",
+            "full_head_target_nll": 9.175113677978516,
+            "lowercase_letter_normalized_target_nll": 4.162668228149414,
+            "target_probability_full_head": 0.00010358545114286244,
+            "target_probability_lowercase_letters": 0.015565969049930573,
+            "target_rank_full_head": 3889,
+            "target_rank_lowercase_letters": 25,
+            "impossible_output_id_probability_mass": 0.9312762022018433,
+            "full_head_argmax_id": 420,
+            "full_head_argmax_token": "<invalid-id:420>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 104,
+            "letter_restricted_argmax_token": "d",
+            "letter_restricted_argmax_byte_hex": "64",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "ram",
+            "prompt": "ra",
+            "target": "m",
+            "stratum": "development",
+            "target_token_id": 113,
+            "target_byte_hex": "6d",
+            "full_head_target_nll": 8.414144515991211,
+            "lowercase_letter_normalized_target_nll": 3.357386350631714,
+            "target_probability_full_head": 0.00022170908050611615,
+            "target_probability_lowercase_letters": 0.034826163202524185,
+            "target_rank_full_head": 2006,
+            "target_rank_lowercase_letters": 17,
+            "impossible_output_id_probability_mass": 0.9327160120010376,
+            "full_head_argmax_id": 3608,
+            "full_head_argmax_token": "<invalid-id:3608>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 109,
+            "letter_restricted_argmax_token": "i",
+            "letter_restricted_argmax_byte_hex": "69",
+            "letter_restricted_exact_letter": false
+          }
+        ],
+        "final_test": [
+          {
+            "word": "bat",
+            "prompt": "ba",
+            "target": "t",
+            "stratum": "near",
+            "target_token_id": 120,
+            "target_byte_hex": "74",
+            "full_head_target_nll": 8.830778121948242,
+            "lowercase_letter_normalized_target_nll": 3.8086514472961426,
+            "target_probability_full_head": 0.00014616445696447045,
+            "target_probability_lowercase_letters": 0.02217806689441204,
+            "target_rank_full_head": 3372,
+            "target_rank_lowercase_letters": 23,
+            "impossible_output_id_probability_mass": 0.9335747957229614,
+            "full_head_argmax_id": 3583,
+            "full_head_argmax_token": "<invalid-id:3583>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 104,
+            "letter_restricted_argmax_token": "d",
+            "letter_restricted_argmax_byte_hex": "64",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "bun",
+            "prompt": "bu",
+            "target": "n",
+            "stratum": "near",
+            "target_token_id": 114,
+            "target_byte_hex": "6e",
+            "full_head_target_nll": 8.563607215881348,
+            "lowercase_letter_normalized_target_nll": 3.5123696327209473,
+            "target_probability_full_head": 0.00019092932052444667,
+            "target_probability_lowercase_letters": 0.029826153069734573,
+            "target_rank_full_head": 2534,
+            "target_rank_lowercase_letters": 17,
+            "impossible_output_id_probability_mass": 0.9346292614936829,
+            "full_head_argmax_id": 3583,
+            "full_head_argmax_token": "<invalid-id:3583>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 104,
+            "letter_restricted_argmax_token": "d",
+            "letter_restricted_argmax_byte_hex": "64",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "pot",
+            "prompt": "po",
+            "target": "t",
+            "stratum": "near",
+            "target_token_id": 120,
+            "target_byte_hex": "74",
+            "full_head_target_nll": 8.917524337768555,
+            "lowercase_letter_normalized_target_nll": 4.033082962036133,
+            "target_probability_full_head": 0.00013401961768977344,
+            "target_probability_lowercase_letters": 0.01771961711347103,
+            "target_rank_full_head": 3550,
+            "target_rank_lowercase_letters": 23,
+            "impossible_output_id_probability_mass": 0.9343291521072388,
+            "full_head_argmax_id": 877,
+            "full_head_argmax_token": "<invalid-id:877>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 112,
+            "letter_restricted_argmax_token": "l",
+            "letter_restricted_argmax_byte_hex": "6c",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "hen",
+            "prompt": "he",
+            "target": "n",
+            "stratum": "near",
+            "target_token_id": 114,
+            "target_byte_hex": "6e",
+            "full_head_target_nll": 8.18276309967041,
+            "lowercase_letter_normalized_target_nll": 3.1323604583740234,
+            "target_probability_full_head": 0.00027942878659814596,
+            "target_probability_lowercase_letters": 0.04361472651362419,
+            "target_rank_full_head": 1256,
+            "target_rank_lowercase_letters": 10,
+            "impossible_output_id_probability_mass": 0.9332226514816284,
+            "full_head_argmax_id": 1733,
+            "full_head_argmax_token": "<invalid-id:1733>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 105,
+            "letter_restricted_argmax_token": "e",
+            "letter_restricted_argmax_byte_hex": "65",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "bog",
+            "prompt": "bo",
+            "target": "g",
+            "stratum": "near",
+            "target_token_id": 107,
+            "target_byte_hex": "67",
+            "full_head_target_nll": 8.6983642578125,
+            "lowercase_letter_normalized_target_nll": 3.6953318119049072,
+            "target_probability_full_head": 0.00016685853188391775,
+            "target_probability_lowercase_letters": 0.024839211255311966,
+            "target_rank_full_head": 2953,
+            "target_rank_lowercase_letters": 22,
+            "impossible_output_id_probability_mass": 0.9340816736221313,
+            "full_head_argmax_id": 3583,
+            "full_head_argmax_token": "<invalid-id:3583>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 106,
+            "letter_restricted_argmax_token": "f",
+            "letter_restricted_argmax_byte_hex": "66",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "dig",
+            "prompt": "di",
+            "target": "g",
+            "stratum": "far",
+            "target_token_id": 107,
+            "target_byte_hex": "67",
+            "full_head_target_nll": 8.128103256225586,
+            "lowercase_letter_normalized_target_nll": 3.2138171195983887,
+            "target_probability_full_head": 0.00029512745095416903,
+            "target_probability_lowercase_letters": 0.04020285978913307,
+            "target_rank_full_head": 1087,
+            "target_rank_lowercase_letters": 9,
+            "impossible_output_id_probability_mass": 0.9336940050125122,
+            "full_head_argmax_id": 420,
+            "full_head_argmax_token": "<invalid-id:420>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 109,
+            "letter_restricted_argmax_token": "i",
+            "letter_restricted_argmax_byte_hex": "69",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "sip",
+            "prompt": "si",
+            "target": "p",
+            "stratum": "far",
+            "target_token_id": 116,
+            "target_byte_hex": "70",
+            "full_head_target_nll": 9.122544288635254,
+            "lowercase_letter_normalized_target_nll": 4.061250686645508,
+            "target_probability_full_head": 0.00010917654435615987,
+            "target_probability_lowercase_letters": 0.01722745969891548,
+            "target_rank_full_head": 3857,
+            "target_rank_lowercase_letters": 25,
+            "impossible_output_id_probability_mass": 0.9379044771194458,
+            "full_head_argmax_id": 3923,
+            "full_head_argmax_token": "<invalid-id:3923>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 109,
+            "letter_restricted_argmax_token": "i",
+            "letter_restricted_argmax_byte_hex": "69",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "bit",
+            "prompt": "bi",
+            "target": "t",
+            "stratum": "far",
+            "target_token_id": 120,
+            "target_byte_hex": "74",
+            "full_head_target_nll": 8.673858642578125,
+            "lowercase_letter_normalized_target_nll": 3.6837310791015625,
+            "target_probability_full_head": 0.00017099801334552467,
+            "target_probability_lowercase_letters": 0.025129040703177452,
+            "target_rank_full_head": 2914,
+            "target_rank_lowercase_letters": 21,
+            "impossible_output_id_probability_mass": 0.9343416690826416,
+            "full_head_argmax_id": 1385,
+            "full_head_argmax_token": "<invalid-id:1385>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 109,
+            "letter_restricted_argmax_token": "i",
+            "letter_restricted_argmax_byte_hex": "69",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "tag",
+            "prompt": "ta",
+            "target": "g",
+            "stratum": "far",
+            "target_token_id": 107,
+            "target_byte_hex": "67",
+            "full_head_target_nll": 8.28307819366455,
+            "lowercase_letter_normalized_target_nll": 3.2428178787231445,
+            "target_probability_full_head": 0.0002527579490561038,
+            "target_probability_lowercase_letters": 0.03905368968844414,
+            "target_rank_full_head": 1534,
+            "target_rank_lowercase_letters": 11,
+            "impossible_output_id_probability_mass": 0.9339273571968079,
+            "full_head_argmax_id": 251,
+            "full_head_argmax_token": "�",
+            "full_head_argmax_byte_hex": "f7",
+            "full_head_argmax_is_impossible_id": false,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 109,
+            "letter_restricted_argmax_token": "i",
+            "letter_restricted_argmax_byte_hex": "69",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "cup",
+            "prompt": "cu",
+            "target": "p",
+            "stratum": "far",
+            "target_token_id": 116,
+            "target_byte_hex": "70",
+            "full_head_target_nll": 9.510333061218262,
+            "lowercase_letter_normalized_target_nll": 4.44881534576416,
+            "target_probability_full_head": 7.408236706396565e-05,
+            "target_probability_lowercase_letters": 0.011692410334944725,
+            "target_rank_full_head": 4056,
+            "target_rank_lowercase_letters": 26,
+            "impossible_output_id_probability_mass": 0.9352948665618896,
+            "full_head_argmax_id": 1483,
+            "full_head_argmax_token": "<invalid-id:1483>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 118,
+            "letter_restricted_argmax_token": "r",
+            "letter_restricted_argmax_byte_hex": "72",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "mud",
+            "prompt": "mu",
+            "target": "d",
+            "stratum": "far",
+            "target_token_id": 104,
+            "target_byte_hex": "64",
+            "full_head_target_nll": 7.9871368408203125,
+            "lowercase_letter_normalized_target_nll": 2.969403028488159,
+            "target_probability_full_head": 0.00033980561420321465,
+            "target_probability_lowercase_letters": 0.051333945244550705,
+            "target_rank_full_head": 685,
+            "target_rank_lowercase_letters": 5,
+            "impossible_output_id_probability_mass": 0.9313983917236328,
+            "full_head_argmax_id": 2789,
+            "full_head_argmax_token": "<invalid-id:2789>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 126,
+            "letter_restricted_argmax_token": "z",
+            "letter_restricted_argmax_byte_hex": "7a",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "hid",
+            "prompt": "hi",
+            "target": "d",
+            "stratum": "far",
+            "target_token_id": 104,
+            "target_byte_hex": "64",
+            "full_head_target_nll": 8.493454933166504,
+            "lowercase_letter_normalized_target_nll": 3.445439577102661,
+            "target_probability_full_head": 0.00020480445527937263,
+            "target_probability_lowercase_letters": 0.031890738755464554,
+            "target_rank_full_head": 2329,
+            "target_rank_lowercase_letters": 17,
+            "impossible_output_id_probability_mass": 0.9341293573379517,
+            "full_head_argmax_id": 1733,
+            "full_head_argmax_token": "<invalid-id:1733>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 112,
+            "letter_restricted_argmax_token": "l",
+            "letter_restricted_argmax_byte_hex": "6c",
+            "letter_restricted_exact_letter": false
+          },
+          {
+            "word": "rib",
+            "prompt": "ri",
+            "target": "b",
+            "stratum": "far",
+            "target_token_id": 102,
+            "target_byte_hex": "62",
+            "full_head_target_nll": 8.410655975341797,
+            "lowercase_letter_normalized_target_nll": 3.3976612091064453,
+            "target_probability_full_head": 0.0002224838681286201,
+            "target_probability_lowercase_letters": 0.03345141559839249,
+            "target_rank_full_head": 1975,
+            "target_rank_lowercase_letters": 14,
+            "impossible_output_id_probability_mass": 0.9336926937103271,
+            "full_head_argmax_id": 2162,
+            "full_head_argmax_token": "<invalid-id:2162>",
+            "full_head_argmax_byte_hex": null,
+            "full_head_argmax_is_impossible_id": true,
+            "full_head_exact_letter": false,
+            "letter_restricted_argmax_id": 109,
+            "letter_restricted_argmax_token": "i",
+            "letter_restricted_argmax_byte_hex": "69",
+            "letter_restricted_exact_letter": false
+          }
+        ]
+      },
+      "conditions": {}
+    }
+  ],
+  "summary": null,
+  "optimizer_configuration": {
+    "name": "AdamW",
+    "learning_rate": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.01,
+    "amsgrad": false,
+    "gradient_clip_norm": 1.0
+  },
+  "training_schedule": {
+    "passes_per_condition": 15,
+    "examples_per_condition": 5,
+    "updates_per_condition": 75,
+    "planned_total_optimizer_updates": 2250,
+    "checkpoint_selection": "none; final weights after fixed schedule",
+    "training_texts_by_condition": {
+      "phonics": [
+        "The cat sat on the mat.",
+        "The dog can run in the sun.",
+        "The sun is hot.",
+        "The red pen is on the bed.",
+        "A cat can run."
+      ],
+      "shuffled": [
+        "Tsh toc hae tn tta eam.",
+        "Trd oia hgn tsu cn eun hne.",
+        "Tio sth ue hsn.",
+        "Ten bie eoh hd re psd etn.",
+        "A car nut can."
+      ],
+      "unrelated_english": [
+        "The system processes data files.",
+        "Network latency affects throughput.",
+        "Database queries return results.",
+        "The compiler optimizes register allocation.",
+        "Memory allocation requires careful management."
+      ]
+    },
+    "raw_training_utf8_bytes_by_condition": {
+      "phonics": 105,
+      "shuffled": 105,
+      "unrelated_english": 188
+    },
+    "training_target_tokens_per_pass_by_condition": {
+      "phonics": 110,
+      "shuffled": 110,
+      "unrelated_english": 193
+    }
+  },
+  "failure": {
+    "type": "RuntimeError",
+    "message": "initial-state mismatch for seed=42, condition=phonics",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/james/projects/The-Lab/experiments/run_cvc_transfer_v2.py\", line 606, in main\n    run_training(protocol, run_bundle, log, save_bundle, args.device)\n  File \"/home/james/projects/The-Lab/experiments/run_cvc_transfer_v2.py\", line 714, in run_training\n    raise RuntimeError(f\"initial-state mismatch for seed={seed}, condition={condition_name}\")\nRuntimeError: initial-state mismatch for seed=42, condition=phonics\n"
+  }
+}

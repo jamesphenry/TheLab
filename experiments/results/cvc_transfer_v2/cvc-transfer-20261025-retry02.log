@@ -1,0 +1,11 @@
+[2026-10-25T09:47:41.025103+00:00] run_id=cvc-transfer-20261025-retry02; preflight=PASS
+[2026-10-25T09:47:41.025159+00:00] bundle=experiments/results/cvc_transfer_v2/cvc-transfer-20261025-retry02.json
+[2026-10-25T09:47:48.960995+00:00] seed=42 paired_initial_state_sha256=b571309075570bbc66508a8ddc5ce211c3b25514d5a10f62fef99fd4203c3483
+[2026-10-25T09:47:54.474537+00:00] run failed; preserving partial bundle: RuntimeError: initial-state mismatch for seed=42, condition=phonics
+[2026-10-25T09:47:54.475276+00:00] Traceback (most recent call last):
+  File "/home/james/projects/The-Lab/experiments/run_cvc_transfer_v2.py", line 606, in main
+    run_training(protocol, run_bundle, log, save_bundle, args.device)
+  File "/home/james/projects/The-Lab/experiments/run_cvc_transfer_v2.py", line 714, in run_training
+    raise RuntimeError(f"initial-state mismatch for seed={seed}, condition={condition_name}")
+RuntimeError: initial-state mismatch for seed=42, condition=phonics
+
