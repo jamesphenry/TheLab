@@ -538,6 +538,7 @@ def main() -> int:
 
     tokenizer = ByteTokenizerContract()
     audit = preflight(protocol, tokenizer)
+    provenance_before_output_creation = git_provenance()
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     bundle_path = RESULTS_DIR / f"{args.run_id}.json"
     log_path = RESULTS_DIR / f"{args.run_id}.log"
@@ -568,7 +569,7 @@ def main() -> int:
         },
         "source_sha256": sha256_file(Path(__file__).resolve()),
         "protocol_data_sha256": hashlib.sha256(protocol_bytes).hexdigest(),
-        "git_provenance_before_output_creation": git_provenance(),
+        "git_provenance_before_output_creation": provenance_before_output_creation,
         "environment": {
             "python": sys.version,
             "platform": platform.platform(),

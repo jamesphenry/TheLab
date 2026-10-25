@@ -14,6 +14,8 @@ created: 2026-10-25
 updated: 2026-10-25
 changelog:
   - date: 2026-10-25
+    change: "Recorded completed retry03 artifacts and its bounded primary contrast; corrected run-state text while preserving the three earlier failed/interrupted attempts."
+  - date: 2026-10-25
     change: "Implementation draft: freeze the inputs/bootstrap recipe and add a preflight-first paired-seed runner with unique run IDs and partial-run preservation; no preflight command or experiment was executed."
   - date: 2026-10-25
     change: "Review revision: verify paired initial weights, expose control n-gram counts and sequences, and limit inference to seeds and items tested."
@@ -29,8 +31,8 @@ changelog:
 
 # Plan — Controlled CVC Transfer Replication
 
-> [!warning] Execution attempts preserved; no training results yet
-> The frozen protocol passed data-only preflight. The first full-run attempt failed because the default server Python lacked PyTorch. A CPU-only retry was interrupted before its first seed record because the initial-state hash path was prohibitively slow. A second retry reached the paired-state check and failed despite equal tensors because the serialized archive metadata differed; diagnostics confirmed the raw payloads matched. All attempts are preserved under their run IDs; no optimizer update or scientific result has been produced. Fix and review the runner, then use a new run ID for any retry.
+> [!warning] Run complete; analysis note pending
+> The frozen protocol passed data-only preflight. Two startup attempts failed and one CPU attempt was interrupted before training; all are preserved under separate run IDs. `cvc-transfer-20261025-retry03` completed all 10 seeds, 30 condition arms, and 2,250 updates. Its validated bundle and log are preserved under `experiments/results/cvc_transfer_v2/`. The measured far-item paired phonics-minus-shuffled improvement contrast is −1.229 full-head NLL units (95% seed-bootstrap interval −2.514 to 0.086; eight fixed far items). This is a bounded measurement, not a generalization claim; create the dated analysis record through the documented completion-review step.
 
 ## Research question
 
@@ -235,13 +237,13 @@ Even if the predicted pattern appears across all ten seeds, the conclusion remai
 
 ## Implementation status and exact execution sequence
 
-1. **Protocol/data frozen; execution attempts preserved:** `experiments/data/cvc_transfer_v2.json` freezes the protocol strings/items, suffix-exposure expectation, optimizer settings, seeds, and bootstrap recipe. Data-only preflight passed as `preflight-20261025-2837ee0`. Full attempt `cvc-transfer-20261025-main` failed before model creation because `/usr/bin/python3` lacked Torch. Attempt `cvc-transfer-20261025-retry01` used the existing CPU-only `.venv` and was interrupted before its first saved seed because Python-level storage-byte conversion was too slow. Attempt `cvc-transfer-20261025-retry02` failed at the paired-state digest check before any condition arm; diagnosis confirmed equal tensors and equal raw payloads but differing serialized archive metadata. All attempt bundles/logs are preserved; no optimizer update completed.
+1. **Protocol/data frozen; run attempts preserved:** `experiments/data/cvc_transfer_v2.json` freezes the protocol strings/items, suffix-exposure expectation, optimizer settings, seeds, and bootstrap recipe. Data-only preflight passed as `preflight-20261025-2837ee0`. `cvc-transfer-20261025-main` failed before model creation because `/usr/bin/python3` lacked Torch. `cvc-transfer-20261025-retry01` was interrupted before its first saved seed because Python-level storage-byte conversion was too slow. `cvc-transfer-20261025-retry02` failed at paired-state digest verification before any condition arm; diagnostics confirmed equal tensors/raw payloads but differing archive metadata. `cvc-transfer-20261025-retry03` completed 10 seeds, 30 arms, and 2,250 updates on CPU. All attempt bundles/logs are preserved.
 2. Before execution, review the exact code/data diff and a clean committed revision against this plan. Use a fresh `--run-id`; output collisions are rejected rather than overwritten.
 3. Run the separate `--preflight-only` command first if desired. It computes leakage, byte-ID, shuffle-inventory, near/far, and suffix-exposure checks and writes a preflight-only bundle/log without importing Torch or constructing a model. Use a different run ID for the later full experiment.
 4. After preflight and separate execution approval, run the full command once. The runner repeats and saves the audit before constructing any model/optimizer; it then evaluates the same-seed baseline, clones and hashes the initial weights, verifies each condition tensor-by-tensor, trains the fixed 15 × 5 updates, and evaluates the final checkpoint without checkpoint selection or stochastic decoding.
 5. The runner saves per-item baseline/final metrics, both declared decoders, impossible-token mass, raw strings/exposures, environment/provenance, summaries, and a durable progress log. It retains failed/interrupted attempts in their run-ID paths. After execution, create a new dated result record and index it; do not rewrite this protocol or prior findings.
 
-**Execution boundary and current next step:** the data-only preflight ran and passed; the three full-run attempts above are failed/interrupted, with zero completed training updates. Do not reuse any run ID or treat those bundles as experiment results. The current fix hashes only raw tensor payload bytes extracted from Torch serialization; after reviewing and publishing that exact revision, use a new run ID for another attempt.
+**Execution boundary and current next step:** retry03 is the completed run; the earlier three full-run IDs remain failed or interrupted and must not be combined with it. Its provenance field reports the run log as untracked because Git status was captured after the log was opened; a pre-launch check confirmed the checkout was otherwise clean at commit `a6191df`. The runner now captures provenance before creating output paths. The formal result note and scientific interpretation remain pending the documented evidence-review step.
 
 ## Estimated compute and memory requirements
 

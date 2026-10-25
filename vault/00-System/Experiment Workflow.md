@@ -10,6 +10,8 @@ created: 2026-10-25
 updated: 2026-10-25
 changelog:
   - date: 2026-10-25
+    change: "Recorded the provenance-order issue and the completed/failed CVC run IDs."
+  - date: 2026-10-25
     change: "Added observed CVC runner environment and performance gotchas, with the preserved failed/interrupted run IDs."
 ---
 
@@ -96,7 +98,8 @@ Find the new dated record in the [[Development/Experiments/Experiments Index|Exp
 - **A visible GPU does not mean the selected environment can use it.** Jane has a Tesla P4, but its `.venv` contains `torch 2.14.1+cpu`, reports `torch.cuda.is_available() == False`, and lacks NumPy. The retry therefore ran on CPU. Check `torch.__version__`, CUDA availability, and the requested device before launching a long run; do not infer GPU support from `nvidia-smi` alone.
 - **Avoid Python iteration over large tensor storage when hashing weights.** The `bytes(tensor.untyped_storage())` path consumed a full CPU core for over a minute on a 10 MB diagnostic tensor. The CVC retry (`cvc-transfer-20261025-retry01`) showed no saved seed progress after more than eight minutes and was interrupted. It produced no optimizer updates. The runner now extracts raw tensor payload bytes from Torch serialization; use a new run ID for any retry.
 - **Do not hash the entire Torch serialization archive as if it were tensor content.** Retry `cvc-transfer-20261025-retry02` failed the paired digest check before training. A no-training diagnostic confirmed `torch.equal` for paired weights and equality of extracted raw payloads, while the surrounding archive representation was not a safe equality check. The digest should include only raw tensor payload bytes plus the separately defined key/dtype/shape fields.
-- **Keep each failed or interrupted run.** The preflight (`preflight-20261025-2837ee0`), failed default-Python attempt, and interrupted CPU attempt have separate JSON/log paths. Do not overwrite or relabel them as completed results.
+- **Provenance must be captured before output creation.** In completed run `cvc-transfer-20261025-retry03`, Git status listed only the run's own newly opened log as untracked because provenance was collected after opening it. The server checkout was verified clean at launch (`a6191df`); the runner now records provenance before creating the results directory/log. When reviewing older bundles, distinguish this self-created output from pre-existing dirty-tree changes.
+- **Keep each failed or interrupted run.** The preflight (`preflight-20261025-2837ee0`), failed default-Python attempt, interrupted CPU attempt, hash-mismatch attempt, and completed run each have separate JSON/log paths. Do not overwrite or relabel them as completed results.
 
 ## Example: reading an existing result bundle
 
