@@ -33,6 +33,7 @@ Canonical index for the experiment records in this directory. Add each new exper
 - [[2026-10-24 Training Format Comparison - Rank Tracking]] - Comparing training formats
 - [[2026-10-24 Stability Tracking Across Checkpoints]] - Tracking stability over time
 - [[2026-10-24 Investigate r s t -> u Failure]] - Investigating persistent failure
+- [[2026-10-24 Side Experiment - Is Seed 42 Actually Special?]] - Investigating whether seed 42 has special properties across projects
 - [[2026-10-24 Comprehensive Diagnostic - Held-Out Expansion]] - Expanded evaluation and checkpoint comparison
 - [[2026-10-24 Coverage Fix Experiment]] - Single-run coverage comparison
 - [[2026-10-24 Coverage Fix Multi-Seed Follow-up]] - Coverage comparison across seeds

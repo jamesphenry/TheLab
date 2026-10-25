@@ -42,13 +42,21 @@ Adding exemplars that bridge coverage gaps will improve performance on held-out 
 
 ## Interpretation
 
-- **Just adding targeted coverage helps** - the mixed approach with a few bridging sequences improved from 16.67% to 41.67%
-- **Too much coverage hurts** - full coverage of all sequences made it worse (8.33%). This suggests overfitting or the model gets confused
-- **The r,s,t,u issue is partially addressed** - "p q r s t u", "q r s t u v" helped
-- **Quality over quantity** - strategic additions to the curriculum are better than exhaustive coverage
+- **Mixed coverage performed best in this run.** It achieved 41.67% probe accuracy (5/12), compared with 16.67% (2/12) for the original curriculum and 8.33% (1/12) for full coverage.
+- **Exhaustive coverage did not guarantee better performance.** The full-coverage condition performed worst under the tested seed and training budget. The cause is not yet established; possible explanations include optimization behavior, initialization variability, or differences in the effective training distribution.
+- **Targeted additions are promising.** Adding overlapping sequences around the `p`–`w` region coincided with improved probe accuracy. This does not yet establish that the additions specifically resolved the `r,s,t,u` coverage issue.
+- **Generalization remains unconfirmed.** Some evaluation contexts or transitions overlap with training examples. A separate evaluation set containing genuinely unseen contexts is needed to measure generalization more directly.
+- **Checkpoint selection matters.** These results report best-checkpoint accuracy. Final-checkpoint accuracy and performance across multiple random seeds should also be compared.
 
 ## Recommendation
-Update Lesson 1.1 to include a few bridging sequences like "p q r s t u", "q r s t u v", "r s t u v w" to fill coverage gaps without overwhelming the lesson. This is a data coverage fix, not a model size issue.
+
+Retain Mixed Fixed as the leading candidate for the next experiment, but do not yet replace Lesson 1.1's curriculum.
+
+Repeat all three conditions across multiple seeds with the same training budget, then compare mean and variability in probe accuracy. Include final-checkpoint performance and a separate evaluation set with unseen contexts.
+
+If mixed coverage consistently outperforms both alternatives, adopt it as the preferred curriculum and investigate which targeted additions contribute most to the improvement.
+
+**Current conclusion:** Targeted coverage additions are promising, but the mechanism and reproducibility of the improvement remain open questions.
 
 ## Related
 - [[2026-10-24 Stability Tracking Across Checkpoints]]
