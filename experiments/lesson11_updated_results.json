@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-10-24T20:26:03.474228",
+  "results": [
+    {
+      "seed": 42,
+      "baseline_loss": 8.185512065887451,
+      "post_loss_all": 1.786535715063413,
+      "post_loss_held": 1.3078364431858063,
+      "delta_loss": 6.3989763508240385,
+      "acc_held": 0.6666666666666666,
+      "correct_held": 2,
+      "passed": true
+    },
+    {
+      "seed": 123,
+      "baseline_loss": 8.808808008829752,
+      "post_loss_all": 2.680495818456014,
+      "post_loss_held": 2.419549902280172,
+      "delta_loss": 6.128312190373737,
+      "acc_held": 0.0,
+      "correct_held": 0,
+      "passed": false
+    },
+    {
+      "seed": 7,
+      "baseline_loss": 8.101391394933065,
+      "post_loss_all": 2.821631928284963,
+      "post_loss_held": 2.5595642725626626,
+      "delta_loss": 5.279759466648102,
+      "acc_held": 0.0,
+      "correct_held": 0,
+      "passed": false
+    },
+    {
+      "seed": 999,
+      "baseline_loss": 8.767557938893637,
+      "post_loss_all": 1.6446301688750584,
+      "post_loss_held": 2.1086347103118896,
+      "delta_loss": 7.1229277700185785,
+      "acc_held": 0.0,
+      "correct_held": 0,
+      "passed": false
+    }
+  ]
+}
