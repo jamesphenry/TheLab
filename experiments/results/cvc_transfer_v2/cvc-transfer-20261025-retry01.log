@@ -1,0 +1,3 @@
+[2026-10-25T09:35:48.053009+00:00] run_id=cvc-transfer-20261025-retry01; preflight=PASS
+[2026-10-25T09:35:48.053075+00:00] bundle=experiments/results/cvc_transfer_v2/cvc-transfer-20261025-retry01.json
+[2026-10-25T09:44:55.410965+00:00] run interrupted; preserving partial bundle: received signal 15
