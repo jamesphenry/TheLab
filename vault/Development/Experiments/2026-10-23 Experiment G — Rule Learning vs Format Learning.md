@@ -2,6 +2,8 @@
 title: "Experiment G — Rule Learning vs Format Learning"
 type: experiment
 status: completed
+scripts:
+  - experiments/run_experiment_g.py
 tags:
   - ai-school
   - experiment
@@ -11,7 +13,7 @@ tags:
   - held-out
   - multi-seed
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Experiment G — Rule Learning vs Format Learning

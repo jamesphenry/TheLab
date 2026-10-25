@@ -2,13 +2,15 @@
 title: "Experiment C — Multiple Random Seeds"
 type: experiment
 status: completed
+scripts:
+  - experiments/run_experiment_c.py
 tags:
   - ai-school
   - experiment
   - random-seeds
   - statistical-validity
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Experiment C — Multiple Random Seeds

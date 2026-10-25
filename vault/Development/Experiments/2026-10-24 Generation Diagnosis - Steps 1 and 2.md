@@ -2,6 +2,9 @@
 title: "2026-10-24 Generation Diagnosis - Steps 1 and 2"
 type: experiment
 status: completed
+scripts:
+  - experiments/diagnose_step1.py
+  - experiments/diagnose_step2.py
 tags:
   - ai-school
   - experiment
@@ -9,7 +12,7 @@ tags:
   - generation
   - diagnosis
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Generation Diagnosis - Steps 1 and 2
 

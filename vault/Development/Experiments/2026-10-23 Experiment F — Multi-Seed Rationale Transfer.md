@@ -2,6 +2,8 @@
 title: "Experiment F — Multi-Seed Rationale Transfer"
 type: experiment
 status: completed
+scripts:
+  - experiments/run_experiment_f.py
 tags:
   - ai-school
   - experiment
@@ -10,7 +12,7 @@ tags:
   - multi-seed
   - transfer
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Experiment F — Multi-Seed Rationale Transfer

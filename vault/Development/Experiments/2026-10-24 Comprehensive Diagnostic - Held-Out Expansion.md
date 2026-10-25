@@ -2,6 +2,8 @@
 title: "2026-10-24 Comprehensive Diagnostic - Held-Out Expansion"
 type: experiment
 status: completed
+scripts:
+  - experiments/comprehensive_diagnostic.py
 tags:
   - ai-school
   - experiment
@@ -10,7 +12,7 @@ tags:
   - generalization
   - checkpoints
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Comprehensive Diagnostic - Held-Out Expansion
 

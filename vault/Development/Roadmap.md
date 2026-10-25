@@ -7,7 +7,7 @@ tags:
   - roadmap
   - plan
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Roadmap — AI Learner Laboratory
@@ -17,7 +17,7 @@ updated: 2026-10-23
 - [x] Establish AI School vault hierarchy and permission specifications.
 - [x] Implement `VaultController` in Python with role-based permission enforcement and path isolation tests.
 - [x] Formalize model sizing decision ([[Decisions/ADR-0001 BabyLM 25M Tabula Rasa Architecture|ADR-0001: 25M Tabula Rasa Architecture]]).
-- [ ] Implement 25M PyTorch Causal Transformer learner model and tokenizer.
+- [x] Implement PyTorch Causal Transformer learner model and byte-level tokenizer ([[Experiments/2026-10-23 BabyLM 25M Baseline Initialization|baseline implementation experiment]]).
 - [ ] Implement Teacher Engine interface (for prompting curriculum lessons & grading).
 
 ## Phase 2: Early Childhood Curriculum & First Learning Cycle (Milestone 1)

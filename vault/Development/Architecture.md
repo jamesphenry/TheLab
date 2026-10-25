@@ -7,7 +7,7 @@ tags:
   - architecture
   - python
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Architecture — AI School Harness
@@ -42,20 +42,27 @@ The harness coordinates an AI learner model, teacher agents, and deterministic a
                +-------------------------+
 ```
 
+For the note organization and authority model, see [[00-System/Vault Architecture|Vault Architecture]].
+
+> [!note] Implementation status
+> The diagram represents the intended system boundary. Current code does not include all shown components; see the implementation-status section below before treating a box as implemented.
+
 ## Module Responsibilities
 - `harness/vault/`: Filesystem interface with path sanitization, permission validation, and markdown parsing.
-- `harness/models/`: Uniform LLM client abstraction (Ollama, Gemini/OpenAI, local server, or deterministically testable mock).
-- `harness/school/`: Teacher prompt loaders, lesson dispatchers, rubric evaluation runners.
-- `harness/sandbox/`: Safe execution of C code, tests, or mathematical verification.
-- `harness/core/`: Event loop, routine scheduler, and experiment recorder.
+- `harness/learner/`: Current BabyLM model, tokenizer, and configuration.
+- `harness/school/`: Current classroom learning-cycle orchestration.
+- Repository-root `experiments/`: Tracked research and diagnostic scripts with selected JSON result bundles. The vault's `Development/Experiments/` holds the narrative records.
+
+### Implementation status (checked 2026-10-25)
+
+The repository currently contains `harness/vault/`, `harness/learner/`, and `harness/school/`. The previously described `harness/models/`, `harness/sandbox/`, and `harness/core/` directories are not present in the inspected source tree; treat them as proposed responsibilities, not implemented modules. Consult source code for current behavior.
 
 ## Learner Model Specification (BabyLM ~25M)
-Per [[Decisions/ADR-0001 BabyLM 25M Tabula Rasa Architecture|ADR-0001]]:
+Per [[Development/Decisions/ADR-0001 BabyLM 25M Tabula Rasa Architecture|ADR-0001]]:
 - **Architecture:** Causal Transformer (Decoder-only), trained from scratch (randomly initialized weights).
-- **Parameters:** ~25M ($n_{layers}=8, d_{model}=512, n_{heads}=8, d_{ff}=2048, \text{vocab}=4096, \text{context}=512$).
-- **VRAM Footprint:** ~430 MB total for FP32 weights, gradients, and full AdamW optimizer state.
-- **Hardware Target:** NVIDIA Tesla P4 (8 GB VRAM, Pascal `sm_61`).
-- **Learning Loop:** Interactive real-time forward and backward gradient updates ($< 15\text{ ms}$ per step).
+- **Recorded model size:** Experiment records report 27,411,456 parameters for the lesson model. `vocab_size=4096` is the model head configuration; [[Development/Experiments/2026-10-23 Experiment D — Inspect Tokenization|tokenizer inspection]] reports only 260 encodable IDs.
+- **Design target:** The ADR estimates about 430 MB training state and targets an NVIDIA Tesla P4 (8 GB VRAM, Pascal `sm_61`). The inspected experiment records use CPU development mode; the P4 memory and latency targets are not benchmarks established by those records.
+- **Context:** The default config and experiment configurations differ; record the exact context length for each run rather than assuming 512.
 
 ## Security & Isolation Invariants
 1. All path operations validate that `os.path.realpath(path)` is within the authorized role directory.

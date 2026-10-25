@@ -7,10 +7,13 @@ tags:
   - notes
   - blueprint
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # AI Learner Laboratory — Discussion Notes
+
+> [!info] Historical proposal
+> This note preserves an early design snapshot. Its initial pretrained-model proposal was superseded by [[Development/Decisions/ADR-0001 BabyLM 25M Tabula Rasa Architecture|ADR-0001]]. Treat accepted ADRs, current specifications, and dated experiment records as authoritative for later decisions and evidence.
 
 **Status:** Early-stage concept; let it simmer before committing to an architecture  
 **Purpose:** Capture the ideas discussed so far in a format that can be edited in an Obsidian vault.

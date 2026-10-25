@@ -1,14 +1,16 @@
 ---
-title: "2026-10-23 BabyLM 25M Baseline Initialization & Gradient Step"
+title: 2026-10-23 BabyLM 25M Baseline Initialization & Gradient Step
 type: experiment
 status: completed
+scripts:
+  - tests/test_learner.py
 tags:
   - ai-school
   - experiment
   - babylm
   - baseline
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # 2026-10-23 BabyLM 25M Baseline Initialization & Gradient Step

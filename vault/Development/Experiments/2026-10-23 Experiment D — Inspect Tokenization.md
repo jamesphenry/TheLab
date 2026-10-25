@@ -2,6 +2,8 @@
 title: "Experiment D — Inspect Tokenization"
 type: experiment
 status: completed
+scripts:
+  - experiments/run_experiment_d.py
 tags:
   - ai-school
   - experiment
@@ -9,7 +11,7 @@ tags:
   - tokenizer
   - verification
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Experiment D — Inspect Tokenization

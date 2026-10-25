@@ -2,6 +2,10 @@
 title: "2026-10-24 Stability Tracking Across Checkpoints"
 type: experiment
 status: completed
+scripts:
+  - experiments/track_stability.py
+  - experiments/track_rank.py
+  - experiments/test_lesson11_proper.py
 tags:
   - ai-school
   - experiment
@@ -9,7 +13,7 @@ tags:
   - stability
   - checkpoints
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 
 # 2026-10-24 Stability Tracking Across Checkpoints

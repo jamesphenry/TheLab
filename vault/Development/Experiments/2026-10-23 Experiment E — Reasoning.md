@@ -2,6 +2,8 @@
 title: "Experiment E — Reasoning"
 type: experiment
 status: completed
+scripts:
+  - experiments/run_experiment_e.py
 tags:
   - ai-school
   - experiment
@@ -9,7 +11,7 @@ tags:
   - rationale
   - metacognition
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Experiment E — Reasoning

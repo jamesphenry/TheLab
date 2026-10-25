@@ -2,6 +2,8 @@
 title: "2026-10-24 Experiment A - Original Curriculum"
 type: experiment
 status: completed
+scripts:
+  - experiments/test_coverage_multi_seed.py
 tags:
   - ai-school
   - experiment
@@ -9,7 +11,7 @@ tags:
   - lesson-1.1
   - experiment-a
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Experiment A - Original Curriculum
 

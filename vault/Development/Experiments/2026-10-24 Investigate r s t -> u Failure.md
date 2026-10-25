@@ -2,6 +2,9 @@
 title: "2026-10-24 Investigate r s t -> u Failure"
 type: experiment
 status: completed
+scripts:
+  - experiments/test_coverage_fix.py
+  - experiments/track_stability.py
 tags:
   - ai-school
   - experiment
@@ -9,7 +12,7 @@ tags:
   - diagnosis
   - failure-analysis
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Investigate r s t -> u Failure
 

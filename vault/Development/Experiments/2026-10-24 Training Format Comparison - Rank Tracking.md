@@ -2,6 +2,8 @@
 title: "2026-10-24 Training Format Comparison - Rank Tracking"
 type: experiment
 status: completed
+scripts:
+  - experiments/track_rank.py
 tags:
   - ai-school
   - experiment
@@ -9,7 +11,7 @@ tags:
   - training-formats
   - diagnosis
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Training Format Comparison - Rank Tracking
 

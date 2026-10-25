@@ -7,12 +7,12 @@ tags:
   - logs
   - index
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Logs Index
 
-Session notes use `YYYY-MM-DD.md`. If there are multiple sessions on one date, use a descriptive suffix.
+New session notes use `YYYY-MM-DD Descriptive Title.md` and are listed newest first. Preserve existing filenames; do not rename historical notes just to match the current convention.
 
 ## Recent Sessions
 

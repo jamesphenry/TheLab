@@ -2,6 +2,8 @@
 title: "2026-10-24 Coverage Fix Multi-Seed Follow-up"
 type: experiment
 status: completed
+scripts:
+  - experiments/test_coverage_multi_seed.py
 tags:
   - ai-school
   - experiment
@@ -10,7 +12,7 @@ tags:
   - coverage
   - multi-seed
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Coverage Fix Multi-Seed Follow-up
 

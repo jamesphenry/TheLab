@@ -2,6 +2,15 @@
 title: "2026-10-24 Generation Debug - Why Zero Accuracy"
 type: experiment
 status: completed
+scripts:
+  - experiments/debug_generation.py
+  - experiments/debug_generation2.py
+  - experiments/debug_generation3.py
+  - experiments/debug_generation4.py
+  - experiments/debug_generation5.py
+  - experiments/debug_generation6.py
+  - experiments/debug_generation7.py
+  - experiments/debug_generation8.py
 tags:
   - ai-school
   - experiment
@@ -9,7 +18,7 @@ tags:
   - generation
   - debugging
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Generation Debug - Why Zero Accuracy
 

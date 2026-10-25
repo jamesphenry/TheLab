@@ -2,13 +2,15 @@
 title: "Experiment B — Control Group"
 type: experiment
 status: completed
+scripts:
+  - experiments/run_experiment_b.py
 tags:
   - ai-school
   - experiment
   - control-group
   - methodology
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Experiment B — Control Group

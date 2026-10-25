@@ -2,13 +2,15 @@
 title: "Experiment A — Held-Out Test"
 type: experiment
 status: completed
+scripts:
+  - experiments/run_experiment_a.py
 tags:
   - ai-school
   - experiment
   - held-out
   - generalization
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Experiment A — Held-Out Test

@@ -1,7 +1,7 @@
 ---
 title: "ADR-{{number}} {{decision_title}}"
 type: decision
-status: accepted
+status: proposed
 tags:
   - ai-school
   - decision

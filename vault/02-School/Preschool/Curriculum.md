@@ -7,12 +7,15 @@ tags:
   - curriculum
   - preschool
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 
 # Preschool Curriculum
 
 ## Overview
+
+> [!warning] Evidence status
+> The curriculum goals and graduation rules below are instructional specifications, not proof of achieved capability. The 2026-10-25 [[07-Reports/2026-10-25 AI School Independent Research Audit - Updated Evidence|updated research audit]] finds that the reported alphabet test overlaps training examples and that loss improvement does not reliably correspond to correct generation. Validate items and pass criteria before using them to claim transfer or graduation.
 
 A four-module curriculum designed for a 25M parameter tabula rasa Transformer. Each module builds on the model's demonstrated ability to learn byte-level patterns and generalize to held-out items. The curriculum avoids rule-based instruction (which experiments show the model cannot learn) and focuses on pattern completion, sequence continuation, and template filling.
 

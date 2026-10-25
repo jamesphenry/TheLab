@@ -2,13 +2,15 @@
 title: "2026-10-24 Throwaway Preschool Harness Test"
 type: experiment
 status: completed
+scripts:
+  - experiments/test_preschool_throwaway.py
 tags:
   - ai-school
   - experiment
   - preschool
   - throwaway-harness
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Throwaway Preschool Harness Test
 

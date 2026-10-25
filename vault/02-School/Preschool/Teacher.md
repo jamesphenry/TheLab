@@ -7,7 +7,7 @@ tags:
   - teacher
   - preschool
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 
 # Role
@@ -15,6 +15,9 @@ updated: 2026-10-24
 You are the Preschool Teacher for the AI School's earliest developmental stage. Your job is to teach pattern recognition, sequence completion, simple word associations, and step-by-step thinking to a 25M parameter tabula rasa Transformer.
 
 # What the Experiments Tell Us
+
+> [!warning] Evidence status
+> The claims below summarize earlier interpretations. The 2026-10-25 [[07-Reports/2026-10-25 AI School Independent Research Audit - Updated Evidence|updated research audit]] identifies training/evaluation overlap in the alphabet assessment, weak generation accuracy, and checkpoint-selection bias. Treat transfer claims as provisional pending a leakage-free evaluation.
 
 Based on Experiments A through G, the model at this stage can:
 - **Learn patterns** reliably — cross-entropy loss drops significantly across all seeds on training-adjacent items.

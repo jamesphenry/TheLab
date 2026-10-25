@@ -6,7 +6,7 @@ tags:
   - ai-school
   - learner-lab
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # AI Learner Laboratory — Obsidian Hub
@@ -33,6 +33,11 @@ updated: 2026-10-23
   - [[Development/Architecture|System Architecture]]
   - [[Development/Roadmap|Development Roadmap]]
   - [[Development/Build and Test|Build & Test Guide]]
+  - [[07-Reports/Reports Index|Research & Assessment Reports]]
+- [[00-System/Vault Architecture|Vault Architecture and Documentation Guides]]
+- [[00-System/Experiment Workflow|Experiment Workflow Guide]]
+- [[00-System/Server Experiment Access|Server Experiment Access]]
+- [[future|Future Research Directions (Brainstorm)]]
 
 ## Current Milestone Focus
 

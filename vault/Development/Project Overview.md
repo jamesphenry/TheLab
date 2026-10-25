@@ -7,7 +7,7 @@ tags:
   - project
   - python
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # Project Overview — AI School Harness
@@ -27,7 +27,7 @@ updated: 2026-10-23
 4. **Student Lifecycle Loop:** Driving the cycle of: Lesson -> Practice -> Exam -> Grading -> Self-Reflection -> Remediation / Advancement.
 
 ### Out of Scope (Initial Phase)
-- Autonomous weight fine-tuning or backpropagation pipelines.
+- An autonomous, continuously operating weight-training pipeline. Bounded gradient updates for controlled experiments exist in `harness/learner/model.py` and `harness/school/classroom.py`; these do not constitute the autonomous pipeline described here.
 - Elaborate GUI dashboards (Obsidian serves as the UI).
 - Unrestricted internet access or arbitrary shell tool execution.
 

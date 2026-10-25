@@ -1,7 +1,7 @@
 ---
-title: "{{date}}"
+title: "{{date}} — {{session_title}}"
 type: log
-status: done
+status: active
 tags:
   - ai-school
   - log
@@ -9,7 +9,7 @@ created: {{date}}
 updated: {{date}}
 ---
 
-# {{date}} — Session Log
+# {{date}} — {{session_title}}
 
 ## Objective
 

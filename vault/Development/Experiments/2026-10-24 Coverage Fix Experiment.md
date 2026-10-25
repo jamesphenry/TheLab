@@ -2,6 +2,8 @@
 title: "2026-10-24 Coverage Fix Experiment"
 type: experiment
 status: completed
+scripts:
+  - experiments/test_coverage_fix.py
 tags:
   - ai-school
   - experiment
@@ -9,7 +11,7 @@ tags:
   - curriculum
   - coverage
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Coverage Fix Experiment
 

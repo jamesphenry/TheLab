@@ -8,13 +8,16 @@ tags:
   - preschool
   - patterns
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 
 # Assessment 1 — Pattern Sequences
 
 ## Purpose
 Evaluate whether the model can complete ordered sequences on items it has never seen before.
+
+> [!warning] Split requires review
+> The three alphabet prompts below (`g h i `, `n o p `, and `s t u `) and their targets occur as contiguous transitions in the updated Lesson 1.1 exemplars. They are not held out from that training material. See the 2026-10-25 [[07-Reports/2026-10-25 AI School Independent Research Audit - Updated Evidence|updated research audit]]. Keep this assessment definition unchanged until a new, leakage-free version is approved; do not use its current alphabet scores as transfer evidence.
 
 ## Pass Criteria
 - Post-training loss delta > +2.0 on held-out items

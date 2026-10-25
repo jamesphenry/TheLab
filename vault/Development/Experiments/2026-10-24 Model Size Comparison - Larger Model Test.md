@@ -2,13 +2,15 @@
 title: "2026-10-24 Model Size Comparison - Larger Model Test"
 type: experiment
 status: completed
+scripts:
+  - experiments/test_larger_model.py
 tags:
   - ai-school
   - experiment
   - model-size
   - scaling
 created: 2026-10-24
-updated: 2026-10-24
+updated: 2026-10-25
 ---
 # 2026-10-24 Model Size Comparison - Larger Model Test
 

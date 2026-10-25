@@ -1,3 +1,18 @@
+---
+title: Future Research Directions
+type: blueprint
+status: active
+tags:
+  - ai-school
+  - research
+  - future-directions
+updated: 2026-10-25
+---
+
+# Future Research Directions
+
+> This note captures an undated early brainstorm. Its creation date is unknown; ideas below are proposals, not findings or adopted decisions.
+
 The whitepaper I'd want to read
 I'd structure it around five questions:
 1. What can a small, randomly initialized, byte-level Transformer learn from minimal training?

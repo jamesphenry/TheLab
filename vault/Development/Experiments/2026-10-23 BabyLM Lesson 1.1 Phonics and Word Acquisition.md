@@ -2,6 +2,7 @@
 title: "2026-10-23 BabyLM Lesson 1.1 Phonics and Word Acquisition"
 type: experiment
 status: completed
+scripts: []
 tags:
   - ai-school
   - experiment
@@ -9,7 +10,7 @@ tags:
   - phonics
   - lesson-1
 created: 2026-10-23
-updated: 2026-10-23
+updated: 2026-10-25
 ---
 
 # 2026-10-23 BabyLM Lesson 1.1 Phonics and Word Acquisition
