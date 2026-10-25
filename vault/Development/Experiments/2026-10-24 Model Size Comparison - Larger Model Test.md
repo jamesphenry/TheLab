@@ -1,0 +1,47 @@
+---
+title: "2026-10-24 Model Size Comparison - Larger Model Test"
+type: experiment
+status: planned
+tags:
+  - ai-school
+  - experiment
+  - model-size
+  - scaling
+created: 2026-10-24
+updated: 2026-10-24
+---
+# 2026-10-24 Model Size Comparison - Larger Model Test
+
+## Question
+Does doubling model size (from 27M to ~109M params) improve acquisition, generalization, and reliability on the alphabet sequence task?
+
+## Hypothesis
+Larger model capacity will lead to more stable learning and better generalization to held-out patterns.
+
+## Variables and Conditions
+- **Independent variable(s):** Model size (27M vs ~109M params)
+- **Measured outcome(s):** Best held-out greedy accuracy, training stability
+- **Controls:** Same training data, same evaluation set (12 examples), same seed, same training budget
+- **Environment / architecture:** BabyLM with dim 512/n_layers 8 vs dim 1024/n_layers 16
+
+## Procedure
+1. Train small model (27M) with seed 123 for 30 iterations
+2. Train large model (~109M) with same seed 123 for 30 iterations
+3. Track best checkpoint accuracy on expanded held-out set
+
+## Results
+*Experiment in progress - was taking too long to run on CPU*
+
+## Interpretation
+*To be determined*
+
+## Limitations
+- Only tested one seed, CPU-bound
+
+## Conclusion
+- **Supported:**
+- **Not established:**
+- **Next experiment:**
+
+## Related
+- Previous: [[2026-10-24 Comprehensive Diagnostic - Held-Out Expansion]]
