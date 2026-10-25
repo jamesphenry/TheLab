@@ -8,72 +8,63 @@ tags:
   - experiment
 created: {{date}}
 updated: {{date}}
-changelog: []
+changelog:
+  - date: 2026-10-25
+    change: "Reorganized as a concise scientific-method record, with explicit procedure, results, and follow-up ideas."
 ---
 
 # {{experiment_name}}
 
 ## Question
 
-What specific question are we trying to answer?
+What do we want to find out? Keep this to one clear question where possible.
+
+## Background and evidence
+
+What existing observations or records motivate this experiment? Link to them. Separate established observations from open questions.
 
 ## Hypothesis
 
-What do we expect, and why? This is not a result.
+What result do we predict, and what observation would count against that prediction?
 
-## Variables and Conditions
+## Method
 
-- **Independent variable(s):**
-- **Measured outcome(s):**
-- **Controls:**
-- **Environment / architecture:**
-- **Code commit:**
-- **Compiler / flags:**
-- **Other relevant conditions:**
+Briefly describe the model/system, data or items, conditions, controls, and how the outcome will be measured. Include only details needed to understand and reproduce this experiment; link to a fuller protocol if one exists.
 
-## Run Provenance
+### Procedure
 
-- **Repository commit / revision:**
-- **Code and configuration paths:**
-- **Environment / package versions:**
-- **Seeds:**
-- **Data / exemplars and split:**
-- **Checkpoint selection and stopping rule:**
-- **Decoding / evaluation settings:**
-- **Raw output / artifact paths:**
+List the steps actually followed. Before a run, this can be a short proposed procedure; after the run, update it to reflect what actually happened and note deviations.
 
-## Procedure
-
-Write enough detail to repeat the experiment.
-
-1. `{{step}}`
+1. {{step}}
 
 ## Results
 
-| Run | Conditions | Observation | Evidence |
-| --- | --- | --- | --- |
-| 1 | `{{conditions}}` | `{{actual_observation}}` | `{{log_or_output}}` |
+Record what happened, including negative, failed, unexpected, and inconclusive outcomes. Link to logs and artifacts. Keep measured observations separate from interpretation.
 
-Include failed, inconclusive, and unexpected results. Never replace observations with what was expected to happen.
-Report teacher-forced loss separately from exact generated-answer accuracy. State whether each target, relation, or prompt context overlaps training.
+| Condition / run | Observation or metric | Evidence / artifact |
+| --- | --- | --- |
+| {{condition}} | {{actual_observation}} | {{log_or_output}} |
 
 ## Interpretation
 
-What do the results suggest? What alternative explanations remain?
-
-## Limitations
-
-What does this experiment not establish?
+What do the results support? What do they not establish? Name plausible alternative explanations and relevant limitations.
 
 ## Conclusion
 
-- **Supported:**
-- **Not established:**
-- **Next experiment:**
+Answer the research question as far as the evidence allows. State whether the hypothesis was supported, contradicted, or unresolved.
 
-## Related
+## Possible next experiments
 
-- Session log:
-- Source / test:
-- Commit:
-- Related experiments:
+List a few useful follow-up questions or small experiments suggested by these results. These are ideas, not approved plans; promote one to a separate plan or protocol before implementation or execution.
+
+- {{possible_follow_up}}
+
+## Provenance and related material
+
+- **Repository revision / commit:**
+- **Scripts:** list repository-relative executable scripts in `scripts` frontmatter; use `[]` if none are recorded.
+- **Data and split:** identify training, validation, and test items and any overlap relevant to the claim.
+- **Seeds / environment / settings:**
+- **Checkpoint selection and stopping rule:**
+- **Artifacts / logs:**
+- **Related notes:**

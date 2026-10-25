@@ -13,7 +13,7 @@ Reusable note templates for this vault. Copy the closest template into its desti
 
 ## Templates
 
-- [[Experiment Template]] — planned and completed experiment records, with run provenance and evidence sections.
+- [[Experiment Template]] — concise scientific-method record for a question, evidence, hypothesis, method, procedure, results, interpretation, conclusion, provenance, and possible follow-up ideas.
 - [[Research Audit Template]] — synthesis across experiments, theories, and source records.
 - [[Decision Template]] — architecture or curriculum decisions (ADR).
 - [[Plan Template]] — scoped work plans.

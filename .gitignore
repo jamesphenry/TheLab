@@ -43,6 +43,9 @@ htmlcov/
 *.swp
 *~
 
+# Obsidian local workspace state
+vault/.obsidian/workspace.json
+
 # Sandboxed execution artifacts
 scratch/
 tmp/
