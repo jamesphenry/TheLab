@@ -1,0 +1,996 @@
+{
+  "bundle_schema_version": 1,
+  "protocol_id": "cvc_transfer_v2",
+  "protocol_version": 2,
+  "run_id": "preflight-20261025-2837ee0",
+  "status": "preflight_only",
+  "started_at_utc": "2026-10-25T09:27:35.906015+00:00",
+  "finished_at_utc": "2026-10-25T09:27:36.066771+00:00",
+  "command": [
+    "python3",
+    "experiments/run_cvc_transfer_v2.py",
+    "--run-id",
+    "preflight-20261025-2837ee0",
+    "--preflight-only"
+  ],
+  "source_path": "experiments/run_cvc_transfer_v2.py",
+  "data_path": "experiments/data/cvc_transfer_v2.json",
+  "output_paths": {
+    "bundle": "experiments/results/cvc_transfer_v2/preflight-20261025-2837ee0.json",
+    "log": "experiments/results/cvc_transfer_v2/preflight-20261025-2837ee0.log"
+  },
+  "source_sha256": "d89497bd75b38ad1bd7799d4b681a2d8ae55090a89d642027489fa567352d5ec",
+  "protocol_data_sha256": "2c51b7d109972d19c47efcbd93e3d03bb79d02bcf2f1bd3029ddf47529e93590",
+  "git_provenance_before_output_creation": {
+    "commit": "2837ee02e71793fa160cbe82794822ddcae12314",
+    "working_tree_clean": false,
+    "working_tree_status_porcelain": "?? experiments/results/cvc_transfer_v2/preflight-20261025-2837ee0.log"
+  },
+  "environment": {
+    "python": "3.11.2 (main, Oct  7 2026, 12:35:07) [GCC 12.2.0]",
+    "platform": "Linux-6.1.0-53-amd64-x86_64-with-glibc2.36",
+    "pytorch_package_version": null,
+    "requested_device": "auto"
+  },
+  "protocol_configuration": {
+    "protocol_id": "cvc_transfer_v2",
+    "protocol_version": 2,
+    "control_shuffle_seed": 20261025,
+    "passes": 15,
+    "seeds": [
+      42,
+      123,
+      7,
+      2026,
+      99,
+      314,
+      256,
+      13,
+      555,
+      8
+    ],
+    "model": {
+      "vocab_size": 4096,
+      "max_seq_len": 256,
+      "dim": 512,
+      "n_layers": 8,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.0
+    },
+    "optimizer": {
+      "name": "AdamW",
+      "learning_rate": 0.001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.01,
+      "amsgrad": false,
+      "gradient_clip_norm": 1.0
+    },
+    "conditions": {
+      "phonics": [
+        "The cat sat on the mat.",
+        "The dog can run in the sun.",
+        "The sun is hot.",
+        "The red pen is on the bed.",
+        "A cat can run."
+      ],
+      "shuffled": [
+        "Tsh toc hae tn tta eam.",
+        "Trd oia hgn tsu cn eun hne.",
+        "Tio sth ue hsn.",
+        "Ten bie eoh hd re psd etn.",
+        "A car nut can."
+      ],
+      "unrelated_english": [
+        "The system processes data files.",
+        "Network latency affects throughput.",
+        "Database queries return results.",
+        "The compiler optimizes register allocation.",
+        "Memory allocation requires careful management."
+      ]
+    },
+    "development": [
+      {
+        "word": "cap",
+        "prompt": "ca",
+        "target": "p"
+      },
+      {
+        "word": "cot",
+        "prompt": "co",
+        "target": "t"
+      },
+      {
+        "word": "met",
+        "prompt": "me",
+        "target": "t"
+      },
+      {
+        "word": "ram",
+        "prompt": "ra",
+        "target": "m"
+      }
+    ],
+    "final_test": [
+      {
+        "stratum": "near",
+        "word": "bat",
+        "prompt": "ba",
+        "target": "t"
+      },
+      {
+        "stratum": "near",
+        "word": "bun",
+        "prompt": "bu",
+        "target": "n"
+      },
+      {
+        "stratum": "near",
+        "word": "pot",
+        "prompt": "po",
+        "target": "t"
+      },
+      {
+        "stratum": "near",
+        "word": "hen",
+        "prompt": "he",
+        "target": "n"
+      },
+      {
+        "stratum": "near",
+        "word": "bog",
+        "prompt": "bo",
+        "target": "g"
+      },
+      {
+        "stratum": "far",
+        "word": "dig",
+        "prompt": "di",
+        "target": "g"
+      },
+      {
+        "stratum": "far",
+        "word": "sip",
+        "prompt": "si",
+        "target": "p"
+      },
+      {
+        "stratum": "far",
+        "word": "bit",
+        "prompt": "bi",
+        "target": "t"
+      },
+      {
+        "stratum": "far",
+        "word": "tag",
+        "prompt": "ta",
+        "target": "g"
+      },
+      {
+        "stratum": "far",
+        "word": "cup",
+        "prompt": "cu",
+        "target": "p"
+      },
+      {
+        "stratum": "far",
+        "word": "mud",
+        "prompt": "mu",
+        "target": "d"
+      },
+      {
+        "stratum": "far",
+        "word": "hid",
+        "prompt": "hi",
+        "target": "d"
+      },
+      {
+        "stratum": "far",
+        "word": "rib",
+        "prompt": "ri",
+        "target": "b"
+      }
+    ],
+    "expected_suffix_exposures": {
+      "at": {
+        "phonics": 4,
+        "unrelated_english": 5,
+        "shuffled": 0
+      },
+      "un": {
+        "phonics": 4,
+        "unrelated_english": 0,
+        "shuffled": 1
+      },
+      "ot": {
+        "phonics": 1,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "en": {
+        "phonics": 1,
+        "unrelated_english": 2,
+        "shuffled": 1
+      },
+      "og": {
+        "phonics": 1,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ig": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ip": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "it": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ag": {
+        "phonics": 0,
+        "unrelated_english": 1,
+        "shuffled": 0
+      },
+      "up": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ud": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "id": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      },
+      "ib": {
+        "phonics": 0,
+        "unrelated_english": 0,
+        "shuffled": 0
+      }
+    },
+    "bootstrap": {
+      "resamples": 10000,
+      "confidence_level": 0.95,
+      "seed": 20261025,
+      "unit": "paired seed-level far-cohort contrast"
+    }
+  },
+  "preflight": {
+    "passed": true,
+    "errors": [],
+    "checks": {
+      "condition_examples": {
+        "phonics": 5,
+        "shuffled": 5,
+        "unrelated_english": 5
+      },
+      "shuffled_byte_inventory": [
+        {
+          "example": 0,
+          "byte_multiset_and_length_match": true
+        },
+        {
+          "example": 1,
+          "byte_multiset_and_length_match": true
+        },
+        {
+          "example": 2,
+          "byte_multiset_and_length_match": true
+        },
+        {
+          "example": 3,
+          "byte_multiset_and_length_match": true
+        },
+        {
+          "example": 4,
+          "byte_multiset_and_length_match": true
+        }
+      ],
+      "development_test_word_disjoint": true,
+      "development_test_prompt_disjoint": true,
+      "all_target_letters_in_phonics_training": true,
+      "suffix_exposure_matches_frozen_matrix": true
+    },
+    "suffix_exposure_counts_per_corpus_before_passes": {
+      "ap": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ot": {
+        "phonics": 1,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "et": {
+        "phonics": 0,
+        "shuffled": 1,
+        "unrelated_english": 2
+      },
+      "am": {
+        "phonics": 0,
+        "shuffled": 1,
+        "unrelated_english": 0
+      },
+      "at": {
+        "phonics": 4,
+        "shuffled": 0,
+        "unrelated_english": 5
+      },
+      "un": {
+        "phonics": 4,
+        "shuffled": 1,
+        "unrelated_english": 0
+      },
+      "en": {
+        "phonics": 1,
+        "shuffled": 1,
+        "unrelated_english": 2
+      },
+      "og": {
+        "phonics": 1,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ig": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ip": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "it": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ag": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 1
+      },
+      "up": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ud": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "id": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ib": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      }
+    },
+    "final_test_suffix_exposure_counts_per_corpus_before_passes": {
+      "up": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "og": {
+        "phonics": 1,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ot": {
+        "phonics": 1,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "at": {
+        "phonics": 4,
+        "shuffled": 0,
+        "unrelated_english": 5
+      },
+      "ig": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "it": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "en": {
+        "phonics": 1,
+        "shuffled": 1,
+        "unrelated_english": 2
+      },
+      "un": {
+        "phonics": 4,
+        "shuffled": 1,
+        "unrelated_english": 0
+      },
+      "ud": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ag": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 1
+      },
+      "ip": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "ib": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      },
+      "id": {
+        "phonics": 0,
+        "shuffled": 0,
+        "unrelated_english": 0
+      }
+    },
+    "training_byte_audit": {
+      "phonics": {
+        "example_count": 5,
+        "utf8_byte_count": 105,
+        "ascii_only": true,
+        "tokenizer_ids_valid": true
+      },
+      "shuffled": {
+        "example_count": 5,
+        "utf8_byte_count": 105,
+        "ascii_only": true,
+        "tokenizer_ids_valid": true
+      },
+      "unrelated_english": {
+        "example_count": 5,
+        "utf8_byte_count": 188,
+        "ascii_only": true,
+        "tokenizer_ids_valid": true
+      }
+    },
+    "evaluation_item_exposure": [
+      {
+        "split": "development",
+        "word": "cap",
+        "prompt": "ca",
+        "target": "p",
+        "stratum": "development",
+        "word_byte_bigrams": {
+          "ca": {
+            "phonics": 4,
+            "shuffled": 2,
+            "unrelated_english": 3
+          },
+          "ap": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "development",
+        "word": "cot",
+        "prompt": "co",
+        "target": "t",
+        "stratum": "development",
+        "word_byte_bigrams": {
+          "co": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 1
+          },
+          "ot": {
+            "phonics": 1,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 1,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "development",
+        "word": "met",
+        "prompt": "me",
+        "target": "t",
+        "stratum": "development",
+        "word_byte_bigrams": {
+          "me": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 2
+          },
+          "et": {
+            "phonics": 0,
+            "shuffled": 1,
+            "unrelated_english": 2
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 1,
+          "unrelated_english": 2
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "development",
+        "word": "ram",
+        "prompt": "ra",
+        "target": "m",
+        "stratum": "development",
+        "word_byte_bigrams": {
+          "ra": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "am": {
+            "phonics": 0,
+            "shuffled": 1,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 1,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "bat",
+        "prompt": "ba",
+        "target": "t",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "ba": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 1
+          },
+          "at": {
+            "phonics": 4,
+            "shuffled": 0,
+            "unrelated_english": 5
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 4,
+          "shuffled": 0,
+          "unrelated_english": 5
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "bun",
+        "prompt": "bu",
+        "target": "n",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "bu": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "un": {
+            "phonics": 4,
+            "shuffled": 1,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 4,
+          "shuffled": 1,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "pot",
+        "prompt": "po",
+        "target": "t",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "po": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "ot": {
+            "phonics": 1,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 1,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "hen",
+        "prompt": "he",
+        "target": "n",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "he": {
+            "phonics": 7,
+            "shuffled": 0,
+            "unrelated_english": 2
+          },
+          "en": {
+            "phonics": 1,
+            "shuffled": 1,
+            "unrelated_english": 2
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 1,
+          "shuffled": 1,
+          "unrelated_english": 2
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "bog",
+        "prompt": "bo",
+        "target": "g",
+        "stratum": "near",
+        "word_byte_bigrams": {
+          "bo": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "og": {
+            "phonics": 1,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 1,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "dig",
+        "prompt": "di",
+        "target": "g",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "di": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "ig": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "sip",
+        "prompt": "si",
+        "target": "p",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "si": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "ip": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "bit",
+        "prompt": "bi",
+        "target": "t",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "bi": {
+            "phonics": 0,
+            "shuffled": 1,
+            "unrelated_english": 0
+          },
+          "it": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "tag",
+        "prompt": "ta",
+        "target": "g",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "ta": {
+            "phonics": 0,
+            "shuffled": 1,
+            "unrelated_english": 2
+          },
+          "ag": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 1
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 1
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "cup",
+        "prompt": "cu",
+        "target": "p",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "cu": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "up": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "mud",
+        "prompt": "mu",
+        "target": "d",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "mu": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "ud": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "hid",
+        "prompt": "hi",
+        "target": "d",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "hi": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          },
+          "id": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      },
+      {
+        "split": "final_test",
+        "word": "rib",
+        "prompt": "ri",
+        "target": "b",
+        "stratum": "far",
+        "word_byte_bigrams": {
+          "ri": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 1
+          },
+          "ib": {
+            "phonics": 0,
+            "shuffled": 0,
+            "unrelated_english": 0
+          }
+        },
+        "suffix_exposures": {
+          "phonics": 0,
+          "shuffled": 0,
+          "unrelated_english": 0
+        },
+        "whole_word_overlap_by_condition": {
+          "phonics": [],
+          "shuffled": [],
+          "unrelated_english": []
+        },
+        "byte_ids_valid": true
+      }
+    ],
+    "pass_count": 15,
+    "updates_per_condition": 75,
+    "planned_trained_fits": 30
+  },
+  "progress": null,
+  "seed_runs": [],
+  "summary": null
+}
