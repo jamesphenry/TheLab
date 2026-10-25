@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import importlib.metadata
+import io
 import json
 import math
 import os
@@ -312,9 +313,11 @@ def digest_state_dict(state: dict[str, Any]) -> str:
         for field in fields:
             digest.update(field.encode("utf-8"))
             digest.update(b"\0")
-        # Read the contiguous tensor's underlying bytes without requiring NumPy.
-        raw = bytes(cpu_tensor.view(torch.uint8).untyped_storage())
-        digest.update(raw)
+        # Torch's deterministic legacy serializer writes storage bytes in C++;
+        # Python-level iteration over UntypedStorage is prohibitively slow here.
+        tensor_buffer = io.BytesIO()
+        torch.save(cpu_tensor, tensor_buffer, _use_new_zipfile_serialization=False)
+        digest.update(tensor_buffer.getbuffer())
         digest.update(b"\0")
     return digest.hexdigest()
 

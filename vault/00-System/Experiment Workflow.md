@@ -8,11 +8,14 @@ tags:
   - workflow
 created: 2026-10-25
 updated: 2026-10-25
+changelog:
+  - date: 2026-10-25
+    change: "Added observed CVC runner environment and performance gotchas, with the preserved failed/interrupted run IDs."
 ---
 
 # AI School Experiment Workflow
 
-Operational checklist for planning, running, and reporting experiments. This describes the current checkout as inspected on 2026-10-25. The vault has a documented research lifecycle, but it does **not** yet contain a standardized runner, result-bundle schema, run-ID generator, artifact validator, or automated `complete` command. The CVC replication remains a plan; its runner and frozen item file have not been implemented. Do not treat the legacy commands below as execution commands for that plan.
+Operational checklist for planning, running, and reporting experiments. The vault documents the research lifecycle. The CVC plan now has a dedicated runner, frozen input file, run-ID-scoped JSON/log outputs, and a data-only preflight; there is still no generic runner standard, run-ID generator, artifact validator, or automated `complete` command. The CVC protocol remains planned, and its full-run attempts have not completed.
 
 ## 1. Plan — Codex and researcher
 
@@ -26,7 +29,7 @@ See [[Documentation Standard]], [[Vault Maintenance]], and [[AGENTS]] for eviden
 
 After the plan is approved for implementation, Codex creates or modifies only the listed runner and frozen inputs, then documents the exact command, expected outputs, paths, schema, and preflight checks in the plan. It checks that final-test items are disjoint from training and validation and that checkpoint selection does not inspect the final test. Code and data changes are reviewed before execution approval.
 
-**Current implementation gap:** the CVC plan at [[Development/Experiments/2026-10-25 Plan - Controlled CVC Transfer Replication]] names `experiments/run_cvc_transfer_v2.py` and `experiments/cvc_transfer_v2.json` as work to create; neither is a runnable, approved protocol artifact yet. Its planned log and bundle paths are not current outputs. There is no generic runner standard or example-runner document in this vault. The existing [[Development/Experiments/README|artifact map]] links legacy scripts; it warns that name correspondence does not prove reproduction.
+**Current implementation:** the CVC plan at [[Development/Experiments/2026-10-25 Plan - Controlled CVC Transfer Replication]] uses `experiments/run_cvc_transfer_v2.py` and `experiments/data/cvc_transfer_v2.json`. Its preflight and two incomplete full-run attempts have run-specific artifacts. There is no generic runner standard or example-runner document in this vault. The existing [[Development/Experiments/README|artifact map]] links legacy scripts; it warns that name correspondence does not prove reproduction.
 
 ## 3. Review — researcher approval
 
@@ -56,7 +59,7 @@ Use only the exact command recorded in the approved experiment note. Existing sc
 - `python3 experiments/test_preschool_throwaway.py` writes a timestamped JSON under `experiments/preschool_test/` and prints progress to the terminal. It is a legacy harness test, not the planned CVC runner.
 - `python3 experiments/run_experiment_b.py` prints results to the terminal; it does not write a result bundle.
 
-These invocations are visible from each script's `__main__` block. Dependencies/environment setup must be confirmed on Jane; this guide does not claim these commands were run or verified there. For a future approved runner, its record must specify durable log capture, bundle path, and safe-resume behavior. A terminal interruption is not evidence of completion. Preserve partial output and document failure; do not silently restart or change the protocol.
+These invocations are visible from each script's `__main__` block. Dependencies/environment setup must be confirmed on Jane. The CVC command and output paths are in its plan; use `~/projects/The-Lab/.venv/bin/python` only after checking that exact environment's PyTorch and device support. A terminal interruption is not evidence of completion. Preserve partial output and document failure; use a new run ID for a retry, and do not change the protocol silently.
 
 ## 7. Validate — researcher, then Codex evidence review
 
@@ -86,6 +89,13 @@ Find the new dated record in the [[Development/Experiments/Experiments Index|Exp
 | Commit differs from approved revision | Stop before execution, or quarantine output if already run. Report both hashes and obtain review for the revised run. |
 | Output path already exists | Do not overwrite. Select a new run-specific path only through the approved protocol or a documented amendment. |
 | Control exposure or split check fails | Stop before training. Preserve the preflight report and revise the protocol with a changelog entry and renewed approval. |
+
+### Observed gotchas — CVC replication, 2026-10-25
+
+- **The server's default Python is not the experiment environment.** On Jane, `/usr/bin/python3` had no PyTorch; the first full attempt (`cvc-transfer-20261025-main`) failed before model construction. The repository `.venv` contains PyTorch, so verify and invoke that interpreter explicitly.
+- **A visible GPU does not mean the selected environment can use it.** Jane has a Tesla P4, but its `.venv` contains `torch 2.14.1+cpu`, reports `torch.cuda.is_available() == False`, and lacks NumPy. The retry therefore ran on CPU. Check `torch.__version__`, CUDA availability, and the requested device before launching a long run; do not infer GPU support from `nvidia-smi` alone.
+- **Avoid Python iteration over large tensor storage when hashing weights.** The `bytes(tensor.untyped_storage())` path consumed a full CPU core for over a minute on a 10 MB diagnostic tensor. The CVC retry (`cvc-transfer-20261025-retry01`) showed no saved seed progress after more than eight minutes and was interrupted. It produced no optimizer updates. The runner is being changed to use deterministic Torch serialization, with a new run ID required for any retry.
+- **Keep each failed or interrupted run.** The preflight (`preflight-20261025-2837ee0`), failed default-Python attempt, and interrupted CPU attempt have separate JSON/log paths. Do not overwrite or relabel them as completed results.
 
 ## Example: reading an existing result bundle
 
