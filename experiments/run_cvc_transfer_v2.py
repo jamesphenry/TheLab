@@ -312,7 +312,8 @@ def digest_state_dict(state: dict[str, Any]) -> str:
         for field in fields:
             digest.update(field.encode("utf-8"))
             digest.update(b"\0")
-        raw = cpu_tensor.view(torch.uint8).numpy().tobytes()
+        # Read the contiguous tensor's underlying bytes without requiring NumPy.
+        raw = bytes(cpu_tensor.view(torch.uint8).untyped_storage())
         digest.update(raw)
         digest.update(b"\0")
     return digest.hexdigest()

@@ -19,6 +19,8 @@ changelog:
     change: "Review revision: verify paired initial weights, expose control n-gram counts and sequences, and limit inference to seeds and items tested."
   - date: 2026-10-25
     change: "Aligned the primary-metric statement with the runner: full-head NLL is primary; letter-renormalized NLL is secondary."
+  - date: 2026-10-25
+    change: "Removed the runner's unnecessary NumPy requirement from canonical tensor hashing after the first server attempt found NumPy unavailable; the failed attempt remains preserved."
 ---
 
 # Plan — Controlled CVC Transfer Replication
