@@ -48,3 +48,4 @@ Canonical index for the experiment records in this directory. Add each new exper
 ## 2026-10-25
 - [[2026-10-25 Controlled CVC Transfer Replication]] - Completed multi-seed, leakage-checked spelling-transfer experiment with procedure, findings, and bounded interpretation
 - [[2026-10-25 Controlled CVC Transfer Replication - Completed Run]] - Detailed seed/item analysis and run-artifact diagnostics
+- [[2026-10-25 Controlled CVC Transfer Replication v3 - Matched Vocabulary]] - Planned 260-token-vocabulary follow-up with the v2 fixed items and matched shuffled control

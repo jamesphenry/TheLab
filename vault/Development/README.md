@@ -12,13 +12,14 @@ updated: 2026-10-25
 
 # Development Documentation
 
-This folder contains internal engineering and architecture documentation for building and maintaining the **AI Learner Laboratory (AI School)** harness and environment.
+This folder contains engineering and architecture documentation for the **AI Learner Laboratory (AI School)**, including the original harness design and current research workflow. The tracked repository currently has no `harness/` directory; see [[AI School Whitepaper|AI School — Living Whitepaper]] for the current implementation status.
 
 > [!NOTE]
 > This folder is strictly for human developers and harness maintainers. Agentic roles (Learner, Teacher, Assessment) have no read or write access here.
 
 ## Core Documents
 
+- [[AI School Whitepaper|AI School — Living Whitepaper]] — Current project synthesis, evidence boundaries, and research priorities.
 - [[Project Overview|Harness Project Overview]] — Mission, goals, constraints, and scope.
 - [[Architecture|System Architecture]] — Component model, data flow, safety invariants, and subsystem responsibilities.
 - [[Roadmap|Development Roadmap]] — Current milestone, active tasks, and upcoming phases.

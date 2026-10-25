@@ -13,11 +13,12 @@ updated: 2026-10-25
 
 > [!abstract] Project at a Glance
 > **Project:** AI Learner Laboratory (AI School)
-> **Harness Stack:** Python 3.13
+> **Current repository:** Obsidian vault and research scripts; the original `harness/` directory is absent from the current checkout.
 > **Purpose:** Experimental developmental environment for an AI learner model featuring subject-specific teachers, evidence-based assessments, metacognitive self-direction, idle reflection, and human guidance.
 
 ## Core Navigation
 
+- [[AI School Whitepaper|AI School — Living Whitepaper]]
 - [[NOTES|Discussion Notes & Blueprint]]
 - [[00-System/Harness-Rules|System Rules & Invariants]]
 - [[00-System/Permissions|Permissions Matrix]]
@@ -36,6 +37,7 @@ updated: 2026-10-25
   - [[07-Reports/Reports Index|Research & Assessment Reports]]
 - [[00-System/Vault Architecture|Vault Architecture and Documentation Guides]]
 - [[00-System/Experiment Workflow|Experiment Workflow Guide]]
+- [[00-System/Computing Environment|Computing Environment — Chromebook, Codex, and Jane]]
 - [[00-System/Server Experiment Access|Server Experiment Access]]
 - [[future|Future Research Directions (Brainstorm)]]
 

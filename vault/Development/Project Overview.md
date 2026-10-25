@@ -12,6 +12,9 @@ updated: 2026-10-25
 
 # Project Overview — AI School Harness
 
+> [!warning] Historical implementation overview
+> This note documents the original harness design. The current repository has no tracked `harness/` directory, and the v2 CVC runner still imports that package. For current project evidence and status, see [[AI School Whitepaper|AI School — Living Whitepaper]]. Do not treat the planned components below as present implementation.
+
 ## Identity
 - **Project Name:** AI Learner Laboratory Harness
 - **Purpose:** A modular Python coordinator that mediates interactions between an AI learner model, subject-specific teachers, an evidence-based assessment engine, and an Obsidian vault environment.

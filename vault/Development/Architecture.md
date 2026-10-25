@@ -55,7 +55,7 @@ For the note organization and authority model, see [[00-System/Vault Architectur
 
 ### Implementation status (checked 2026-10-25)
 
-The repository currently contains `harness/vault/`, `harness/learner/`, and `harness/school/`. The previously described `harness/models/`, `harness/sandbox/`, and `harness/core/` directories are not present in the inspected source tree; treat them as proposed responsibilities, not implemented modules. Consult source code for current behavior.
+The current tracked repository has no `harness/` directory. This differs from the original architecture design documented above. The v2 CVC runner imports `harness.learner.config`, `harness.learner.model`, and `harness.learner.tokenizer`, so it is not runnable from the current checkout without restoring or replacing those modules. The historical implementation is available in Git history, not current source. See [[AI School Whitepaper|AI School — Living Whitepaper]] for current project status and the planned runner-owned model approach.
 
 ## Learner Model Specification (BabyLM ~25M)
 Per [[Development/Decisions/ADR-0001 BabyLM 25M Tabula Rasa Architecture|ADR-0001]]:
